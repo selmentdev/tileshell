@@ -1,0 +1,52 @@
+<scene export_time="1376652008.993851" previous_export_time="1376651876.142846" exported_by="kgrzy_000" formatVersion="1.0.1" >
+  <nodes >
+    <node name="Skybox" >
+      <position x="20" y="0" z="0" />
+      <rotation qw="0.707107" qz="-0.000000" qx="0.000000" qy="0.707107" />
+      <scale x="3.500000" y="3.500000" z="3.500000" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+      <entity velocity_max="0.0" ghost="False" physics_type="STATIC" lock_rot_z="False" lock_rot_y="False" actor="False" lock_trans_x="False" lock_trans_y="False" lock_trans_z="False" friction_z="1.0" damping_rot="0.1589999943971634" friction_x="1.0" friction_y="1.0" velocity_min="0.0" damping_trans="0.02539999969303608" anisotropic_friction="False" name="Skybox" inertia_tensor="0.4000000059604645" meshFile="Skybox.mesh" mass_radius="1.0" lock_rot_x="False" mass="1.0" />
+    </node>
+    <node name="Lamp" >
+      <position x="2.062946" y="6.903862" z="0.980244" />
+      <rotation qw="0.589468" qz="-0.267906" qx="0.175755" qy="0.741528" />
+      <scale x="1.000000" y="1.000000" z="1.000000" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+      <light powerScale="1.840000033378601" shadow="true" name="Lamp" type="point" >
+        <position x="2.062946" y="6.903862" z="0.980244" />
+        <lightAttenuation quadratic="0.0" constant="1.0" linear="0.03333335240683057" range="5000" />
+        <colourDiffuse r="1.0" b="1.0" g="1.0" />
+        <colourSpecular r="1.0" b="1.0" g="1.0" />
+        <colourShadow r="1.0" b="1.0" g="1.0" />
+      </light>
+    </node>
+    <node name="Camera" >
+      <position x="19.349642" y="5.492417" z="12.832738" />
+      <rotation qw="0.633447" qz="-0.349090" qx="0.572383" qy="0.386342" />
+      <scale x="1.000000" y="1.000007" z="0.999997" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+      <camera projectionType="perspective" name="Camera" fov="0.5033799435163735" >
+        <clipping farPlaneDist="1000.0" nearPlaneDist="0.10000000149011612" far="1000.0" near="0.10000000149011612" />
+      </camera>
+    </node>
+  </nodes>
+  <externals >
+    <item type="material" >
+      <file name="D:\Projects\TileShell\tileshell\build\Media\mainmenu\Skybox.material" />
+    </item>
+  </externals>
+  <environment >
+    <colourAmbient r="1.0" b="1.0" g="1.0" />
+    <colourDiffuse r="1.0" b="1.0" g="1.0" />
+    <colourBackground r="1.0" b="1.0" g="1.0" />
+  </environment>
+</scene>

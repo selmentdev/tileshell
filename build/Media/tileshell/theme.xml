@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Style Texture="theme.png" Font="../media/tileshell/Verdana.fnt">
+	<!--
+		color table
+		
+		Alpha default: 		104
+	
+		Border:				146, 201, 172, 204
+		Normal: 			41, 65, 35
+		Pushed:				254, 171, 0
+		Disabled:			62, 63, 62
+		Selected:			156, 204, 0 
+		DarkPanel:			30, 30, 30, A 66%
+		DarkPanelBorder:	69, 69, 69, A 90%
+		
+	-->
+	<!--
+	Control prototypes:
+		TextBox             - (passive, dont' send events) textbox
+		Button		        - button (OnClick)
+		EditBox             - editbox (OnValueChanged)
+		ItemBox             - itembox (OnValueChanged)
+		ProgressBar         - (passive, dont send events) progressbar
+		RangeBar            - rangebar (OnValueChanged)
+		
+	-->
+	<StyleItem9Grid Name="BevelButtonSelected" 	Rectangle="0,     0,  128, 128" 	Padding="40, 40, 40, 40"/>
+	<StyleItem9Grid Name="BevelButtonDisabled" 	Rectangle="160,   0,  128, 128" 	Padding="40, 40, 40, 40"/>
+	<StyleItem9Grid Name="BevelButtonPushed" 	Rectangle="320,   0,  128, 128" 	Padding="40, 40, 40, 40"/>
+	<StyleItem9Grid Name="BevelButtonNormal" 	Rectangle="480,   0,  128, 128" 	Padding="40, 40, 40, 40"/>
+	<StyleItem9Grid Name="BevelPanelDark"		Rectangle="640,   0,  128, 128" 	Padding="40, 40, 40, 40"/>
+	<StyleItem9Grid Name="BevelPanelLight"		Rectangle="800,   0,  128, 128" 	Padding="40, 40, 40, 40"/>	
+	<!--
+	<StyleItem9Grid Name="ButtonSelected" 		Rectangle="0,     160,  128, 128" 	Padding="40, 40, 40, 40"/>
+	<StyleItem9Grid Name="ButtonDisabled" 		Rectangle="160,   160,  128, 128" 	Padding="40, 40, 40, 40"/>
+	<StyleItem9Grid Name="ButtonPushed" 		Rectangle="320,   160,  128, 128" 	Padding="40, 40, 40, 40"/>
+	<StyleItem9Grid Name="ButtonNormal" 		Rectangle="480,   160,  128, 128" 	Padding="40, 40, 40, 40"/>
+	<StyleItem9Grid Name="PanelDark"			Rectangle="640,   160,  128, 128" 	Padding="40, 40, 40, 40"/>
+	<StyleItem9Grid Name="PanelLight"			Rectangle="800,   160,  128, 128" 	Padding="40, 40, 40, 40"/>
+	<StyleItem1Quad Name="MenuSelected" 		Rectangle="0,     320,  128, 128"/>
+	<StyleItem1Quad Name="MenuDisabled" 		Rectangle="160,   320,  128, 128"/>
+	<StyleItem1Quad Name="MenuPushed" 			Rectangle="320,   320,  128, 128"/>
+	<StyleItem1Quad Name="MenuNormal" 			Rectangle="480,   320,  128, 128"/>
+	<StyleItem1Quad Name="MenuDark"				Rectangle="640,   320,  128, 128"/>
+	<StyleItem1Quad Name="MenuLight"			Rectangle="800,   320,  128, 128"/>-->
+	<!--<StyleItem9Grid Name="Selector"				Rectangle="0,   0,  128, 128" 		Padding="40, 40, 40, 40"/>
+	<StyleItem9Grid Name="Selector"				Rectangle="0,   0,  128, 128" 		Padding="40, 40, 40, 40"/>-->
+	
+	<StyleItem9Grid Name="ButtonHovered" 		Rectangle="0,     0,  128, 128" 	Padding="40, 40, 40, 40"/>
+	<StyleItem9Grid Name="ButtonDisabled" 		Rectangle="160,   0,  128, 128" 	Padding="40, 40, 40, 40"/>
+	<StyleItem9Grid Name="ButtonPushed" 		Rectangle="320,   0,  128, 128" 	Padding="40, 40, 40, 40"/>
+	<StyleItem9Grid Name="ButtonNormal" 		Rectangle="480,   0,  128, 128" 	Padding="40, 40, 40, 40"/>
+	
+	<StyleItem9Grid Name="ProgressBarNormal" 	Rectangle="480,   0,  128, 128" 	Padding="40, 40, 40, 40"/>
+	<StyleItem9Grid Name="ProgressBarProgress" 	Rectangle="320,   0,  128, 128" 	Padding="40, 40, 40, 40"/>
+	
+	<StyleItem9Grid Name="CheckBoxHovered" 		Rectangle="0,     160,  128, 128" 	Padding="40, 40, 40, 40"/>
+	<StyleItem9Grid Name="CheckBoxDisabled" 	Rectangle="160,   160,  128, 128" 	Padding="40, 40, 40, 40"/>
+	<StyleItem9Grid Name="CheckBoxPushed" 		Rectangle="320,   160,  128, 128" 	Padding="40, 40, 40, 40"/>
+	<StyleItem9Grid Name="CheckBoxNormal" 		Rectangle="480,   160,  128, 128" 	Padding="40, 40, 40, 40"/>
+	
+	<StyleItem1Quad Name="Cursor1"				Rectangle="0,	480,128,128"/>
+	<StyleItem1Quad Name="Cursor2"				Rectangle="160,	480,128,128"/>
+	<StyleItem1Quad Name="Cursor"				Rectangle="320,	480,128,128"/>
+	<StyleItem1Quad Name="ArrowLeftDown"		Rectangle="640, 480,128,128"/>
+	<StyleItem1Quad Name="ArrowLeftUp"			Rectangle="640, 640,128,128"/>
+	<StyleItem1Quad Name="ArrowRightDown"		Rectangle="480, 480,128,128"/>
+	<StyleItem1Quad Name="ArrowRightUp"			Rectangle="480, 640,128,128"/>
+	
+	<StyleItem9Grid Name="MenuHover" 		Rectangle="0,   0,  128, 128" 	Padding="40, 40, 40, 40"/>
+	<StyleItem9Grid Name="MenuPushed" 		Rectangle="320, 0,  128, 128" 	Padding="40, 40, 40, 40"/>
+	
+	<StyleItem9Grid Name="ActivitySelector"				Rectangle="800,   0,  128, 128" 		Padding="40, 40, 40, 40"/>
+	<StyleItem9Grid Name="Spinner1"				Rectangle="0,   700,  200, 200" 	Padding="0,0,0,0"/>
+	<StyleItem9Grid Name="Spinner2"				Rectangle="200,   700,  200, 200" 	Padding="0,0,0,0"/>
+	<StyleItem9Grid Name="Spinner3"				Rectangle="800,   480,  200, 200" 	Padding="0,0,0,0"/>
+</Style>

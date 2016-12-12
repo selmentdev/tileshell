@@ -1,0 +1,788 @@
+<!-- 
+The MIT License(MIT)
+
+Copyright(c) 2015 by Karol Grzybowski
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files(the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and / or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions :
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+-->
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<MenuScene DefaultActivity="Menu.Main" Style="../media/tileshell/theme.xml">
+  <!-- Main Menu -->
+  <Activity Name="Menu.Main"
+		Rectangle="0,0,600,380"
+		Padding="30,30,30,30"
+		CursorSize="16,16"
+		CursorZOrder="60"
+		Title="Main Menu"
+		Translate="-300,-190"
+		CameraPosition="0,0,0"
+		CameraUp="0,1,0"
+		CameraTarget="0,0,-500"
+		ZOrder="-500">
+
+    <TextBlock Name="Trackback" Rectangle="0,0,600,35" Text="Main" TextAlign="Left"/>
+    <TextBlock Name="debug_OutputDbg" Rectangle="0,0,600,35" TextAlign="Right" FontSize="0"/>
+
+	<TextBlock Name="Spinner1" ZOrder=" 10" Rectangle="400,100,200,200" StyleItem="Spinner1" BackgroundColor="1.0,1.0,1.0,0.6"/>
+    <TextBlock Name="Spinner4" ZOrder=" 20" Rectangle="410,110,180,180" StyleItem="Spinner1" BackgroundColor="1.0,0.4,0.3,0.8"/>
+    <TextBlock Name="Spinner2" ZOrder=" 30" Rectangle="425,125,150,150" StyleItem="Spinner2" BackgroundColor="1.0,1.0,1.0,0.5"/>
+    <TextBlock Name="Spinner3" ZOrder=" 40" Rectangle="440,140,120,120" StyleItem="Spinner1" BackgroundColor="1.0,0.4,0.3,0.6"/>
+
+    <MultiButton
+			Rectangle="10,50,580,200"
+			Padding="0,0,0,0"
+			SelectedItem="MenuHover"
+			PushedItem="MenuPushed"
+			ItemSize="400,42"
+			ItemPadding="10,10,10,10"
+			Name="Menu"
+			HoverElevate="25"
+			FontSize="30"
+			HoverItemColor="0,0,0,1"
+      ZOrder="10"
+			>
+      <MultiButton.Items>
+        <Item Text="Campaign" Id="0" TargetActivity="Menu.Main.Campaign"/>
+        <Item Text="Multiplayer" Id="1" TargetActivity="Menu.Main.Multiplayer"/>
+        <Item Text="Profile" Id="2" TargetActivity="Menu.Main.Profile"/>
+        <Item Text="Options" Id="3" TargetActivity="Menu.Main.Options"/>
+        <Item Text="Exit" Id="4" TargetActivity="Menu.Main.Exit"/>
+      </MultiButton.Items>
+    </MultiButton>
+
+  </Activity>
+
+  <!-- Main Menu Exit -->
+  <Activity Name="Menu.Main.Exit"
+		Rectangle="0,0,600,380"
+		Padding="30,30,30,30"
+		CursorSize="16,16"
+		CursorZOrder="60"
+    Backlink="Menu.Main"
+    StyleElement="BevelPanelDark"
+		Title="Main Menu"
+		Translate="-300,-190"
+		CameraPosition="0,0,5000"
+		CameraUp="0,1,0"
+		CameraTarget="0,0,4500"
+		ZOrder="4500">
+
+    <TextBlock Name="TrackbackPath" Rectangle="50,10,600,35" Text="Main / Exit" TextAlign="Left" ZOrder="10"/>
+    
+    <TextBlock Name="Question" Rectangle="0,100,600,50" Text="Do you really want exit game?" TargetAlign="Center"/>
+
+    <Button Name="btn_Exit" Rectangle="40,150,255,35" Padding="10,10,10,10" Text="Yes" TargetActivity="Menu.Main.Exit.Exit" ZOrder="20"/>
+    <Button Name="btn_Back" Rectangle="305,150,255,35" Padding="10,10,10,10" Text="No" TargetActivity="Menu.Main" ZOrder="20"/>
+
+  </Activity>
+
+  <!-- Menu.Main.Campaign -->
+  <Activity Name="Menu.Main.Campaign"
+    Backlink="Menu.Main"
+		Rectangle="0,0,600,380"
+		Padding="30,30,30,30"
+		CursorSize="16,16"
+		CursorZOrder="60"
+		Title="Main Menu"
+		Translate="-2300,-190"
+		CameraPosition="-2000,0,0"
+		CameraUp="0,1,0"
+		CameraTarget="-2000,0,-500"
+		ZOrder="-500">
+
+    <MultiButton
+			Rectangle="10,50,580,320"
+			Padding="0,0,0,0"
+			SelectedItem="MenuHover"
+			PushedItem="MenuPushed"
+			ItemSize="400,42"
+			ItemPadding="10,10,10,10"
+			Name="Menu"
+			HoverElevate="25"
+			FontSize="30"
+			HoverItemColor="0,0,0,1"
+			>
+      <MultiButton.Items>
+        <Item Text="New Game" Id="0" TargetActivity="Menu.Main.Campaign.NewGame"/>
+        <Item Text="Load Save" Id="1" TargetActivity="Menu.Main.Campaign.LoadSave"/>
+      </MultiButton.Items>
+    </MultiButton>
+
+    <TextBlock Name="Trackback" Rectangle="0,0,450,35" Text="Main / Campaign" ZOrder="10" TextAlign="Left"/>
+    <Button Name="btn_Back" Rectangle="425,0,250,35" Padding="10,10,10,10" Text="Back" TargetActivity="Menu.Main" ZOrder="10" Scale="0.5,0.5"/>
+  </Activity>
+
+  <!--
+    Menu.Main.Campaign.NewGame
+    
+    Some of target activities are not present in this file, since they are used to indicate
+    transitions between game states, i.e. load specific game save or create new game.
+    
+  -->
+
+  <!-- Menu.Main.Campaign.NewGame -->
+  <Activity Name="Menu.Main.Campaign.NewGame"
+    Backlink="Menu.Main.Campaign"
+		Rectangle="0,0,600,450"
+		Padding="30,30,30,30"
+		CursorSize="16,16"
+		CursorZOrder="60"
+		Title="Main Menu"
+		Translate="-2300,-1190"
+		CameraPosition="-2000,950,150"
+		CameraUp="0,1,0"
+		CameraTarget="-2000,950,-500"
+		ZOrder="-500">
+
+    <MultiButton
+			Rectangle="10,50,580,400"
+			Padding="0,0,0,0"
+			SelectedItem="MenuHover"
+			PushedItem="MenuPushed"
+			ItemSize="400,42"
+			ItemPadding="10,10,10,10"
+			Name="Menu"
+			HoverElevate="25"
+			FontSize="30"
+			HoverItemColor="0,0,0,1"
+      ZOrder="10"
+			>
+      <MultiButton.Items>
+        <Item Text="Level 0" Id="0" TargetActivity="Menu.Main.Campaign.NewGame.0"/>
+        <Item Text="Level 1" Id="0" TargetActivity="Menu.Main.Campaign.NewGame.1"/>
+        <Item Text="Level 2" Id="0" TargetActivity="Menu.Main.Campaign.NewGame.2"/>
+        <Item Text="Level 3" Id="0" TargetActivity="Menu.Main.Campaign.NewGame.3"/>
+        <Item Text="Level 4" Id="0" TargetActivity="Menu.Main.Campaign.NewGame.4"/>
+        <Item Text="Level 5" Id="0" TargetActivity="Menu.Main.Campaign.NewGame.5"/>
+        <Item Text="Level 6" Id="0" TargetActivity="Menu.Main.Campaign.NewGame.6"/>
+        <Item Text="Level 7" Id="0" TargetActivity="Menu.Main.Campaign.NewGame.7"/>
+        <Item Text="Level 8" Id="0" TargetActivity="Menu.Main.Campaign.NewGame.8"/>
+        <Item Text="Level 9" Id="0" TargetActivity="Menu.Main.Campaign.NewGame.9"/>
+      </MultiButton.Items>
+    </MultiButton>
+
+    <Button Name="btn_Back" Rectangle="425,0,250,35" Padding="10,10,10,10" Text="Back" TargetActivity="Menu.Main" ZOrder="10" Scale="0.5,0.5"/>
+    <TextBlock Name="Trackback" Rectangle="0,0,450,35" Text="Main / Campaign / New Game" ZOrder="10" TextAlign="Left"/>
+
+  </Activity>
+  
+  <!-- Menu.Main.GameMenu -->
+  <Activity
+    Name="Menu.Main.Game"
+    Rectangle="0,0,600,450"
+		Padding="30,30,30,30"
+		CursorSize="16,16"
+		CursorZOrder="60"
+		Title="Main Menu"
+		Translate="-3300,-1190"
+		CameraPosition="-3000,950,150"
+		CameraUp="0,1,0"
+		CameraTarget="-3000,950,-500"
+		ZOrder="-500">
+
+    <MultiButton
+			Rectangle="10,50,580,400"
+			Padding="0,0,0,0"
+			SelectedItem="MenuHover"
+			PushedItem="MenuPushed"
+			ItemSize="400,42"
+			ItemPadding="10,10,10,10"
+			Name="Menu"
+			HoverElevate="25"
+			FontSize="30"
+			HoverItemColor="0,0,0,1"
+      ZOrder="10"
+			>
+      <MultiButton.Items>
+        <Item Text="Resume" Id="0" TargetActivity="Menu.Main.Campaign.NewGame.0"/>
+        <Item Text="Scoreboard" Id="0" TargetActivity="Menu.Main.Campaign.NewGame.1"/>
+        <Item Text="Squad &amp; Team" Id="0" TargetActivity="Menu.Main.Campaign.NewGame.2"/>
+        <Item Text="Suicide" Id="0" TargetActivity="Menu.Main.Campaign.NewGame.3"/>
+        <Item Text="Options" Id="0" TargetActivity="Menu.Main.Campaign.NewGame.4"/>
+        <Item Text="Quit" Id="0" TargetActivity="Menu.Main.Campaign.NewGame.5"/>
+      </MultiButton.Items>
+    </MultiButton>
+
+    <TextBlock Name="TrackbackPath" Rectangle="50,10,2000,35" Text="Main /" FontSize="40" TextAlign="Left" ZOrder="10"/>
+    <TextBlock Name="TrackbackName" Rectangle="50,50,200,80" Text="Game Menu" FontSize="80" ZOrder="20" TextAlign="Left"/>
+    <Button Name="btn_Back" Rectangle="425,0,250,35" Padding="10,10,10,10" Text="Back" TargetActivity="Menu.Main" ZOrder="10" Scale="0.5,0.5"/>
+
+  </Activity>        
+
+  <!-- Menu.Main.Campaign.LoadSave -->
+  <Activity Name="Menu.Main.Campaign.LoadSave"
+    Backlink="Menu.Main.Campaign"
+		Rectangle="0,0,600,450"
+		Padding="30,30,30,30"
+		CursorSize="16,16"
+		CursorZOrder="60"
+		Title="Main Menu"
+    Translate="-2300,775"
+		CameraPosition="-2000,-1000,150"
+		CameraUp="0,1,0"
+		CameraTarget="-2000,-1000,-500"
+		ZOrder="-500">
+
+    <MultiButton
+			Rectangle="10,50,580,400"
+			Padding="0,0,0,0"
+			SelectedItem="MenuHover"
+			PushedItem="MenuPushed"
+			ItemSize="400,42"
+			ItemPadding="10,10,10,10"
+			Name="Menu"
+			HoverElevate="25"
+			FontSize="30"
+			HoverItemColor="0,0,0,1"
+      ZOrder="10"
+			>
+      <MultiButton.Items>
+        <Item Text="Save Slot 0" Id="0" TargetActivity="Menu.Main.Campaign.LoadSave.0"/>
+        <Item Text="Save Slot 1" Id="0" TargetActivity="Menu.Main.Campaign.LoadSave.1"/>
+        <Item Text="Save Slot 2" Id="0" TargetActivity="Menu.Main.Campaign.LoadSave.2"/>
+        <Item Text="Save Slot 3" Id="0" TargetActivity="Menu.Main.Campaign.LoadSave.3"/>
+        <Item Text="Save Slot 4" Id="0" TargetActivity="Menu.Main.Campaign.LoadSave.4"/>
+        <Item Text="Save Slot 5" Id="0" TargetActivity="Menu.Main.Campaign.LoadSave.5"/>
+        <Item Text="Save Slot 6" Id="0" TargetActivity="Menu.Main.Campaign.LoadSave.6"/>
+        <Item Text="Save Slot 7" Id="0" TargetActivity="Menu.Main.Campaign.LoadSave.7"/>
+        <Item Text="Save Slot 8" Id="0" TargetActivity="Menu.Main.Campaign.LoadSave.8"/>
+        <Item Text="Save Slot 9" Id="0" TargetActivity="Menu.Main.Campaign.LoadSave.9"/>
+      </MultiButton.Items>
+    </MultiButton>
+
+    <Button Name="btn_Back" Rectangle="425,0,250,35" Padding="10,10,10,10" Text="Back" TargetActivity="Menu.Main" ZOrder="10" Scale="0.5,0.5"/>
+    <TextBlock Name="Trackback" Rectangle="0,0,450,35" Text="Main / Campaign / Load Save" ZOrder="10"/>
+  </Activity>
+
+  <!-- Menu.Main.Multiplayer -->
+  <Activity
+    Name="Menu.Main.Multiplayer"
+    Backlink="Menu.Main"
+		Rectangle="0,0,2000,1000"
+		Padding="30,30,30,30"
+		CursorSize="16,16"
+		CursorZOrder="60"
+		StyleElement="BevelPanelDark"
+		Title="New game"
+		Translate="-1000,500"
+		CameraPosition="0,-1000,1500"
+		CameraUp="0,1,0"
+		CameraTarget="0,-1000,0"
+    >
+
+    <TextBlock Name="TrackbackPath" Rectangle="50,10,2000,35" Text="Main /" FontSize="40" TextAlign="Left" ZOrder="10"/>
+    <TextBlock Name="TrackbackName" Rectangle="50,50,200,80" Text="Multiplayer" FontSize="80" ZOrder="20" TextAlign="Left"/>
+    <Button Name="btn_Back" Rectangle="50,915,250,35" Padding="10,10,10,10" Text="Back" TargetActivity="Menu.Main" ZOrder="10"/>
+  </Activity>
+
+  <!-- Menu.Main.Profile -->
+  <Activity
+    Name="Menu.Main.Profile"
+    Backlink="Menu.Main"
+		Rectangle="0,0,2000,1000"
+		Padding="30,30,30,30"
+		CursorSize="16,16"
+		CursorZOrder="60"
+		StyleElement="BevelPanelDark"
+		Title="New game"
+		Translate="-1000,-1500"
+		CameraPosition="0,1000,1500"
+		CameraUp="0,1,0"
+		CameraTarget="0,1000,0"
+    >
+    
+    <TextBlock Name="tbk_ProfileId" Rectangle="50,200,400,35" Text="Profile ID" ZOrder="10" TextAlign="Left"/>
+    <TextBox   Name="tbx_ProfileId" Rectangle="300,200,400,35" Padding="10,10,10,10" Text="$(ProfileID)" ZOrder="10"/>
+
+    <TextBlock Name="tbk_Login" Rectangle="50,300,400,35" Text="Login" ZOrder="10" TextAlign="Left"/>
+    <TextBox   Name="tbx_Login" Rectangle="300,300,400,35" Padding="10,10,10,10" Text="$(ProfileLogin)" ZOrder="10"/>
+
+    <TextBlock Name="tbk_Password" Rectangle="50,350,400,35" Text="Password" ZOrder="10" TextAlign="Left"/>
+    <TextBox   Name="tbx_Password" Rectangle="300,350,400,35" Padding="10,10,10,10" PasswordChar="*" ZOrder="10"/>
+    
+    <TextBlock Name="TrackbackPath" Rectangle="50,10,2000,35" Text="Main /" FontSize="40" TextAlign="Left" ZOrder="10"/>
+    <TextBlock Name="TrackbackName" Rectangle="50,50,200,80" Text="Profile" FontSize="80" ZOrder="20" TextAlign="Left"/>
+    <Button Name="btn_Back" Rectangle="50,915,250,35" Padding="10,10,10,10" Text="Back" TargetActivity="Menu.Main" ZOrder="10"/>
+  </Activity>
+
+  <!-- Menu.Main.Options -->
+  <Activity
+    Name="Menu.Main.Options"
+    Backlink="Menu.Main"
+		Rectangle="0,0,600,380"
+		Padding="30,30,30,30"
+		CursorSize="16,16"
+		CursorZOrder="60"
+    StyleElement="BevelPanelDark"
+		Title="Main Menu"
+		Translate="1950,-190"
+		CameraPosition="2250,0,4000"
+		CameraUp="0,1,0"
+		CameraTarget="2250,0,3500"
+		ZOrder="3500">
+    
+    <MultiButton
+			Rectangle="10,50,580,320"
+			Padding="0,0,0,0"
+			SelectedItem="MenuHover"
+			PushedItem="MenuPushed"
+			ItemSize="400,42"
+			ItemPadding="10,10,10,10"
+			Name="Menu"
+			HoverElevate="25"
+			FontSize="30"
+			HoverItemColor="0,0,0,1"
+      ZOrder="10"
+			>
+      <MultiButton.Items>
+        <Item Text="Controls" Id="0" TargetActivity="Menu.Main.Options.Controls"/>
+        <Item Text="Gameplay" Id="1" TargetActivity="Menu.Main.Options.Gameplay"/>
+        <Item Text="Video" Id="2" TargetActivity="Menu.Main.Options.Video"/>
+        <Item Text="Audio" Id="3" TargetActivity="Menu.Main.Options.Audio"/>
+        <Item Text="Key Bindings" Id="4" TargetActivity="Menu.Main.Options.KeyBindings"/>
+      </MultiButton.Items>
+    </MultiButton>
+
+    <TextBlock Name="Trackback" Rectangle="0,0,450,35" Text="Main / Options" ZOrder="10" TextAlign="Left"/>
+    <Button Name="btn_Back" Rectangle="425,0,250,35" Padding="10,10,10,10" Text="Back" TargetActivity="Menu.Main" ZOrder="10" Scale="0.5,0.5"/>
+    
+  </Activity>
+
+  <!-- Menu.Main.Options.Controls-->
+  <Activity
+    Name="Menu.Main.Options.Controls"
+    Backlink="Menu.Main.Options"
+		Rectangle="0,0,2000,1000"
+		Padding="30,30,30,30"
+		CursorSize="16,16"
+		CursorZOrder="60"
+		StyleElement="BevelPanelDark"
+		Title="New game"
+		Translate="2500,-500"
+		CameraPosition="3500,0,1000"
+		CameraUp="0,1,0"
+		CameraTarget="3500,0,-500"
+		ZOrder="-500">
+
+    <TextBlock Name="TrackbackPath" Rectangle="50,10,2000,35" Text="Main / Options /" FontSize="40" TextAlign="Left" ZOrder="10"/>
+    <TextBlock Name="TrackbackName" Rectangle="50,50,200,80" Text="Controls" FontSize="80" ZOrder="20" TextAlign="Left"/>
+    <Button Name="btn_Back" Rectangle="50,915,250,35" Padding="10,10,10,10" Text="Back" TargetActivity="Menu.Main.Options" ZOrder="10"/>
+
+    <TextBlock Name="tbk_RotationAngle" Rectangle="50,200,400,35" Text="Rotation Angle" TextAlign="Left" ZOrder="10"/>
+    <Slider Name="sdr_RotationAngle" Rectangle="500,200,400,35" Padding="10,10,10,10" ZOrder="25" RangeMin="-360" RangeMax="360" RangeSmallStep="11.25" RangeLargeStep="90" Orientation="Horizontal" DefaultValue="0"/>
+
+    <TextBlock Name="tbk_ScaleX" Rectangle="50,250,400,35" Text="Scale X" TextAlign="Left" ZOrder="10"/>
+    <Slider Name="sdr_ScaleX" Rectangle="500,250,400,35" Padding="10,10,10,10" ZOrder="25" RangeMin="-2" RangeMax="2" RangeSmallStep="0.05" RangeLargeStep="0.10" Orientation="Horizontal" DefaultValue="1"/>
+
+    <TextBlock Name="tbk_ScaleY" Rectangle="50,300,400,35" Text="Scale Y" TextAlign="Left" ZOrder="10"/>
+    <Slider Name="sdr_ScaleY" Rectangle="500,300,400,35" Padding="10,10,10,10" ZOrder="25" RangeMin="-2" RangeMax="2" RangeSmallStep="0.05" RangeLargeStep="0.10" Orientation="Horizontal" DefaultValue="1"/>
+
+    <TextBlock Name="tbk_SkewX" Rectangle="50,350,400,35" Text="Skew X" TextAlign="Left" ZOrder="10"/>
+    <Slider Name="sdr_SkewX" Rectangle="500,350,400,35" Padding="10,10,10,10" ZOrder="25" RangeMin="-2" RangeMax="2" RangeSmallStep="0.05" RangeLargeStep="0.10" Orientation="Horizontal" DefaultValue="0"/>
+
+    <TextBlock Name="tbk_SkewY" Rectangle="50,400,400,35" Text="Skew Y" TextAlign="Left" ZOrder="10"/>
+    <Slider Name="sdr_SkewY" Rectangle="500,400,400,35" Padding="10,10,10,10" ZOrder="25" RangeMin="-2" RangeMax="2" RangeSmallStep="0.05" RangeLargeStep="0.10" Orientation="Horizontal" DefaultValue="0"/>
+
+    <TextBlock Name="tbk_TranslateX" Rectangle="50,450,400,35" Text="Translate X" TextAlign="Left" ZOrder="10"/>
+    <Slider Name="sdr_TranslateX" Rectangle="500,450,400,35" Padding="10,10,10,10" ZOrder="25" RangeMin="-400" RangeMax="400" RangeSmallStep="5" RangeLargeStep="10" Orientation="Horizontal" DefaultValue="0"/>
+
+    <TextBlock Name="tbk_TranslateY" Rectangle="50,500,400,35" Text="Translate Y" TextAlign="Left" ZOrder="10"/>
+    <Slider Name="sdr_TranslateY" Rectangle="500,500,400,35" Padding="10,10,10,10" ZOrder="25" RangeMin="-400" RangeMax="400" RangeSmallStep="5" RangeLargeStep="10" Orientation="Horizontal" DefaultValue="0"/>
+
+    <TextBlock Name="tbk_ZOrder" Rectangle="50,500,400,35" Text="Z Order" TextAlign="Left" ZOrder="10"/>
+    <Slider Name="sdr_ZOrder" Rectangle="500,500,400,35" Padding="10,10,10,10" ZOrder="25" RangeMin="10" RangeMax="60" RangeSmallStep="2" RangeLargeStep="5" Orientation="Horizontal" DefaultValue="0"/>
+
+    <CheckBox Name="chb_Automate" Rectangle="500,550,400,35" Padding="10,10,10,10" ZOrder="50" TextEnabled="Automated" IsChecked="false" TextDisabled="Manual"/>
+    
+    <Button Name="btn_Object" Rectangle="500,500,350,50" Padding="10,10,10,10" ZOrder="250" Text="Object"/>
+    
+    
+  </Activity>
+
+  <!-- Menu.Main.Options.Gameplay-->
+  <Activity
+    Name="Menu.Main.Options.Gameplay"
+    Backlink="Menu.Main.Options"
+		Rectangle="0,0,2000,1000"
+		Padding="30,30,30,30"
+		CursorSize="16,16"
+		CursorZOrder="60"
+		StyleElement="BevelPanelDark"
+		Title="New game"
+		Translate="5000,-500"
+		CameraPosition="6000,0,1000"
+		CameraUp="0,1,0"
+		CameraTarget="6000,0,-500"
+		ZOrder="-500">
+
+    <TextBlock Name="TrackbackPath" Rectangle="50,10,2000,35" Text="Main / Options /" FontSize="40" TextAlign="Left" ZOrder="10"/>
+    <TextBlock Name="TrackbackName" Rectangle="50,50,200,80" Text="Gameplay" FontSize="80" ZOrder="20" TextAlign="Left"/>
+    <Button Name="btn_Back" Rectangle="50,915,250,35" Padding="10,10,10,10" Text="Back" TargetActivity="Menu.Main.Options" ZOrder="10"/>
+
+  </Activity>
+
+  <!-- Menu.Main.Options.Audio-->
+  <Activity
+    Name="Menu.Main.Options.Audio"
+    Backlink="Menu.Main.Options"
+		Rectangle="0,0,2000,1000"
+		Padding="30,30,30,30"
+		CursorSize="16,16"
+		CursorZOrder="60"
+		StyleElement="BevelPanelDark"
+		Title="New game"
+		Translate="1500,-2000"
+		CameraPosition="2500,1500,1000"
+		CameraUp="0,1,0"
+		CameraTarget="2500,1500,-500"
+		ZOrder="-500">
+
+    <!-- Stereo 3D Covergence -->
+    <TextBlock Name="tbk_MasterVolume" Rectangle="50,200,400,35" Text="Master" TextAlign="Left" ZOrder="10"/>
+    <Slider Name="sdr_MasterVolume" Rectangle="500,200,400,35" Padding="10,10,10,10" ZOrder="25" RangeMin="0" RangeMax="100" RangeSmallStep="5" RangeLargeStep="10" Orientation="Horizontal" Value="100"/>
+
+    <!-- Graphics Quality -->
+    <TextBlock Name="tbk_SpeakerSystem" Rectangle="50,250,400,35" Text="Speaker System" TextAlign="Left" ZOrder="10"/>
+    <SelectBox Name="sbx_SpeakerSystem" Rectangle="500,250,400,35" Padding="10,10,10,10" ZOrder="25">
+      <Items>
+        <Item Text="Off" Id="1"/>
+        <Item Text="Headphones" Id="2"/>
+        <Item Text="2.0" Id="3"/>
+        <Item Text="2.1" Id="4"/>
+        <Item Text="4.0" Id="5"/>
+        <Item Text="4.1" Id="6"/>
+        <Item Text="5.1" Id="7"/>
+        <Item Text="7.1" Id="8"/>
+      </Items>
+    </SelectBox>
+
+    <!-- Graphics Quality -->
+    <TextBlock Name="tbk_EnhancedStereoMode" Rectangle="50, 300,400,35" Text="Enhanced Stereo Mode" TextAlign="Left" ZOrder="10"/>
+    <SelectBox Name="sbx_EnhancedStereoMode" Rectangle="500,300,400,35" Padding="10,10,10,10" ZOrder="25">
+      <Items>
+        <Item Text="On" Id="1"/>
+        <Item Text="Off" Id="2"/>
+      </Items>
+    </SelectBox>
+
+    <!-- Graphics Quality -->
+    <TextBlock Name="tbk_VoiceoverLanguage" Rectangle="50,350,400,35" Text="Voiceover Language" TextAlign="Left" ZOrder="10"/>
+    <SelectBox Name="sbx_VoiceoverLanguage" Rectangle="500,350,400,35" Padding="10,10,10,10" ZOrder="25">
+      <Items>
+        <Item Text="English" Id="1"/>
+        <Item Text="Polish" Id="2"/>
+        <Item Text="German" Id="3"/>
+      </Items>
+    </SelectBox>
+
+    <TextBlock Name="TrackbackPath" Rectangle="50,10,2000,35" Text="Main / Options /" FontSize="40" TextAlign="Left" ZOrder="10"/>
+    <TextBlock Name="TrackbackName" Rectangle="50,50,200,80" Text="Audio" FontSize="80" ZOrder="20" TextAlign="Left"/>
+    <Button Name="btn_Back" Rectangle="50,915,250,35" Padding="10,10,10,10" Text="Back" TargetActivity="Menu.Main.Options" ZOrder="10"/>
+
+    <TextBlock Name="debug_OutputDbg" Rectangle="1000,50,1000,100" FontSize="40" TextAlign="Left" ZOrder="10"/>
+    <ProgressBar Name="debug_Progress" Rectangle="1000,150,1000,35" Padding="10,10,10,10" ZOrder="10"/>
+  </Activity>
+
+  <!-- Menu.Main.Options.Video-->
+  <Activity
+    Name="Menu.Main.Options.Video"
+    Backlink="Menu.Main.Options"
+		Rectangle="0,0,2000,1000"
+		Padding="30,30,30,30"
+		CursorSize="16,16"
+		CursorZOrder="50"
+		StyleElement="BevelPanelDark"
+		Title="Menu.Main.Options.Video"
+		Translate="4000,-2000"
+		CameraPosition="5000,1500,1000"
+		CameraUp="0,1,0"
+		CameraTarget="5000,1500,-500"
+		ZOrder="-500">
+
+    <TextBlock Name="TrackbackPath" Rectangle="50,10,2000,35" Text="Main / Options /" FontSize="40" TextAlign="Left" ZOrder="10"/>
+    <TextBlock Name="TrackbackName" Rectangle="50,50,200,80" Text="Video" FontSize="80" ZOrder="20" TextAlign="Left"/>
+
+    <!-- Fullscreen monitor -->
+    <TextBlock Name="tbk_FullscreenMonitor" Rectangle="50,200,400,35" Text="Fullscreen Monitor" TextAlign="Left" ZOrder="10"/>
+    <SelectBox Name="sbx_FullscreenMonitor" Rectangle="500,200,400,35" Padding="10,10,10,10" ZOrder="25">
+      <Items>
+        <Item Text="1" Id="1"/>
+        <Item Text="2" Id="2"/>
+      </Items>
+    </SelectBox>
+
+    <!-- Fullscreen resolution -->
+    <TextBlock Name="tbk_FullscreenResolution" Rectangle="50,250,400,35" Text="Fullscreen Resolution" TextAlign="Left" ZOrder="10"/>
+    <SelectBox Name="sbx_FullscreenResolution" Rectangle="500,250,400,35" Padding="10,10,10,10" ZOrder="25">
+      <Items>
+        <Item Text="1280x720 59Hz" Id="1"/>
+        <Item Text="1280x720 60Hz" Id="1"/>
+        <Item Text="1600x900 59Hz" Id="1"/>
+        <Item Text="1600x900 60Hz" Id="1"/>
+        <Item Text="1920x1080 59Hz" Id="1"/>
+        <Item Text="1920x1080 60Hz" Id="1"/>
+      </Items>
+    </SelectBox>
+
+    <!-- Fullscreen -->
+    <TextBlock Name="tbk_Fullscreen" Rectangle="50,300,400,35" Text="Fullscreen Resolution" TextAlign="Left" ZOrder="10"/>
+    <SelectBox Name="sbx_Fullscreen" Rectangle="500,300,400,35" Padding="10,10,10,10" ZOrder="25">
+      <Items>
+        <Item Text="On" Id="1"/>
+        <Item Text="Off" Id="2"/>
+      </Items>
+    </SelectBox>
+
+    <!-- Brightness -->
+    <TextBlock Name="tbk_Brightness" Rectangle="50,350,400,35" Text="Brightness" TextAlign="Left" ZOrder="10"/>
+    <Slider Name="sdr_Brightness" Rectangle="500,350,400,35" Padding="10,10,10,10" ZOrder="25" RangeMin="0" RangeMax="100" RangeSmallStep="5" RangeLargeStep="10" Orientation="Horizontal" Value="100"/>
+
+    <!-- Fullscreen -->
+    <TextBlock Name="tbk_VerticalSync" Rectangle="50,400,400,35" Text="Vertical Sync" TextAlign="Left" ZOrder="10"/>
+    <SelectBox Name="sbx_VerticalSync" Rectangle="500,400,400,35" Padding="10,10,10,10" ZOrder="25">
+      <Items>
+        <Item Text="On" Id="1"/>
+        <Item Text="Off" Id="2"/>
+      </Items>
+    </SelectBox>
+
+    <!-- Field of view-->
+    <TextBlock Name="tbk_FieldOfView" Rectangle="50,450,400,35" Text="Field of view" TextAlign="Left" ZOrder="10"/>
+    <SelectBox Name="sbx_FieldOfView" Rectangle="500,450,400,35" Padding="10,10,10,10" ZOrder="25">
+      <Items>
+        <Item Text="60" Id="1"/>
+        <Item Text="70" Id="2"/>
+        <Item Text="80" Id="3"/>
+        <Item Text="90" Id="4"/>
+      </Items>
+    </SelectBox>
+
+    <!-- Stereo 3D -->
+    <TextBlock Name="tbk_Stereo3D" Rectangle="50,500,400,35" Text="Stereo 3D" TextAlign="Left" ZOrder="10"/>
+    <SelectBox Name="sbx_Stereo3D" Rectangle="500,500,400,35" Padding="10,10,10,10" ZOrder="25">
+      <Items>
+        <Item Text="On" Id="1"/>
+        <Item Text="Off" Id="2"/>
+      </Items>
+    </SelectBox>
+
+    <!-- Stereo 3D Covergence -->
+    <TextBlock Name="tbk_Stereo3DCovergence" Rectangle="50,550,400,35" Text="Stereo 3D convergence" TextAlign="Left" ZOrder="10"/>
+    <Slider Name="sdr_Stereo3DCovergence" Rectangle="500,550,400,35" Padding="10,10,10,10" ZOrder="25" RangeMin="0" RangeMax="100" RangeSmallStep="5" RangeLargeStep="10" Orientation="Horizontal" Value="100"/>
+
+    <!-- Second column -->
+    
+    <!-- Graphics Quality -->
+    <TextBlock Name="tbk_GraphicsQuality" Rectangle="1000,200,400,35" Text="Graphics Quality" TextAlign="Left" ZOrder="10"/>
+    <SelectBox Name="sbx_GraphicsQuality" Rectangle="1450,200,400,35" Padding="10,10,10,10" ZOrder="25">
+      <Items>
+        <Item Text="Low" Id="1"/>
+        <Item Text="Medium" Id="2"/>
+        <Item Text="High" Id="3"/>
+        <Item Text="Very High" Id="4"/>
+        <Item Text="Ultra" Id="5"/>
+      </Items>
+    </SelectBox>
+
+    <!-- Texture Quality -->
+    <TextBlock Name="tbk_TextureQuality" Rectangle="1000,250,400,35" Text="Texture Quality" TextAlign="Left" ZOrder="10"/>
+    <SelectBox Name="sbx_TextureQuality" Rectangle="1450,250,400,35" Padding="10,10,10,10" ZOrder="25">
+      <Items>
+        <Item Text="Low" Id="1"/>
+        <Item Text="Medium" Id="2"/>
+        <Item Text="High" Id="3"/>
+        <Item Text="Very High" Id="4"/>
+        <Item Text="Ultra" Id="5"/>
+      </Items>
+    </SelectBox>
+
+    <!-- Shadow Quality -->
+    <TextBlock Name="tbk_ShadowQuality" Rectangle="1000,300,400,35" Text="Shadow Quality" TextAlign="Left" ZOrder="10"/>
+    <SelectBox Name="sbx_ShadowQuality" Rectangle="1450,300,400,35" Padding="10,10,10,10" ZOrder="25">
+      <Items>
+        <Item Text="Low" Id="1"/>
+        <Item Text="Medium" Id="2"/>
+        <Item Text="High" Id="3"/>
+        <Item Text="Very High" Id="4"/>
+        <Item Text="Ultra" Id="5"/>
+      </Items>
+    </SelectBox>
+
+    <!-- Effects Quality -->
+    <TextBlock Name="tbk_EffectsQuality" Rectangle="1000,350,400,35" Text="Effects Quality" TextAlign="Left" ZOrder="10"/>
+    <SelectBox Name="sbx_EffectsQuality" Rectangle="1450,350,400,35" Padding="10,10,10,10" ZOrder="25">
+      <Items>
+        <Item Text="Low" Id="1"/>
+        <Item Text="Medium" Id="2"/>
+        <Item Text="High" Id="3"/>
+        <Item Text="Very High" Id="4"/>
+        <Item Text="Ultra" Id="5"/>
+      </Items>
+    </SelectBox>
+
+    <!-- Mesh Quality -->
+    <TextBlock Name="tbk_Mesh" Rectangle="1000,400,400,35" Text="Mesh Quality" TextAlign="Left" ZOrder="10"/>
+    <SelectBox Name="sbx_Mesh" Rectangle="1450,400,400,35" Padding="10,10,10,10" ZOrder="25">
+      <Items>
+        <Item Text="Low" Id="1"/>
+        <Item Text="Medium" Id="2"/>
+        <Item Text="High" Id="3"/>
+        <Item Text="Very High" Id="4"/>
+        <Item Text="Ultra" Id="5"/>
+      </Items>
+    </SelectBox>
+
+    <!-- Terrain Quality -->
+    <TextBlock Name="tbk_TextureQuality" Rectangle="1000,450,400,35" Text="Terrain Quality" TextAlign="Left" ZOrder="10"/>
+    <SelectBox Name="sbx_TextureQuality" Rectangle="1450,450,400,35" Padding="10,10,10,10" ZOrder="25">
+      <Items>
+        <Item Text="Low" Id="1"/>
+        <Item Text="Medium" Id="2"/>
+        <Item Text="High" Id="3"/>
+        <Item Text="Very High" Id="4"/>
+        <Item Text="Ultra" Id="5"/>
+      </Items>
+    </SelectBox>
+
+    <!-- Terrain Decoration -->
+    <TextBlock Name="tbk_TextureQuality" Rectangle="1000,500,400,35" Text="Terrain Decoration" TextAlign="Left" ZOrder="10"/>
+    <SelectBox Name="sbx_TextureQuality" Rectangle="1450,500,400,35" Padding="10,10,10,10" ZOrder="25">
+      <Items>
+        <Item Text="Low" Id="1"/>
+        <Item Text="Medium" Id="2"/>
+        <Item Text="High" Id="3"/>
+        <Item Text="Very High" Id="4"/>
+        <Item Text="Ultra" Id="5"/>
+      </Items>
+    </SelectBox>
+
+    <!-- Antialiasing preferred -->
+    <TextBlock Name="tbk_AntialiasingPreferred" Rectangle="1000,550,400,35" Text="Antialiasing Preferred" TextAlign="Left" ZOrder="10"/>
+    <SelectBox Name="sbx_AntialiasingPreferred" Rectangle="1450,550,400,35" Padding="10,10,10,10" ZOrder="25">
+      <Items>
+        <Item Text="Disabled" Id="1"/>
+        <Item Text="2x MSAA" Id="2"/>
+        <Item Text="4x MSAA" Id="3"/>
+        <Item Text="8x MSAA" Id="4"/>
+        <Item Text="16x MSAA" Id="5"/>
+      </Items>
+    </SelectBox>
+
+    <!-- Antialiasing post -->
+    <TextBlock Name="tbk_AntialiasingPost" Rectangle="1000,600,400,35" Text="Antialiasing Post" TextAlign="Left" ZOrder="10"/>
+    <SelectBox Name="sbx_AntialiasingPost" Rectangle="1450,600,400,35" Padding="10,10,10,10" ZOrder="25">
+      <Items>
+        <Item Text="Low" Id="1"/>
+        <Item Text="Medium" Id="2"/>
+        <Item Text="High" Id="3"/>
+        <Item Text="Very High" Id="4"/>
+        <Item Text="Ultra" Id="5"/>
+      </Items>
+    </SelectBox>
+
+    <!-- Motion blur -->
+    <TextBlock Name="tbk_MotionBlur" Rectangle="1000,650,400,35" Text="Motion Blur" TextAlign="Left" ZOrder="10"/>
+    <SelectBox Name="cbk_MotionBlur" Rectangle="1450,650,400,35" Padding="10,10,10,10" ZOrder="25">
+      <Items>
+        <Item Text="On" Id="1"/>
+        <Item Text="Off" Id="2"/>
+      </Items>
+    </SelectBox>
+    
+    <!-- Blur Amount -->
+    <TextBlock Name="tbk_MotionBlurAmount" Rectangle="1000,700,400,35" Text="Motion Blur Amount" TextAlign="Left" ZOrder="10"/>
+    <SelectBox Name="sbx_MotionBlurAmount" Rectangle="1450,700,400,35" Padding="10,10,10,10" ZOrder="25">
+      <Items>
+        <Item Text="40" Id="1"/>
+        <Item Text="50" Id="2"/>
+        <Item Text="60" Id="3"/>
+        <Item Text="70" Id="4"/>
+        <Item Text="80" Id="5"/>
+      </Items>
+    </SelectBox>
+
+    <!-- Anisotropic filter -->
+    <TextBlock Name="tbk_TextureQuality" Rectangle="1000,750,400,35" Text="Anisotropic Filter" TextAlign="Left" ZOrder="10"/>
+    <SelectBox Name="sbx_TextureQuality" Rectangle="1450,750,400,35" Padding="10,10,10,10" ZOrder="25">
+      <Items>
+        <Item Text="2x" Id="1"/>
+        <Item Text="4x" Id="2"/>
+        <Item Text="8x" Id="3"/>
+        <Item Text="16x" Id="4"/>
+      </Items>
+    </SelectBox>
+
+    <!-- Ambient occlusion -->
+    <TextBlock Name="tbk_AmbientOcclusion" Rectangle="1000,800,400,35" Text="Ambient Occlusion" TextAlign="Left" ZOrder="10"/>
+    <SelectBox Name="sbx_AmbientOcclusion" Rectangle="1450,800,400,35" Padding="10,10,10,10" ZOrder="25">
+      <Items>
+        <Item Text="Off" Id="1"/>
+        <Item Text="SSAO" Id="2"/>
+        <Item Text="HBAO" Id="3"/>
+      </Items>
+    </SelectBox>
+
+    <Button Name="btn_Back" Rectangle="50,915,250,35" Padding="10,10,10,10" Text="Back" TargetActivity="Menu.Main.Options" ZOrder="10"/>
+    <Button Name="btn_Reset" Rectangle="350,915,450,35" Padding="10,10,10,10" Text="Reset Settings" TargetActivity="Menu.Main.Options" ZOrder="10"/>
+    <Button Name="btn_Apply" Rectangle="850,915,450,35" Padding="10,10,10,10" Text="Apply Fullscreen Resolution" TargetActivity="Menu.Main.Options" ZOrder="10"/>
+  </Activity>
+
+  <!-- Menu.Main.Options.KeyBindings-->
+  <Activity
+    Name="Menu.Main.Options.KeyBindings"
+    Backlink="Menu.Main.Options"
+		Rectangle="0,0,2000,1000"
+		Padding="30,30,30,30"
+		CursorSize="16,16"
+		CursorZOrder="60"
+		StyleElement="BevelPanelDark"
+		Title="New game"
+		Translate="1500,1000"
+		CameraPosition="2500,-1500,1000"
+		CameraUp="0,1,0"
+		CameraTarget="2500,-1500,-500"
+		ZOrder="-500">
+
+    <TextBlock Name="tbk_Forward" Rectangle="50,200,400,35" Text="Forward" TextAlign="Left" ZOrder="10"/>
+    <TextBox   Name="hky_Forward" Rectangle="500,200,400,35" Padding="10,10,10,10" Text="W" ZOrder="25"/>
+
+    <TextBlock Name="tbk_Backward" Rectangle="50,250,400,35" Text="Backward" TextAlign="Left" ZOrder="10"/>
+    <TextBox   Name="hky_Backward" Rectangle="500,250,400,35" Padding="10,10,10,10" Text="S" ZOrder="25"/>
+
+    <TextBlock Name="tbk_StrafeLeft" Rectangle="50,300,400,35" Text="Strafe Left" TextAlign="Left" ZOrder="10"/>
+    <TextBox   Name="hky_StrafeLeft" Rectangle="500,300,400,35" Padding="10,10,10,10" Text="A" ZOrder="25"/>
+
+    <TextBlock Name="tbk_StrafeRight" Rectangle="50,350,400,35" Text="Strafe Right" TextAlign="Left" ZOrder="10"/>
+    <TextBox   Name="hky_StrafeRight" Rectangle="500,350,400,35" Padding="10,10,10,10" Text="D" ZOrder="25"/>
+
+    <TextBlock Name="tbk_Jump" Rectangle="50,400,400,35" Text="Jump" TextAlign="Left" ZOrder="10"/>
+    <TextBox   Name="hky_Jump" Rectangle="500,400,400,35" Padding="10,10,10,10" Text="Space" ZOrder="25"/>
+
+    <TextBlock Name="tbk_Sprint" Rectangle="50,450,400,35" Text="Sprint" TextAlign="Left" ZOrder="10"/>
+    <TextBox   Name="hky_Sprint" Rectangle="500,450,400,35" Padding="10,10,10,10" Text="Shift" ZOrder="25"/>
+
+    <TextBlock Name="tbk_Crouch" Rectangle="50,500,400,35" Text="Crouch" TextAlign="Left" ZOrder="10"/>
+    <TextBox   Name="hky_Crouch" Rectangle="500,500,400,35" Padding="10,10,10,10" Text="C" ZOrder="25"/>
+
+    <TextBlock Name="TrackbackPath" Rectangle="50,10,2000,35" Text="Main / Options /" FontSize="40" TextAlign="Left" ZOrder="10"/>
+    <TextBlock Name="TrackbackName" Rectangle="50,50,200,80" Text="Key Bindings" FontSize="80" ZOrder="20" TextAlign="Left"/>
+    <Button Name="btn_Back" Rectangle="50,915,250,35" Padding="10,10,10,10" Text="Back" TargetActivity="Menu.Main.Options" ZOrder="10"/>
+
+  </Activity>
+</MenuScene>

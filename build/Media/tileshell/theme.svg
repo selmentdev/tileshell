@@ -1,0 +1,899 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="theme.svg"
+   inkscape:export-filename="D:\Projects\TileShell\tileshell\build\Media\tileshell\theme.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <defs
+     id="defs4">
+    <linearGradient
+       id="linearGradient6085">
+      <stop
+         style="stop-color:#454545;stop-opacity:0.90196079;"
+         offset="0"
+         id="stop6087" />
+      <stop
+         style="stop-color:#454545;stop-opacity:0;"
+         offset="1"
+         id="stop6089" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient5780">
+      <stop
+         style="stop-color:#9ccc00;stop-opacity:0.40784314;"
+         offset="0"
+         id="stop5782" />
+      <stop
+         style="stop-color:#9ccc00;stop-opacity:0;"
+         offset="1"
+         id="stop5784" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient5764">
+      <stop
+         style="stop-color:#92c9ac;stop-opacity:1;"
+         offset="0"
+         id="stop5766" />
+      <stop
+         style="stop-color:#92c9ac;stop-opacity:0;"
+         offset="1"
+         id="stop5768" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient5671">
+      <stop
+         style="stop-color:#92c9ac;stop-opacity:0;"
+         offset="0"
+         id="stop5673" />
+      <stop
+         id="stop5679"
+         offset="0.25"
+         style="stop-color:#92c9ac;stop-opacity:0.80000001;" />
+      <stop
+         style="stop-color:#92c9ac;stop-opacity:0.80000001;"
+         offset="0.75"
+         id="stop5681" />
+      <stop
+         style="stop-color:#92c9ac;stop-opacity:0;"
+         offset="1"
+         id="stop5675" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient3885"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#92c9ac;stop-opacity:1;"
+         offset="0"
+         id="stop3887" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient5671"
+       id="linearGradient5677"
+       x1="1931.0005"
+       y1="1042.3043"
+       x2="1931.0005"
+       y2="486.4556"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(0,319.99998)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient5671-6"
+       id="linearGradient5677-2"
+       x1="1931.0005"
+       y1="1042.3043"
+       x2="1931.0005"
+       y2="486.4556"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       id="linearGradient5671-6">
+      <stop
+         style="stop-color:#1e1e1e;stop-opacity:0;"
+         offset="0"
+         id="stop5673-2" />
+      <stop
+         id="stop5679-7"
+         offset="0.25"
+         style="stop-color:#1e1e1e;stop-opacity:0.60000002;" />
+      <stop
+         style="stop-color:#1e1e1e;stop-opacity:0.60000002;"
+         offset="0.75"
+         id="stop5681-5" />
+      <stop
+         style="stop-color:#1e1e1e;stop-opacity:0;"
+         offset="1"
+         id="stop5675-7" />
+    </linearGradient>
+    <linearGradient
+       gradientTransform="translate(160.00001,319.99994)"
+       y2="486.4556"
+       x2="1931.0005"
+       y1="1042.3043"
+       x1="1931.0005"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient5700"
+       xlink:href="#linearGradient5671-6"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient5764"
+       id="linearGradient5770"
+       x1="0"
+       y1="161.97269"
+       x2="256"
+       y2="161.97269"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(0,1280)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient5764"
+       id="linearGradient5778"
+       x1="0"
+       y1="406.87527"
+       x2="256"
+       y2="406.87527"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(0,1280)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient5780"
+       id="linearGradient5786"
+       x1="0.00028"
+       y1="284.33882"
+       x2="256"
+       y2="284.33882"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(0,1280)" />
+    <linearGradient
+       gradientTransform="translate(319.99999,1279.9999)"
+       inkscape:collect="always"
+       xlink:href="#linearGradient5764-2"
+       id="linearGradient5778-8"
+       x1="0"
+       y1="406.87527"
+       x2="256"
+       y2="406.87527"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient5764-2">
+      <stop
+         style="stop-color:#92c9ac;stop-opacity:1;"
+         offset="0"
+         id="stop5766-0" />
+      <stop
+         style="stop-color:#92c9ac;stop-opacity:0;"
+         offset="1"
+         id="stop5768-5" />
+    </linearGradient>
+    <linearGradient
+       gradientTransform="translate(319.99999,1279.9999)"
+       inkscape:collect="always"
+       xlink:href="#linearGradient5764-2"
+       id="linearGradient5770-5"
+       x1="0"
+       y1="161.97269"
+       x2="256"
+       y2="161.97269"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient5780-7"
+       id="linearGradient5786-2"
+       x1="0.00028000001"
+       y1="284.33881"
+       x2="256"
+       y2="284.33881"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       id="linearGradient5780-7">
+      <stop
+         style="stop-color:#454545;stop-opacity:0.40784314;"
+         offset="0"
+         id="stop5782-6" />
+      <stop
+         style="stop-color:#454545;stop-opacity:0;"
+         offset="1"
+         id="stop5784-7" />
+    </linearGradient>
+    <linearGradient
+       gradientTransform="translate(319.99999,1279.9999)"
+       y2="284.33881"
+       x2="256"
+       y1="284.33881"
+       x1="0.00028000001"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient5816"
+       xlink:href="#linearGradient5780-7"
+       inkscape:collect="always" />
+    <linearGradient
+       gradientTransform="translate(959.99999,1279.9999)"
+       inkscape:collect="always"
+       xlink:href="#linearGradient5764-2-6"
+       id="linearGradient5778-8-1"
+       x1="0"
+       y1="406.87527"
+       x2="256"
+       y2="406.87527"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient5764-2-6">
+      <stop
+         style="stop-color:#92c9ac;stop-opacity:1;"
+         offset="0"
+         id="stop5766-0-0" />
+      <stop
+         style="stop-color:#92c9ac;stop-opacity:0;"
+         offset="1"
+         id="stop5768-5-9" />
+    </linearGradient>
+    <linearGradient
+       gradientTransform="translate(959.99999,1279.9999)"
+       inkscape:collect="always"
+       xlink:href="#linearGradient5764-2-6"
+       id="linearGradient5770-5-5"
+       x1="0"
+       y1="161.97269"
+       x2="256"
+       y2="161.97269"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       gradientTransform="translate(959.99999,1279.9999)"
+       y2="284.33881"
+       x2="256"
+       y1="284.33881"
+       x1="0.00028000001"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient5816-8"
+       xlink:href="#linearGradient5780-7-9"
+       inkscape:collect="always" />
+    <linearGradient
+       id="linearGradient5780-7-9">
+      <stop
+         style="stop-color:#294123;stop-opacity:0.40784314;"
+         offset="0"
+         id="stop5782-6-0" />
+      <stop
+         style="stop-color:#294123;stop-opacity:0;"
+         offset="1"
+         id="stop5784-7-0" />
+    </linearGradient>
+    <linearGradient
+       gradientTransform="translate(640,1280)"
+       inkscape:collect="always"
+       xlink:href="#linearGradient5764-7"
+       id="linearGradient5778-0"
+       x1="0"
+       y1="406.87527"
+       x2="256"
+       y2="406.87527"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient5764-7">
+      <stop
+         style="stop-color:#92c9ac;stop-opacity:1;"
+         offset="0"
+         id="stop5766-2" />
+      <stop
+         style="stop-color:#92c9ac;stop-opacity:0;"
+         offset="1"
+         id="stop5768-55" />
+    </linearGradient>
+    <linearGradient
+       gradientTransform="translate(640,1280)"
+       inkscape:collect="always"
+       xlink:href="#linearGradient5764-7"
+       id="linearGradient5770-2"
+       x1="0"
+       y1="161.97269"
+       x2="256"
+       y2="161.97269"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient5780-4"
+       id="linearGradient5786-1"
+       x1="0.00028000001"
+       y1="284.33881"
+       x2="256"
+       y2="284.33881"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       id="linearGradient5780-4">
+      <stop
+         style="stop-color:#feab00;stop-opacity:0.40784314;"
+         offset="0"
+         id="stop5782-8" />
+      <stop
+         style="stop-color:#feab00;stop-opacity:0;"
+         offset="1"
+         id="stop5784-6" />
+    </linearGradient>
+    <linearGradient
+       gradientTransform="translate(640,1280)"
+       y2="284.33881"
+       x2="256"
+       y1="284.33881"
+       x1="0.00028000001"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient5901"
+       xlink:href="#linearGradient5780-4"
+       inkscape:collect="always" />
+    <linearGradient
+       gradientTransform="translate(640,-1.1906128e-5)"
+       y2="284.33881"
+       x2="256"
+       y1="284.33881"
+       x1="0.00028000001"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient5901-5"
+       xlink:href="#linearGradient5780-4-1"
+       inkscape:collect="always" />
+    <linearGradient
+       id="linearGradient5780-4-1">
+      <stop
+         style="stop-color:#1e1e1e;stop-opacity:0.40784314;"
+         offset="0"
+         id="stop5782-8-5" />
+      <stop
+         style="stop-color:#1e1e1e;stop-opacity:0;"
+         offset="1"
+         id="stop5784-6-5" />
+    </linearGradient>
+    <linearGradient
+       gradientTransform="translate(1280,1280)"
+       inkscape:collect="always"
+       xlink:href="#linearGradient6085"
+       id="linearGradient5770-2-8"
+       x1="0"
+       y1="161.97269"
+       x2="256"
+       y2="161.97269"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       gradientTransform="translate(1280,1280)"
+       inkscape:collect="always"
+       xlink:href="#linearGradient6085"
+       id="linearGradient5778-0-4"
+       x1="0"
+       y1="406.87527"
+       x2="256"
+       y2="406.87527"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       gradientTransform="translate(1598.6622,1279.9999)"
+       y2="284.33881"
+       x2="256"
+       y1="284.33881"
+       x1="0.00028000001"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient5816-8-7"
+       xlink:href="#linearGradient5780-7-9-2"
+       inkscape:collect="always" />
+    <linearGradient
+       id="linearGradient5780-7-9-2">
+      <stop
+         style="stop-color:#92c9ac;stop-opacity:0.40784314;"
+         offset="0"
+         id="stop5782-6-0-1" />
+      <stop
+         style="stop-color:#92c9ac;stop-opacity:0;"
+         offset="1"
+         id="stop5784-7-0-4" />
+    </linearGradient>
+    <linearGradient
+       gradientTransform="translate(1600,1279.9999)"
+       inkscape:collect="always"
+       xlink:href="#linearGradient5764-2-6-9"
+       id="linearGradient5770-5-5-9"
+       x1="0"
+       y1="161.97269"
+       x2="256"
+       y2="161.97269"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient5764-2-6-9">
+      <stop
+         style="stop-color:#92c9ac;stop-opacity:1;"
+         offset="0"
+         id="stop5766-0-0-0" />
+      <stop
+         style="stop-color:#92c9ac;stop-opacity:0;"
+         offset="1"
+         id="stop5768-5-9-3" />
+    </linearGradient>
+    <linearGradient
+       gradientTransform="translate(1600,1279.9999)"
+       inkscape:collect="always"
+       xlink:href="#linearGradient5764-2-6-9"
+       id="linearGradient5778-8-1-0"
+       x1="0"
+       y1="406.87527"
+       x2="256"
+       y2="406.87527"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       y2="284.33881"
+       x2="256"
+       y1="284.33881"
+       x1="0.00028000001"
+       gradientTransform="translate(1280,1280)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient6016"
+       xlink:href="#linearGradient5780-4-1"
+       inkscape:collect="always" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.3737539"
+     inkscape:cx="954.54377"
+     inkscape:cy="-343.04828"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1600"
+     inkscape:window-height="837"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Theme"
+     inkscape:groupmode="layer"
+     id="layer1"
+     style="display:inline">
+    <path
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#92c9ac;fill-opacity:0.8;fill-rule:evenodd;stroke:none;stroke-width:22.00052261;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       d="m 1024.9375,796.36218 -3.2188,3.21875 -58.49995,58.5 -3.21875,3.21875 0,4.5625 0,175.50002 0,11 11,0 175.5,0 4.5625,0 3.2188,-3.25 58.5,-58.50002 3.2187,-3.21875 0,-4.53125 0,-175.5 0,-11 -11,0 -175.5,0 z m 3.9531,11.1092 176.1311,-0.1294 5e-4,176.57563 -57.461,57.46619 -176.59396,-10e-4 -0.0186,-176.54209 z"
+       id="rect2985-5-3"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccccccccccccccccccc"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       id="path3848"
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#92c9ac;fill-opacity:0.40784314;fill-rule:evenodd;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       d="m 124.60034,1731.7685 -3.375,3.2813 -62.562499,61.0937 -3.5,3.4375 0,4.9063 0,427.6562 0,11.625 11.625,0 938.218659,0 4.7188,0 3.375,-3.3125 62.5625,-61.0937 3.5001,-3.4375 0,-4.875 0,-303.2813 0,-124.375 0,-11.625 -11.6251,0 -756.37495,0 -181.84375,0 z"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccccccccccccccc" />
+    <path
+       id="path5350"
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#92c9ac;fill-opacity:0.8;fill-rule:evenodd;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       d="m 124.60034,1731.7685 -3.375,3.2813 -62.562499,61.0937 -3.5,3.4375 0,4.9063 0,427.6562 0,11.625 11.625,0 938.218759,0 4.7187,0 3.375,-3.3125 62.5625,-61.0937 3.5,-3.4375 0,-4.875 0,-303.2813 0,-124.375 0,-11.625 -11.625,0 -756.37495,0 -181.84376,0 z m 9.46875,23.25 177.09376,0 126.53664,112.7502 618.21331,0 0,298.3748 -55.6562,54.375 -921.843759,0 0,-411.125 z"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccccccccccccccccccccccc" />
+    <path
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#294123;fill-opacity:0.40784314;fill-rule:evenodd;stroke:none;stroke-width:22.00052261000000100;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       d="m 1028.4529,807.2874 c -21.1394,21.13785 -38.95864,38.99769 -57.48712,57.52478 0,58.22703 0,118.35086 0,176.57792 58.23142,0 118.35602,0 176.58742,0 19.7607,-19.83 37.6849,-37.6804 57.481,-57.47505 0,-60.62519 0,-124.60822 0,-176.57586 -58.2314,0 -118.3499,-0.0518 -176.5813,-0.0518 z"
+       id="rect2985-5-3-7"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccc"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#92c9ac;fill-opacity:0.8;fill-rule:evenodd;stroke:none;stroke-width:22.00052261;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       d="m 704.9375,796.36218 -3.21875,3.21875 -58.5,58.5 -3.21875,3.21875 0,4.5625 0,175.50002 0,11 11,0 175.5,0 4.5625,0 3.21875,-3.25 58.5,-58.50002 3.21875,-3.21875 0,-4.53125 0,-175.5 0,-11 -11,0 -175.5,0 z m 3.95314,11.1092 176.13111,-0.1294 4.5e-4,176.57563 -57.46098,57.46619 -176.59398,-10e-4 -0.0186,-176.54209 z"
+       id="rect2985-5-3-4"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccccccccccccccccccc"
+       inkscape:export-filename="D:\Projects\TileShell\tileshell\build\Media\tileshell\rect2985-5-3-7-8.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#feab00;fill-opacity:0.40784314;fill-rule:evenodd;stroke:none;stroke-width:22.00052261000000100;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       d="m 708.45293,807.2874 c -21.13941,21.13785 -38.95867,38.99769 -57.48715,57.52478 0,58.22703 0,118.35086 0,176.57792 58.23138,0 118.35601,0 176.5874,0 19.76072,-19.83 37.68487,-37.6804 57.48104,-57.47505 0,-60.62519 0,-124.60822 0,-176.57586 -58.23138,0 -118.3499,-0.0518 -176.58129,-0.0518 z"
+       id="rect2985-5-3-7-6"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccc"
+       inkscape:export-filename="D:\Projects\TileShell\tileshell\build\Media\tileshell\rect2985-5-3-7-8.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#92c9ac;fill-opacity:0.8;fill-rule:evenodd;stroke:none;stroke-width:22.00052261;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       d="m 384.9375,796.36218 -3.21875,3.21875 -58.5,58.5 -3.21875,3.21875 0,4.5625 0,175.50002 0,11 11,0 175.5,0 4.5625,0 3.21875,-3.25 58.5,-58.50002 3.21875,-3.21875 0,-4.53125 0,-175.5 0,-11 -11,0 -175.5,0 z m 3.95314,11.1092 176.13111,-0.1294 4.5e-4,176.57563 -57.46098,57.46619 -176.59398,-10e-4 -0.0186,-176.54209 z"
+       id="rect2985-5-3-0"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccccccccccccccccccc"
+       inkscape:export-filename="D:\Projects\TileShell\tileshell\build\Media\tileshell\rect2985-5-3-7-8.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#454545;fill-opacity:0.40784314;fill-rule:evenodd;stroke:none;stroke-width:22.00052261000000100;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       d="m 388.45293,807.2874 c -21.13941,21.13785 -38.95867,38.99769 -57.48715,57.52478 0,58.22703 0,118.35086 0,176.57792 58.23138,0 118.35601,0 176.5874,0 19.76072,-19.83 37.68487,-37.6804 57.48104,-57.47505 0,-60.62519 0,-124.60822 0,-176.57586 -58.23138,0 -118.3499,-0.0518 -176.58129,-0.0518 z"
+       id="rect2985-5-3-7-3"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccc"
+       inkscape:export-filename="D:\Projects\TileShell\tileshell\build\Media\tileshell\rect2985-5-3-7-8.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#92c9ac;fill-opacity:0.8;fill-rule:evenodd;stroke:none;stroke-width:22.00052261;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       d="m 64.9375,796.36218 -3.21875,3.21875 -58.5,58.5 L 0,861.29968 l 0,4.5625 0,175.50002 0,11 11,0 175.5,0 4.5625,0 3.21875,-3.25 58.5,-58.50002 3.21875,-3.21875 0,-4.53125 0,-175.5 0,-11 -11,0 -175.5,0 z m 3.95314,11.1092 176.13111,-0.1294 4.5e-4,176.57563 -57.46098,57.46619 -176.59398,-10e-4 -0.0186,-176.54209 z"
+       id="rect2985-5-3-4-6"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccccccccccccccccccc"
+       inkscape:export-filename="D:\Projects\TileShell\tileshell\build\Media\tileshell\rect2985-5-3-7-8.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#9ccc00;fill-opacity:0.40784314;fill-rule:evenodd;stroke:none;stroke-width:22.00052261000000100;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       d="m 68.45293,807.2874 c -21.13941,21.13785 -38.95867,38.99769 -57.48715,57.52478 0,58.22703 0,118.35086 0,176.57792 58.23138,0 118.35601,0 176.5874,0 19.76072,-19.83 37.68487,-37.6804 57.48104,-57.47505 0,-60.62519 0,-124.60822 0,-176.57586 -58.23138,0 -118.3499,-0.0518 -176.58129,-0.0518 z"
+       id="rect2985-5-3-7-6-2"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccc"
+       inkscape:export-filename="D:\Projects\TileShell\tileshell\build\Media\tileshell\rect2985-5-3-7-8.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#454545;fill-opacity:0.90196078;fill-rule:evenodd;stroke:none;stroke-width:22.00052261;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       d="m 1344.9375,796.3622 -3.2187,3.21875 -58.5,58.5 -3.2188,3.21875 0,4.5625 0,175.5 0,11 11,0 175.5,0 4.5625,0 3.2188,-3.25 58.5,-58.5 3.2187,-3.21875 0,-4.53125 0,-175.5 0,-11 -11,0 -175.5,0 z m 3.9531,11.1092 176.1311,-0.1294 5e-4,176.57563 -57.461,57.46617 -176.594,0 -0.019,-176.54207 z"
+       id="rect2985-5-3-45"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccccccccccccccccccc"
+       inkscape:export-filename="D:\Projects\TileShell\tileshell\build\Media\tileshell\rect2985-5-3-7-8.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#1e1e1e;fill-opacity:0.40784314;fill-rule:evenodd;stroke:none;stroke-width:22.00052261000000100;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       d="m 1348.4529,807.28742 c -21.1394,21.13785 -38.9586,38.99769 -57.4871,57.52478 0,58.22703 0,118.35086 0,176.5779 58.2314,0 118.356,0 176.5874,0 19.7607,-19.83 37.6849,-37.6803 57.481,-57.47503 0,-60.62519 0,-124.60822 0,-176.57586 -58.2314,0 -118.3499,-0.0518 -176.5813,-0.0518 z"
+       id="rect2985-5-3-7-8"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccc"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#92c9ac;fill-opacity:0.8;fill-rule:evenodd;stroke:none;stroke-width:22.00052261;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       d="m 0,1372.3622 c 62.166667,0 193.83055,0 255.99721,0 0,-85.0654 0.003,-211.9129 0.003,-256 -85.3125,0 -170.625,0 -255.9374998,0 C 0.07565266,1206.8586 0,1295.3257 0,1372.3622 z m 245.02797,-245.0163 c 0,107.3045 0.004,155.808 0.004,234.0379 l -234.06488,-10e-4 -0.01533,-234.0906"
+       id="rect2985-5-3-4-6-8"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccc"
+       inkscape:export-filename="D:\Projects\TileShell\tileshell\build\Media\tileshell\rect2985-5-3-7-8.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#9ccc00;fill-opacity:0.40784314;fill-rule:evenodd;stroke:none;stroke-width:22.00052261000000100;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       d="m 10.947367,1127.2874 c 0,76.6518 0.01844,151.9767 0.01844,234.1027 58.23138,0 175.839623,0 234.071013,0 0,-113.7964 -0.003,-148.4678 -0.003,-234.0509 -72.69832,0 -175.256103,-0.052 -234.086457,-0.052 z"
+       id="rect2985-5-3-7-6-2-2"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="D:\Projects\TileShell\tileshell\build\Media\tileshell\rect2985-5-3-7-8.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#92c9ac;fill-opacity:0.8;fill-rule:evenodd;stroke:none;stroke-width:22.00052261;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       d="m 320,1372.3622 c 62.16667,0 193.83055,0 255.99721,0 0,-85.0654 0.003,-211.9129 0.003,-256 -85.3125,0 -170.62501,0 -255.9375,0 0.0129,90.4964 -0.0627,178.9635 -0.0627,256 z m 245.02797,-245.0163 c 0,107.3045 0.004,155.808 0.004,234.0379 l -234.06488,-10e-4 -0.0197,-234.0906"
+       id="rect2985-5-3-4-6-8-2"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccc"
+       inkscape:export-filename="D:\Projects\TileShell\tileshell\build\Media\tileshell\rect2985-5-3-7-8.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#454545;fill-opacity:0.40784314;fill-rule:evenodd;stroke:none;stroke-width:22.00052261000000100;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       d="m 330.94737,1127.2874 c 0,76.6518 0.0184,151.9767 0.0184,234.1027 58.23137,0 175.83962,0 234.07101,0 0,-113.7964 -0.003,-148.4678 -0.003,-234.0509 -72.69832,0 -175.25611,-0.052 -234.08646,-0.052 z"
+       id="rect2985-5-3-7-6-2-2-9"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="D:\Projects\TileShell\tileshell\build\Media\tileshell\rect2985-5-3-7-8.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#92c9ac;fill-opacity:0.8;fill-rule:evenodd;stroke:none;stroke-width:22.00052261;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       d="m 640,1372.3622 c 62.16667,0 193.83055,0 255.99721,0 0,-85.0654 0.003,-211.9129 0.003,-256 -85.3125,0 -170.625,0 -255.9375,0 0.0129,90.4964 -0.0627,178.9635 -0.0627,256 z m 245.02797,-245.0163 c 0,107.3045 0.004,155.808 0.004,234.0379 l -234.06488,-10e-4 -0.0124,-234.0906"
+       id="rect2985-5-3-4-6-8-9"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccc"
+       inkscape:export-filename="D:\Projects\TileShell\tileshell\build\Media\tileshell\rect2985-5-3-7-8.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#feab00;fill-opacity:0.40784314;fill-rule:evenodd;stroke:none;stroke-width:22.00052261000000100;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       d="m 650.94737,1127.2874 c 0,76.6518 0.0184,151.9767 0.0184,234.1027 58.23138,0 175.83962,0 234.07101,0 0,-113.7964 -0.003,-148.4678 -0.003,-234.0509 -72.69832,0 -175.2561,-0.052 -234.08646,-0.052 z"
+       id="rect2985-5-3-7-6-2-2-8"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="D:\Projects\TileShell\tileshell\build\Media\tileshell\rect2985-5-3-7-8.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#92c9ac;fill-opacity:0.8;fill-rule:evenodd;stroke:none;stroke-width:22.00052261;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       d="m 960,1372.3622 c 62.1667,0 193.8305,0 255.9972,0 0,-85.0654 0,-211.9129 0,-256 -85.3125,0 -170.625,0 -255.93749,0 0.0129,90.4964 -0.0627,178.9635 -0.0627,256 z m 245.028,-245.0163 c 0,107.3045 0,155.808 0,234.0379 l -234.06491,-10e-4 -0.0152,-234.0906"
+       id="rect2985-5-3-4-6-8-2-3"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccc"
+       inkscape:export-filename="D:\Projects\TileShell\tileshell\build\Media\tileshell\rect2985-5-3-7-8.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#294123;fill-opacity:0.40784314;fill-rule:evenodd;stroke:none;stroke-width:22.00052261000000100;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       d="m 970.94737,1127.2874 c 0,76.6518 0.0184,151.9767 0.0184,234.1027 58.23133,0 175.83963,0 234.07103,0 0,-113.7964 0,-148.4678 0,-234.0509 -72.6983,0 -175.2561,-0.052 -234.08648,-0.052 z"
+       id="rect2985-5-3-7-6-2-2-9-8"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="D:\Projects\TileShell\tileshell\build\Media\tileshell\rect2985-5-3-7-8.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#454545;fill-opacity:0.90196079;fill-rule:evenodd;stroke:none;stroke-width:22.00052261000000100;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       d="m 1280.0033,1372.3622 c 62.1667,0 193.8305,0 255.9972,0 0,-85.0654 0,-211.9129 0,-256 -85.3125,0 -170.625,0 -255.9375,0 0.013,90.4964 -0.063,178.9635 -0.063,256 z m 245.028,-245.0163 c 0,107.3045 0,155.808 0,234.0379 l -234.0649,-10e-4 -0.01,-234.0906"
+       id="rect2985-5-3-4-6-8-2-3-6"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccc"
+       inkscape:export-filename="D:\Projects\TileShell\tileshell\build\Media\tileshell\rect2985-5-3-7-8.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#1e1e1e;fill-opacity:0.40784314;fill-rule:evenodd;stroke:none;stroke-width:22.00052261000000100;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       d="m 1290.9507,1127.2874 c 0,76.6518 0.018,151.9767 0.018,234.1027 58.2313,0 175.8396,0 234.071,0 0,-113.7964 0,-148.4678 0,-234.0509 -72.6983,0 -175.2561,-0.052 -234.0865,-0.052 z"
+       id="rect2985-5-3-7-6-2-2-9-8-9"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="D:\Projects\TileShell\tileshell\build\Media\tileshell\rect2985-5-3-7-8.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#92c9ac;fill-opacity:0.8;fill-rule:evenodd;stroke:none;stroke-width:22.00052261;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       d="m 1664.9408,796.36217 -3.2188,3.21875 -58.5,58.49996 -3.2187,3.2188 0,4.5625 0,175.50002 0,11 11,0 175.5,0 4.5625,0 3.2188,-3.25 58.5,-58.50002 3.2187,-3.2188 0,-4.5312 0,-175.5 0,-11.00001 -11,0 -175.5,0 z m 3.9531,11.10921 176.1311,-0.1294 5e-4,176.5756 -57.461,57.46622 -176.594,-10e-4 -0.019,-176.54212 z"
+       id="rect2985-5-3-8"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccccccccccccccccccc"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="D:\Projects\TileShell\tileshell\build\Media\tileshell\rect2985-5-3-7-8.png" />
+    <path
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#92c9ac;fill-opacity:0.40784314;fill-rule:evenodd;stroke:none;stroke-width:22.00052261000000100;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       d="m 1668.4562,807.28738 c -21.1394,21.1379 -38.9587,38.9977 -57.4871,57.5248 0,58.227 0,118.3508 0,176.57792 58.2314,0 118.356,0 176.5874,0 19.7607,-19.83 37.6849,-37.6804 57.481,-57.47502 0,-60.6252 0,-124.6083 0,-176.5759 -58.2314,0 -118.3499,-0.052 -176.5813,-0.052 z"
+       id="rect2985-5-3-7-66"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccc"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="D:\Projects\TileShell\tileshell\build\Media\tileshell\rect2985-5-3-7-8.png" />
+    <path
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#92c9ac;fill-opacity:0.8;fill-rule:evenodd;stroke:none;stroke-width:22.00052261;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       d="m 1600.0033,1372.3622 c 62.1667,0 193.8305,0 255.9972,0 0,-85.0654 0,-211.9129 0,-256.0001 -85.3125,0 -170.625,0 -255.9375,0 0.013,90.4965 -0.063,178.9636 -0.063,256.0001 z m 245.028,-245.0163 c 0,107.3045 0,155.808 0,234.0379 l -234.0649,-10e-4 -0.012,-234.0906"
+       id="rect2985-5-3-4-6-8-2-3-2"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccc"
+       inkscape:export-filename="D:\Projects\TileShell\tileshell\build\Media\tileshell\rect2985-5-3-7-8.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#92c9ac;fill-opacity:0.40784314;fill-rule:evenodd;stroke:none;stroke-width:22.00052261;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       d="m 1610.9507,1127.2874 c 0,76.6518 0.018,151.9766 0.018,234.1027 58.2313,0 175.8396,0 234.071,0 0,-113.7964 0,-148.4678 0,-234.0509 -72.6983,0 -175.2561,-0.052 -234.0865,-0.052 z"
+       id="rect2985-5-3-7-6-2-2-9-8-3"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="D:\Projects\TileShell\tileshell\build\Media\tileshell\rect2985-5-3-7-8.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:url(#linearGradient5677);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:22.00099945;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       d="m 1920.0033,1372.3622 c 62.1667,0 -51.1695,0 10.9972,0 0,-191.3972 0,-476.80388 0,-576.00002 -85.3125,0 74.375,0 -10.9375,0 C 1920.076,999.97915 1920,1199.03 1920,1372.3622 z"
+       id="rect2985-5-3-4-6-8-2-3-2-8"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccc"
+       inkscape:export-filename="D:\Projects\TileShell\tileshell\build\Media\tileshell\rect2985-5-3-7-8.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:url(#linearGradient5700);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:22.00099945;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       d="m 2080.0033,1372.3622 c 62.1667,0 -51.1695,0 10.9972,0 0,-191.3972 0,-476.80392 0,-576.00006 -85.3125,0 74.375,0 -10.9375,0 C 2080.076,999.97911 2080,1199.03 2080,1372.3622 z"
+       id="rect2985-5-3-4-6-8-2-3-2-8-8"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccc"
+       inkscape:export-filename="D:\Projects\TileShell\tileshell\build\Media\tileshell\rect2985-5-3-7-8.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:url(#linearGradient5786);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:22.00052261;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       d="m 0.02016597,1681.3902 c 63.68177903,0 192.29804403,0 255.97983403,0 0,-113.7964 -0.003,-148.4678 -0.003,-234.051 -79.50281,0 -191.659908,-0.052 -255.99672,-0.052 m 0,0 4.374396e-5,10e-5 c 0,76.6517 0.020122226,151.9766 0.020122226,234.1027"
+       id="rect2985-5-3-7-6-2-2-80"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccc"
+       inkscape:export-filename="D:\Projects\TileShell\tileshell\build\Media\tileshell\rect2985-5-3-7-8.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:url(#linearGradient5770);fill-opacity:1;fill-rule:evenodd;stroke:none"
+       id="rect5744"
+       width="256"
+       height="10.693"
+       x="0"
+       y="1436.6262"
+       inkscape:export-filename="D:\Projects\TileShell\tileshell\build\Media\tileshell\rect2985-5-3-7-8.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:url(#linearGradient5778);fill-opacity:1;fill-rule:evenodd;stroke:none;display:inline"
+       id="rect5744-2"
+       width="256"
+       height="10.973829"
+       x="0"
+       y="1681.3883"
+       inkscape:export-filename="D:\Projects\TileShell\tileshell\build\Media\tileshell\rect2985-5-3-7-8.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:url(#linearGradient5816);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:22.00052261;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       d="m 320.02016,1681.3901 c 63.68178,0 192.29804,0 255.97983,0 0,-113.7964 -0.003,-148.4677 -0.003,-234.0509 -79.50281,0 -191.6599,-0.052 -255.99672,-0.052 m 0,0 5e-5,0 c 0,76.6518 0.0201,151.9767 0.0201,234.1027"
+       id="rect2985-5-3-7-6-2-2-80-8"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccc"
+       inkscape:export-filename="D:\Projects\TileShell\tileshell\build\Media\tileshell\rect2985-5-3-7-8.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:url(#linearGradient5770-5);fill-opacity:1;fill-rule:evenodd;stroke:none;display:inline"
+       id="rect5744-7"
+       width="256"
+       height="10.693"
+       x="320"
+       y="1436.6261"
+       inkscape:export-filename="D:\Projects\TileShell\tileshell\build\Media\tileshell\rect2985-5-3-7-8.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:url(#linearGradient5778-8);fill-opacity:1;fill-rule:evenodd;stroke:none;display:inline"
+       id="rect5744-2-8"
+       width="256"
+       height="10.973829"
+       x="320"
+       y="1681.3883"
+       inkscape:export-filename="D:\Projects\TileShell\tileshell\build\Media\tileshell\rect2985-5-3-7-8.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:url(#linearGradient5901);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:22.00052261;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       d="m 640.02017,1681.3902 c 63.68178,0 192.29804,0 255.97983,0 0,-113.7964 -0.003,-148.4678 -0.003,-234.051 -79.50281,0 -191.65991,-0.052 -255.99672,-0.052 m 0,0 4e-5,0 c 0,76.6518 0.0201,151.9767 0.0201,234.1028"
+       id="rect2985-5-3-7-6-2-2-80-4"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccc"
+       inkscape:export-filename="D:\Projects\TileShell\tileshell\build\Media\tileshell\rect2985-5-3-7-8.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:url(#linearGradient5770-2);fill-opacity:1;fill-rule:evenodd;stroke:none;display:inline"
+       id="rect5744-6"
+       width="256"
+       height="10.693"
+       x="640"
+       y="1436.6262"
+       inkscape:export-filename="D:\Projects\TileShell\tileshell\build\Media\tileshell\rect2985-5-3-7-8.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:url(#linearGradient5778-0);fill-opacity:1;fill-rule:evenodd;stroke:none;display:inline"
+       id="rect5744-2-89"
+       width="256"
+       height="10.973829"
+       x="640"
+       y="1681.3883"
+       inkscape:export-filename="D:\Projects\TileShell\tileshell\build\Media\tileshell\rect2985-5-3-7-8.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:url(#linearGradient5816-8);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:22.00052261;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       d="m 960.02016,1681.3901 c 63.68174,0 192.29804,0 255.97984,0 0,-113.7964 0,-148.4678 0,-234.0509 -79.5028,0 -191.6599,-0.052 -255.99673,-0.052 m 0,0 5e-5,0 c 0,76.6518 0.0201,151.9767 0.0201,234.1027"
+       id="rect2985-5-3-7-6-2-2-80-8-8"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccc"
+       inkscape:export-filename="D:\Projects\TileShell\tileshell\build\Media\tileshell\rect2985-5-3-7-8.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:url(#linearGradient5770-5-5);fill-opacity:1;fill-rule:evenodd;stroke:none;display:inline"
+       id="rect5744-7-3"
+       width="256"
+       height="10.693"
+       x="960"
+       y="1436.6261"
+       inkscape:export-filename="D:\Projects\TileShell\tileshell\build\Media\tileshell\rect2985-5-3-7-8.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:url(#linearGradient5778-8-1);fill-opacity:1;fill-rule:evenodd;stroke:none;display:inline"
+       id="rect5744-2-8-5"
+       width="256"
+       height="10.973829"
+       x="960"
+       y="1681.3883"
+       inkscape:export-filename="D:\Projects\TileShell\tileshell\build\Media\tileshell\rect2985-5-3-7-8.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:url(#linearGradient6016);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:22.00052261;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       d="m 1280.0202,1681.3901 c 63.6817,0 192.298,0 255.9798,0 0,-113.7964 0,-148.4677 0,-234.0509 -79.5028,0 -191.6599,-0.052 -255.9967,-0.052 m 0,0 0,0 c 0,76.6518 0.02,151.9767 0.02,234.1027"
+       id="rect2985-5-3-7-6-2-2-80-4-3"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccc"
+       inkscape:export-filename="D:\Projects\TileShell\tileshell\build\Media\tileshell\rect2985-5-3-7-8.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:url(#linearGradient5770-2-8);fill-opacity:1.0;fill-rule:evenodd;stroke:none;display:inline"
+       id="rect5744-6-5"
+       width="256"
+       height="10.693"
+       x="1280"
+       y="1436.6261"
+       inkscape:export-filename="D:\Projects\TileShell\tileshell\build\Media\tileshell\rect2985-5-3-7-8.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:url(#linearGradient5778-0-4);fill-opacity:1.0;fill-rule:evenodd;stroke:none;display:inline"
+       id="rect5744-2-89-0"
+       width="256"
+       height="10.973829"
+       x="1280"
+       y="1681.3883"
+       inkscape:export-filename="D:\Projects\TileShell\tileshell\build\Media\tileshell\rect2985-5-3-7-8.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:url(#linearGradient5816-8-7);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:22.00052261;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       d="m 1598.6823,1681.3901 c 63.6818,0 192.2981,0 255.9799,0 0,-113.7964 0,-148.4678 0,-234.0509 -79.5028,0 -191.6599,-0.052 -255.9968,-0.052 m 0,0 10e-5,0 c 0,76.6518 0.02,151.9767 0.02,234.1027"
+       id="rect2985-5-3-7-6-2-2-80-8-8-7"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccc"
+       inkscape:export-filename="D:\Projects\TileShell\tileshell\build\Media\tileshell\rect2985-5-3-7-8.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:url(#linearGradient5770-5-5-9);fill-opacity:1;fill-rule:evenodd;stroke:none;display:inline"
+       id="rect5744-7-3-6"
+       width="256"
+       height="10.693"
+       x="1600"
+       y="1436.6261"
+       inkscape:export-filename="D:\Projects\TileShell\tileshell\build\Media\tileshell\rect2985-5-3-7-8.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:url(#linearGradient5778-8-1-0);fill-opacity:1;fill-rule:evenodd;stroke:none;display:inline"
+       id="rect5744-2-8-5-7"
+       width="256"
+       height="10.973829"
+       x="1600"
+       y="1681.3883"
+       inkscape:export-filename="D:\Projects\TileShell\tileshell\build\Media\tileshell\rect2985-5-3-7-8.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+  </g>
+</svg>

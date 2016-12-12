@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{5E421DEF-3C21-4618-8257-550DC97F3279}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>TileShellMenuKit</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\TileShell\TileShellEngine.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\TileShell\TileShellEngine.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\TileShell\TileShellEngine.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\TileShell\TileShellEngine.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(TILESHELL_ROOT)\build\$(Configuration)-$(PlatformName)\</OutDir>
+    <IntDir>$(TILESHELL_ROOT)\intermediate\$(Configuration)-$(PlatformName)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(TILESHELL_ROOT)\build\$(Configuration)-$(PlatformName)\</OutDir>
+    <IntDir>$(TILESHELL_ROOT)\intermediate\$(Configuration)-$(PlatformName)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <PrecompiledHeaderFile />
+      <PrecompiledHeaderOutputFile />
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <PrecompiledHeaderFile />
+      <PrecompiledHeaderOutputFile />
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="include\TIleShell\UI\Controls\CheckBox.h" />
+    <ClInclude Include="include\TIleShell\UI\Controls\ComboBox.h" />
+    <ClInclude Include="include\TIleShell\UI\Controls\ContainerControl.h" />
+    <ClInclude Include="include\TIleShell\UI\Controls\ControlFactory.h" />
+    <ClInclude Include="include\TIleShell\UI\Controls\Activity.h" />
+    <ClInclude Include="include\TIleShell\UI\Controls\Button.h" />
+    <ClInclude Include="include\TIleShell\UI\Controls\Control.h" />
+    <ClInclude Include="include\TIleShell\UI\Controls\IEventHandler.h" />
+    <ClInclude Include="include\TIleShell\UI\Controls\MenuScene.h" />
+    <ClInclude Include="include\TIleShell\UI\Controls\MultiButton.h" />
+    <ClInclude Include="include\TIleShell\UI\Controls\Primitives\ButtonBase.h" />
+    <ClInclude Include="include\TIleShell\UI\Controls\Primitives\RangeBase.h" />
+    <ClInclude Include="include\TIleShell\UI\Controls\Primitives\SelectorBase.h" />
+    <ClInclude Include="include\TIleShell\UI\Controls\Primitives\TextBase.h" />
+    <ClInclude Include="include\TIleShell\UI\Controls\Primitives\ToggleButton.h" />
+    <ClInclude Include="include\TIleShell\UI\Controls\ProgressBar.h" />
+    <ClInclude Include="include\TIleShell\UI\Controls\SelectBox.h" />
+    <ClInclude Include="include\TIleShell\UI\Controls\Slider.h" />
+    <ClInclude Include="include\TIleShell\UI\Controls\TextBlock.h" />
+    <ClInclude Include="include\TIleShell\UI\Controls\TextBox.h" />
+    <ClInclude Include="include\TIleShell\UI\Controls\Unimplemented.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TileShell\TileShell.vcxproj">
+      <Project>{29b83b79-2a1e-41f7-b6e7-c044a860b302}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\TileShell\UI\Controls\Activity.cpp" />
+    <ClCompile Include="source\TileShell\UI\Controls\Button.cpp" />
+    <ClCompile Include="source\TileShell\UI\Controls\CheckBox.cpp" />
+    <ClCompile Include="source\TileShell\UI\Controls\ComboBox.cpp" />
+    <ClCompile Include="source\TileShell\UI\Controls\ContainerControl.cpp" />
+    <ClCompile Include="source\TileShell\UI\Controls\Control.cpp" />
+    <ClCompile Include="source\TileShell\UI\Controls\ControlFactory.cpp" />
+    <ClCompile Include="source\TileShell\UI\Controls\MenuScene.cpp" />
+    <ClCompile Include="source\TileShell\UI\Controls\Primitives\ButtonBase.cpp" />
+    <ClCompile Include="source\TileShell\UI\Controls\MultiButton.cpp" />
+    <ClCompile Include="source\TileShell\UI\Controls\Primitives\RangeBase.cpp" />
+    <ClCompile Include="source\TileShell\UI\Controls\Primitives\SelectorBase.cpp" />
+    <ClCompile Include="source\TileShell\UI\Controls\Primitives\TextBase.cpp" />
+    <ClCompile Include="source\TileShell\UI\Controls\Primitives\ToggleButton.cpp" />
+    <ClCompile Include="source\TileShell\UI\Controls\ProgressBar.cpp" />
+    <ClCompile Include="source\TileShell\UI\Controls\Register.cpp" />
+    <ClCompile Include="source\TileShell\UI\Controls\SelectBox.cpp" />
+    <ClCompile Include="source\TileShell\UI\Controls\Slider.cpp" />
+    <ClCompile Include="source\TileShell\UI\Controls\TextBlock.cpp" />
+    <ClCompile Include="source\TileShell\UI\Controls\TextBox.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="diagrams\uml_menukit_activity.cd" />
+    <None Include="diagrams\uml_menukit_control.cd" />
+    <None Include="diagrams\uml_menukit_controlfactory.cd" />
+    <None Include="diagrams\uml_menukit_primitives.cd" />
+    <None Include="diagrams\uml_menukit_primitives_controls.cd" />
+    <None Include="include\TIleShell\UI\Controls\Activity.inl" />
+    <None Include="include\TIleShell\UI\Controls\Control.inl" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

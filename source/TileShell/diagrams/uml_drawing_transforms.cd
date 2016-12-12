@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Struct Name="TileShell::Drawing::ScaleTransform">
+    <Position X="3.25" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>include\TileShell\Drawing\Transform.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="TileShell::Drawing::SkewTransform">
+    <Position X="0.5" Y="2.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>include\TileShell\Drawing\Transform.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="TileShell::Drawing::TranslateTransform">
+    <Position X="0.5" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAYAA=</HashCode>
+      <FileName>include\TileShell\Drawing\Transform.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="TileShell::Drawing::RotateTransform">
+    <Position X="3.25" Y="2.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>include\TileShell\Drawing\Transform.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="TileShell::Drawing::Transform">
+    <Position X="0.5" Y="4.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAEAAAAAAAAAAEAAAAAEI=</HashCode>
+      <FileName>include\TileShell\Drawing\Transform.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
