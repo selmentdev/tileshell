@@ -1,0 +1,5 @@
+add_subdirectory( core.engine )
+add_subdirectory( tileshell )
+#add_subdirectory( TileShell.HudKit)
+#add_subdirectory( TileShell.MenuKit )
+#add_subdirectory( TileShell.SplashKit )
