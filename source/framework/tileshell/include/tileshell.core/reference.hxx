@@ -26,229 +26,226 @@
 #pragma once
 #ifndef _TileShell_Core_Reference_H__
 #define _TileShell_Core_Reference_H__
-//------------------------------------------------------------------------------------------------//
+
 #include <tileshell/required.hxx>
 #include <tileshell.core/referenced.hxx>
-//------------------------------------------------------------------------------------------------//
-namespace TileShell
-{
-namespace Core
+
+namespace TileShell::Core
 {
 
-///
-/// This class represents reference to the type T.
-///
-/// @tparam T
-///     A referenced type.
-///
-template <typename T>
-class Reference
-{
-private:
-    T* _pointer;
-
-public:
-    typedef T Type;
-
-    Reference(T* pointer = nullptr)
-        : _pointer(pointer)
+    ///
+    /// This class represents reference to the type T.
+    ///
+    /// @tparam T
+    ///     A referenced type.
+    ///
+    template <typename T>
+    class Reference
     {
-        if ((pointer != nullptr))
+    private:
+        T* _pointer;
+
+    public:
+        typedef T Type;
+
+        Reference(T* pointer = nullptr)
+            : _pointer(pointer)
         {
-            pointer->AddRef();
-        }
-    }
-
-    Reference(const Reference<T>& reference)
-        : _pointer(reference._pointer)
-    {
-        if ((_pointer != nullptr))
-        {
-            _pointer->AddRef();
-        }
-    }
-
-    ~Reference()
-    {
-        if ((_pointer != nullptr))
-        {
-            _pointer->Release();
-        }
-    }
-
-    Reference<T>& operator = (T* pointer)
-    {
-        if ((_pointer != nullptr))
-        {
-            _pointer->Release();
-        }
-
-        _pointer = pointer;
-
-        if ((_pointer != nullptr))
-        {
-            _pointer->AddRef();
-        }
-
-        return (*this);
-    }
-
-    Reference<T>& operator = (const Reference<T>& reference)
-    {
-        if (this != &reference)
-        {
-            if ((reference._pointer != nullptr))
+            if ((pointer != nullptr))
             {
-                reference._pointer->AddRef();
+                pointer->AddRef();
             }
+        }
 
+        Reference(const Reference<T>& reference)
+            : _pointer(reference._pointer)
+        {
+            if ((_pointer != nullptr))
+            {
+                _pointer->AddRef();
+            }
+        }
+
+        ~Reference()
+        {
+            if ((_pointer != nullptr))
+            {
+                _pointer->Release();
+            }
+        }
+
+        Reference<T>& operator = (T* pointer)
+        {
             if ((_pointer != nullptr))
             {
                 _pointer->Release();
             }
 
-            _pointer = reference._pointer;
+            _pointer = pointer;
+
+            if ((_pointer != nullptr))
+            {
+                _pointer->AddRef();
+            }
+
+            return (*this);
         }
 
-        return (*this);
-    }
-
-    template <typename U>
-    Reference<T>& operator = (U* pointer)
-    {
-        if ((_pointer != nullptr))
+        Reference<T>& operator = (const Reference<T>& reference)
         {
-            _pointer->Release();
+            if (this != &reference)
+            {
+                if ((reference._pointer != nullptr))
+                {
+                    reference._pointer->AddRef();
+                }
+
+                if ((_pointer != nullptr))
+                {
+                    _pointer->Release();
+                }
+
+                _pointer = reference._pointer;
+            }
+
+            return (*this);
         }
 
-        _pointer = static_cast<T*>(pointer);
-
-        if ((_pointer != nullptr))
+        template <typename U>
+        Reference<T>& operator = (U* pointer)
         {
-            _pointer->AddRef();
+            if ((_pointer != nullptr))
+            {
+                _pointer->Release();
+            }
+
+            _pointer = static_cast<T*>(pointer);
+
+            if ((_pointer != nullptr))
+            {
+                _pointer->AddRef();
+            }
+
+            return (*this);
         }
 
-        return (*this);
-    }
-
-    template <typename U>
-    Reference<T>& operator = (const Reference<U>& reference)
-    {
-        if ((_pointer != nullptr))
+        template <typename U>
+        Reference<T>& operator = (const Reference<U>& reference)
         {
-            _pointer->Release();
+            if ((_pointer != nullptr))
+            {
+                _pointer->Release();
+            }
+
+            _pointer = static_cast<T*>(reference._pointer);
+
+            if ((_pointer != nullptr))
+            {
+                _pointer->AddRef();
+            }
+
+            return (*this);
         }
 
-        _pointer = static_cast<T*>(reference._pointer);
-
-        if ((_pointer != nullptr))
+        operator T* () const
         {
-            _pointer->AddRef();
+            return _pointer;
         }
 
-        return (*this);
+        operator const T* () const
+        {
+            return _pointer;
+        }
+
+        T& operator * () const
+        {
+            assert(_pointer != nullptr);
+            return (*_pointer);
+        }
+
+        T* operator -> () const
+        {
+            assert(_pointer != nullptr);
+            return _pointer;
+        }
+
+        bool IsValid() const
+        {
+            return _pointer != nullptr;
+        }
+
+        T* GetPointer() const
+        {
+            return _pointer;
+        }
+
+        operator bool() const
+        {
+            return _pointer != nullptr;
+        }
+
+        bool operator ! () const
+        {
+            return _pointer == nullptr;
+        }
+
+        bool operator == (const T* pointer) const
+        {
+            return _pointer == pointer;
+        }
+
+        bool operator == (const Reference<T>& reference) const
+        {
+            return _pointer == reference._pointer;
+        }
+
+        bool operator != (const T* pointer) const
+        {
+            return _pointer != pointer;
+        }
+
+        bool operator != (const Reference<T>& reference) const
+        {
+            return _pointer != reference._pointer;
+        }
+
+        template <typename TTarget>
+        TTarget* cast()
+        {
+            return static_cast<TTarget*>(_pointer);
+        }
+
+        template <typename TTarget>
+        TTarget* safe_cast()
+        {
+            return dynamic_cast<TTarget*>(_pointer);
+        }
+    };
+
+    template <typename T>
+    inline bool operator == (const Reference<T>& reference, nullptr_t)
+    {
+        return (T*)reference == nullptr;
     }
 
-    operator T* () const
+    template <typename T>
+    inline bool operator == (nullptr_t, const Reference<T>& reference)
     {
-        return _pointer;
+        return (T*)reference == nullptr;
     }
 
-    operator const T* () const
+    template <typename T>
+    inline bool operator != (const Reference<T>& reference, nullptr_t)
     {
-        return _pointer;
+        return (T*)reference != nullptr;
     }
 
-    T& operator * () const
+    template <typename T>
+    inline bool operator != (nullptr_t, const Reference<T>& reference)
     {
-        assert(_pointer != nullptr);
-        return (*_pointer);
+        return (T*)reference != nullptr;
     }
 
-    T* operator -> () const
-    {
-        assert(_pointer != nullptr);
-        return _pointer;
-    }
-
-    bool IsValid() const
-    {
-        return _pointer != nullptr;
-    }
-
-    T* GetPointer() const
-    {
-        return _pointer;
-    }
-
-    operator bool () const
-    {
-        return _pointer != nullptr;
-    }
-
-    bool operator ! () const
-    {
-        return _pointer == nullptr;
-    }
-
-    bool operator == (const T* pointer) const
-    {
-        return _pointer == pointer;
-    }
-
-    bool operator == (const Reference<T>& reference) const
-    {
-        return _pointer == reference._pointer;
-    }
-
-    bool operator != (const T* pointer) const
-    {
-        return _pointer != pointer;
-    }
-
-    bool operator != (const Reference<T>& reference) const
-    {
-        return _pointer != reference._pointer;
-    }
-
-    template <typename TTarget>
-    TTarget* cast()
-    {
-        return static_cast<TTarget*>(_pointer);
-    }
-
-    template <typename TTarget>
-    TTarget* safe_cast()
-    {
-        return dynamic_cast<TTarget*>(_pointer);
-    }
-};
-//------------------------------------------------------------------------------------------------//
-template <typename T>
-inline bool operator == (const Reference<T>& reference, nullptr_t)
-{
-    return (T*)reference == nullptr;
 }
-//------------------------------------------------------------------------------------------------//
-template <typename T>
-inline bool operator == (nullptr_t, const Reference<T>& reference)
-{
-    return (T*)reference == nullptr;
-}
-//------------------------------------------------------------------------------------------------//
-template <typename T>
-inline bool operator != (const Reference<T>& reference, nullptr_t)
-{
-    return (T*)reference != nullptr;
-}
-//------------------------------------------------------------------------------------------------//
-template <typename T>
-inline bool operator != (nullptr_t, const Reference<T>& reference)
-{
-    return (T*)reference != nullptr;
-}
-//------------------------------------------------------------------------------------------------//
-}
-}
-//------------------------------------------------------------------------------------------------//
+
 #endif /* _TileShell_Core_Reference_H__ */

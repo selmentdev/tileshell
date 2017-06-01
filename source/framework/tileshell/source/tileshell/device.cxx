@@ -28,27 +28,26 @@
 #include <tileshell.drawing/texturemanager.hxx>
 #include <tileshell.drawing/stylemanager.hxx>
 #include <tileshell.drawing/resourcefactory.hxx>
-//------------------------------------------------------------------------------------------------//
+
 namespace TileShell
 {
-//------------------------------------------------------------------------------------------------//
-bool Device::Initialize(ExternalResourceFactory* resource_factory)
-{
-    Drawing::ResourceFactory::Initialize(resource_factory);
-    Drawing::TextureManager::Initialize();
-    Drawing::FontManager::Initialize();
-    Drawing::StyleManager::Initialize();
-    return true;
+
+    bool Device::Initialize(ExternalResourceFactory* resource_factory)
+    {
+        Drawing::ResourceFactory::Initialize(resource_factory);
+        Drawing::TextureManager::Initialize();
+        Drawing::FontManager::Initialize();
+        Drawing::StyleManager::Initialize();
+        return true;
+    }
+
+    bool Device::Shutdown()
+    {
+        Drawing::StyleManager::Shutdown();
+        Drawing::FontManager::Shutdown();
+        Drawing::TextureManager::Shutdown();
+        Drawing::ResourceFactory::Shutdown();
+        return true;
+    }
+
 }
-//------------------------------------------------------------------------------------------------//
-bool Device::Shutdown()
-{
-    Drawing::StyleManager::Shutdown();
-    Drawing::FontManager::Shutdown();
-    Drawing::TextureManager::Shutdown();
-    Drawing::ResourceFactory::Shutdown();
-    return true;
-}
-//------------------------------------------------------------------------------------------------//
-}
-//------------------------------------------------------------------------------------------------//

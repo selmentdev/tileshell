@@ -28,12 +28,12 @@
 #include "../Demo/PlayGameState.h"
 #include "../Demo/MenuGameState.h"
 #include "../OgreGlue/OgreRenderResourceFactory.h"
-//------------------------------------------------------------------------------------------------//
+
 #include <TileShell/Device.h>
 #include <TileShell/Core/Allocator.h>
 #include <TileShell/UI/Controls/ControlFactory.h>
 #include <TileShell/HudKit/HudElementFactory.h>
-//------------------------------------------------------------------------------------------------//
+
 INT __stdcall WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 {
     _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
@@ -77,4 +77,4 @@ INT __stdcall WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 
     return 0;
 }
-//------------------------------------------------------------------------------------------------//
+

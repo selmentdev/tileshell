@@ -26,47 +26,44 @@
 #pragma once
 #ifndef _TileShell_Render_Texture_H__
 #define _TileShell_Render_Texture_H__
-//------------------------------------------------------------------------------------------------//
+
 #include <tileshell/required.hxx>
 #include <tileshell.core/referenced.hxx>
 #include <tileshell.core/reference.hxx>
 #include <tileshell.drawing/size.hxx>
 #include <tileshell.drawing/rect.hxx>
-//------------------------------------------------------------------------------------------------//
-namespace TileShell
-{
-namespace Drawing
-{
-///
-/// This class represents texture resource.
-///
-class Texture : public Core::Referenced
-{
-public:
-    ///
-    /// Destroys instance of the Texture class.
-    ///
-    virtual ~Texture() {}
 
-    ///
-    /// Gets size of the texture in texels.
-    ///
-    virtual Size GetSize() = 0;
-
-    ///
-    /// Gets rectagnel of the texture in texels.
-    ///
-    Rect GetRectangle();
-};
-typedef Core::Reference<Texture> TextureRef;
-//------------------------------------------------------------------------------------------------//
-inline Rect Texture::GetRectangle()
+namespace TileShell::Drawing
 {
-    Size size = GetSize();
-    return Rect(0.0F, 0.0F, size.Width, size.Height);
+    ///
+    /// This class represents texture resource.
+    ///
+    class Texture : public Core::Referenced
+    {
+    public:
+        ///
+        /// Destroys instance of the Texture class.
+        ///
+        virtual ~Texture() {}
+
+        ///
+        /// Gets size of the texture in texels.
+        ///
+        virtual Size GetSize() = 0;
+
+        ///
+        /// Gets rectagnel of the texture in texels.
+        ///
+        Rect GetRectangle();
+    };
+    typedef Core::Reference<Texture> TextureRef;
+
+    inline Rect Texture::GetRectangle()
+    {
+        Size size = GetSize();
+        return Rect(0.0F, 0.0F, size.Width, size.Height);
+    }
+
 }
-//------------------------------------------------------------------------------------------------//
-}
-}
-//------------------------------------------------------------------------------------------------//
+
 #endif /* _TileShell_Render_Texture_H__ */

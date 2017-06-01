@@ -24,22 +24,22 @@
 // 
 //
 #include "OgreVertexBuffer.h"
-//------------------------------------------------------------------------------------------------//
+
 namespace OgreGlue
 {
-//------------------------------------------------------------------------------------------------//
+
 OgreVertexBuffer::OgreVertexBuffer()
     : _vertex_count(30)
     , _required_vertex_count(0)
 {
     CreateVertexBuffer();
 }
-//------------------------------------------------------------------------------------------------//
+
 OgreVertexBuffer::~OgreVertexBuffer()
 {
     DestroyVertexBuffer();
 }
-//------------------------------------------------------------------------------------------------//
+
 void OgreVertexBuffer::CreateVertexBuffer()
 {
     _render_operation.vertexData        = new Ogre::VertexData();
@@ -64,31 +64,31 @@ void OgreVertexBuffer::CreateVertexBuffer()
     _render_operation.operationType = Ogre::RenderOperation::OT_TRIANGLE_LIST;
     _render_operation.useIndexes = false;
 }
-//------------------------------------------------------------------------------------------------//
+
 void OgreVertexBuffer::DestroyVertexBuffer()
 {
     delete _render_operation.vertexData;
     _render_operation.vertexData = nullptr;
     _vertex_buffer.setNull();
 }
-//------------------------------------------------------------------------------------------------//
+
 void OgreVertexBuffer::ResizeVertexBuffer()
 {
     _vertex_count = _required_vertex_count + 30;
     DestroyVertexBuffer();
     CreateVertexBuffer();
 }
-//------------------------------------------------------------------------------------------------//
+
 void OgreVertexBuffer::SetVertexCount(size_t count)
 {
     _required_vertex_count = count;
 }
-//------------------------------------------------------------------------------------------------//
+
 size_t OgreVertexBuffer::GetVertexCount() const
 {
     return _required_vertex_count;
 }
-//------------------------------------------------------------------------------------------------//
+
 TileShell::Drawing::Vertex* OgreVertexBuffer::Map()
 {
     if (_required_vertex_count > _vertex_count)
@@ -99,11 +99,11 @@ TileShell::Drawing::Vertex* OgreVertexBuffer::Map()
     return reinterpret_cast<TileShell::Drawing::Vertex*>(_vertex_buffer->lock(
                 Ogre::HardwareVertexBuffer::HBL_DISCARD));
 }
-//------------------------------------------------------------------------------------------------//
+
 void OgreVertexBuffer::Unmap()
 {
     _vertex_buffer->unlock();
 }
-//------------------------------------------------------------------------------------------------//
+
 }
-//------------------------------------------------------------------------------------------------//
+

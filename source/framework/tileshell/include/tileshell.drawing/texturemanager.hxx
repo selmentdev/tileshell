@@ -26,70 +26,67 @@
 #pragma once
 #ifndef _TileShell_Render_TextureManager_H__
 #define _TileShell_Render_TextureManager_H__
-//------------------------------------------------------------------------------------------------//
+
 #include <tileshell.core/types.hxx>
 #include <tileshell.core/reference.hxx>
 #include <tileshell.core/referenced.hxx>
 #include <tileshell/externalresourcefactory.hxx>
-//------------------------------------------------------------------------------------------------//
-namespace TileShell
+
+namespace TileShell::Drawing
 {
-namespace Drawing
-{
-class Texture;
-typedef Core::Reference<Texture> TextureRef;
-
-///
-/// This class implements texture management.
-///
-class TextureManager
-{
-private:
-    typedef std::map<string_t, TextureRef> TextureCollection;
-
-private:
-    static TextureCollection            _texture_collection;
-
-public:
-    ///
-    /// Initializes texture manager.
-    ///
-    /// @returns
-    ///     true when successful, false otherwise.
-    ///
-    static bool Initialize();
+    class Texture;
+    typedef Core::Reference<Texture> TextureRef;
 
     ///
-    /// Shutdowns texture manager.
+    /// This class implements texture management.
     ///
-    /// @returns
-    ///     true when successful, false otherwise.
-    ///
-    static bool Shutdown();
+    class TextureManager
+    {
+    private:
+        typedef std::map<string_t, TextureRef> TextureCollection;
 
-public:
-    ///
-    /// Gets texture for the specified name.
-    ///
-    /// @param[in] name
-    ///     A texture name to load or create.
-    ///
-    static TextureRef GetTexture(const string_t& name);
+    private:
+        static TextureCollection            _texture_collection;
 
-    ///
-    /// Releases texture from manager.
-    ///
-    /// @note
-    ///     If there is any reference to this texture outside texture manager, texture object
-    ///     is destroyed when last reference is released.
-    ///
-    /// @param[in] texture
-    ///     A texture to release.
-    ///
-    static void ReleaseTexture(TextureRef texture);
-};
+    public:
+        ///
+        /// Initializes texture manager.
+        ///
+        /// @returns
+        ///     true when successful, false otherwise.
+        ///
+        static bool Initialize();
+
+        ///
+        /// Shutdowns texture manager.
+        ///
+        /// @returns
+        ///     true when successful, false otherwise.
+        ///
+        static bool Shutdown();
+
+    public:
+        ///
+        /// Gets texture for the specified name.
+        ///
+        /// @param[in] name
+        ///     A texture name to load or create.
+        ///
+        static TextureRef GetTexture(const string_t& name);
+
+        ///
+        /// Releases texture from manager.
+        ///
+        /// @note
+        ///     If there is any reference to this texture outside texture manager, texture object
+        ///     is destroyed when last reference is released.
+        ///
+        /// @param[in] texture
+        ///     A texture to release.
+        ///
+        static void ReleaseTexture(TextureRef texture);
+    };
 
 }
-}
-//------------------------------------------------------------------------------------------------//
+
 #endif /* _TileShell_Render_TextureManager_H__ */

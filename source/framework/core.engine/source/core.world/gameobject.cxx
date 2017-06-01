@@ -4,7 +4,7 @@
 //      See LICENSE file in the project root for full license information.
 //
 
-#include <Core.World/GameObject.hxx>
+#include <core.world/gameobject.hxx>
 
 namespace Core::World
 {

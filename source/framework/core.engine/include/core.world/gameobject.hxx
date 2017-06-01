@@ -22,7 +22,7 @@ namespace Core::World
         friend class Scene;
     protected:
         const GameObjectTypeID TypeID;
-       
+
     private:
         bool m_MarkedToRemove;
 

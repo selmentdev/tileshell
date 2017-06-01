@@ -4,8 +4,8 @@
 //      See LICENSE file in the project root for full license information.
 //
 
-#include <Core.World/Camera.hxx>
-#include <Core.Rendering/RenderSystem.hxx>
+#include <core.world/camera.hxx>
+#include <core.rendering/rendersystem.hxx>
 
 namespace Core::World
 {

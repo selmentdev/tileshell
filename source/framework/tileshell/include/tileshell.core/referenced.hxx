@@ -26,66 +26,63 @@
 #pragma once
 #ifndef _TileShell_Core_Referenced_H__
 #define _TileShell_Core_Referenced_H__
-//------------------------------------------------------------------------------------------------//
+
 #include <tileshell/required.hxx>
 #include <tileshell.core/allocator.hxx>
-//------------------------------------------------------------------------------------------------//
-namespace TileShell
+
+namespace TileShell::Core
 {
-namespace Core
-{
-typedef int32_t refcount_t;
+    typedef int32_t refcount_t;
 
-///
-/// This class represents referenced object.
-///
-class Referenced
-{
-private:
-    refcount_t  _refcount;
-
-public:
-    Referenced()
-        : _refcount(0)
+    ///
+    /// This class represents referenced object.
+    ///
+    class Referenced
     {
-    }
+    private:
+        refcount_t  _refcount;
 
-    virtual ~Referenced()
-    {
-        //assert(_refcount == 0);
-    }
-
-    ///
-    /// Acquires reference of the specified object.
-    ///
-    /// @returns
-    ///     A number of references to this object.
-    ///
-    refcount_t AddRef()
-    {
-        return ++_refcount;
-    }
-
-    ///
-    /// Releases reference of the specified object.
-    ///
-    /// @returns
-    ///     A number of references to this object.
-    ///
-    refcount_t Release()
-    {
-        if (--_refcount == 0)
+    public:
+        Referenced()
+            : _refcount(0)
         {
-            delete this;
-
-            return 0;
         }
 
-        return _refcount;
-    }
-};
+        virtual ~Referenced()
+        {
+            //assert(_refcount == 0);
+        }
+
+        ///
+        /// Acquires reference of the specified object.
+        ///
+        /// @returns
+        ///     A number of references to this object.
+        ///
+        refcount_t AddRef()
+        {
+            return ++_refcount;
+        }
+
+        ///
+        /// Releases reference of the specified object.
+        ///
+        /// @returns
+        ///     A number of references to this object.
+        ///
+        refcount_t Release()
+        {
+            if (--_refcount == 0)
+            {
+                delete this;
+
+                return 0;
+            }
+
+            return _refcount;
+        }
+    };
 
 }
-}
-//------------------------------------------------------------------------------------------------//
+
 #endif /* _TileShell_Core_Referenced_H__ */

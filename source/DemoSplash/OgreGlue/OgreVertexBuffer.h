@@ -26,9 +26,9 @@
 #pragma once
 #ifndef _OgreGlue_OgreVertexBuffer_H__
 #define _OgreGlue_OgreVertexBuffer_H__
-//------------------------------------------------------------------------------------------------//
+
 #include <TileShell/Drawing/GeometryBuffer.h>
-//------------------------------------------------------------------------------------------------//
+
 #include <OgreHardwareBufferManager.h>
 #include <OgreHardwareVertexBuffer.h>
 #include <OgrePrerequisites.h>
@@ -36,7 +36,7 @@
 #include <OgreRenderSystem.h>
 #include <OgreTextureManager.h>
 #include <OgreTextureUnitState.h>
-//------------------------------------------------------------------------------------------------//
+
 namespace OgreGlue
 {
 class OgreVertexBuffer : public TileShell::Drawing::GeometryBuffer
@@ -70,5 +70,5 @@ public:
 
 };
 }
-//------------------------------------------------------------------------------------------------//
+
 #endif /* _OgreGlue_OgreVertexBuffer_H__ */

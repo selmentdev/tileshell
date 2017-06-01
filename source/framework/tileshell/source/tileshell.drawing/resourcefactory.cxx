@@ -24,36 +24,32 @@
 // 
 //
 #include <tileshell.drawing/resourcefactory.hxx>
-//------------------------------------------------------------------------------------------------//
-namespace TileShell
+
+namespace TileShell::Drawing
 {
-namespace Drawing
-{
-//------------------------------------------------------------------------------------------------//
-ExternalResourceFactory* ResourceFactory::_resource_factory = nullptr;
-//------------------------------------------------------------------------------------------------//
-bool ResourceFactory::Initialize(ExternalResourceFactory* resource_factory)
-{
-    _resource_factory = resource_factory;
-    return true;
+
+    ExternalResourceFactory* ResourceFactory::_resource_factory = nullptr;
+
+    bool ResourceFactory::Initialize(ExternalResourceFactory* resource_factory)
+    {
+        _resource_factory = resource_factory;
+        return true;
+    }
+
+    bool ResourceFactory::Shutdown()
+    {
+        _resource_factory = nullptr;
+        return true;
+    }
+
+    TextureRef ResourceFactory::CreateTexture(const string_t& path)
+    {
+        return _resource_factory->CreateTexture(path);
+    }
+
+    GeometryBufferRef ResourceFactory::CreateGeometryBuffer()
+    {
+        return _resource_factory->CreateGeometryBuffer();
+    }
+
 }
-//------------------------------------------------------------------------------------------------//
-bool ResourceFactory::Shutdown()
-{
-    _resource_factory = nullptr;
-    return true;
-}
-//------------------------------------------------------------------------------------------------//
-TextureRef ResourceFactory::CreateTexture(const string_t& path)
-{
-    return _resource_factory->CreateTexture(path);
-}
-//------------------------------------------------------------------------------------------------//
-GeometryBufferRef ResourceFactory::CreateGeometryBuffer()
-{
-    return _resource_factory->CreateGeometryBuffer();
-}
-//------------------------------------------------------------------------------------------------//
-}
-}
-//------------------------------------------------------------------------------------------------//

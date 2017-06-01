@@ -25,44 +25,41 @@
 //
 #include <tileshell.drawing/font.hxx>
 #include <tileshell.drawing/fontmanager.hxx>
-//------------------------------------------------------------------------------------------------//
-namespace TileShell
-{
-namespace Drawing
-{
-//------------------------------------------------------------------------------------------------//
-FontManager::FontCollection FontManager::_font_collection;
-//------------------------------------------------------------------------------------------------//
-FontRef FontManager::GetFont(const string_t& name)
-{
-    FontCollection::const_iterator it = _font_collection.find(name);
 
-    if (it != _font_collection.end())
+namespace TileShell::Drawing
+{
+
+    FontManager::FontCollection FontManager::_font_collection;
+
+    FontRef FontManager::GetFont(const string_t& name)
     {
-        return it->second;
+        FontCollection::const_iterator it = _font_collection.find(name);
+
+        if (it != _font_collection.end())
+        {
+            return it->second;
+        }
+
+        FontRef font(new Font());
+
+        if (font->Load(name))
+        {
+            _font_collection.insert(std::make_pair(name, font));
+            return font;
+        }
+
+        return FontRef(nullptr);
     }
 
-    FontRef font(new Font());
-
-    if (font->Load(name))
+    bool FontManager::Initialize()
     {
-        _font_collection.insert(std::make_pair(name, font));
-        return font;
+        return true;
     }
 
-    return FontRef(nullptr);
-}
-//------------------------------------------------------------------------------------------------//
-bool FontManager::Initialize()
-{
-    return true;
-}
-//------------------------------------------------------------------------------------------------//
-bool FontManager::Shutdown()
-{
-    _font_collection.clear();
-    return true;
-}
-//------------------------------------------------------------------------------------------------//
-}
+    bool FontManager::Shutdown()
+    {
+        _font_collection.clear();
+        return true;
+    }
+
 }

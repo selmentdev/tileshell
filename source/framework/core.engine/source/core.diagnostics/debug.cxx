@@ -102,15 +102,15 @@ namespace Core::Diagnostics
                 break;
 
             case ::ModuleCallback:
+            {
+                if ((output->ModuleWriteFlags & ::ModuleReferencedByMemory) != 0)
                 {
-                    if ((output->ModuleWriteFlags & ::ModuleReferencedByMemory) != 0)
-                    {
-                        output->ModuleWriteFlags ^= ::ModuleWriteModule;
-                    }
-
-                    result = TRUE;
-                    break;
+                    output->ModuleWriteFlags ^= ::ModuleWriteModule;
                 }
+
+                result = TRUE;
+                break;
+            }
 
             case ::CancelCallback:
                 break;
@@ -326,18 +326,18 @@ namespace Core::Diagnostics
         switch (::MessageBoxW(0, wtext.c_str(), L"Assertion failed", MB_OK | MB_ABORTRETRYIGNORE))
         {
         case IDRETRY:
-            {
-                return false;
-            }
+        {
+            return false;
+        }
         case IDIGNORE:
-            {
-                return true;
-            }
+        {
+            return true;
+        }
         case IDABORT:
-            {
-                Debug::Fail("Abort due to assertion failure");
-                return false;
-            }
+        {
+            Debug::Fail("Abort due to assertion failure");
+            return false;
+        }
         }
 
         //

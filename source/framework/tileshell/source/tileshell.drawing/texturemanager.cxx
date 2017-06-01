@@ -25,55 +25,51 @@
 //
 #include <tileshell.drawing/texturemanager.hxx>
 #include <tileshell.drawing/resourcefactory.hxx>
-//------------------------------------------------------------------------------------------------//
-namespace TileShell
-{
-namespace Drawing
-{
-//------------------------------------------------------------------------------------------------//
-TextureManager::TextureCollection TextureManager::_texture_collection;
-//------------------------------------------------------------------------------------------------//
-bool TextureManager::Initialize()
-{
-    return true;
-}
-//------------------------------------------------------------------------------------------------//
-bool TextureManager::Shutdown()
-{
-    _texture_collection.clear();
 
-    return true;
-}
-//------------------------------------------------------------------------------------------------//
-TextureRef TextureManager::GetTexture(const string_t& name)
+namespace TileShell::Drawing
 {
-    TextureCollection::const_iterator it = _texture_collection.find(name);
 
-    if (it != _texture_collection.end())
+    TextureManager::TextureCollection TextureManager::_texture_collection;
+
+    bool TextureManager::Initialize()
     {
-        return it->second;
+        return true;
     }
 
-    TextureRef texture = ResourceFactory::CreateTexture(name);
-    _texture_collection.insert(std::make_pair(name, texture));
-
-    return texture;
-}
-//------------------------------------------------------------------------------------------------//
-void TextureManager::ReleaseTexture(TextureRef texture)
-{
-    for (TextureCollection::const_iterator it = _texture_collection.begin();
-         it != _texture_collection.end();
-         ++it)
+    bool TextureManager::Shutdown()
     {
-        if (it->second == texture)
+        _texture_collection.clear();
+
+        return true;
+    }
+
+    TextureRef TextureManager::GetTexture(const string_t& name)
+    {
+        TextureCollection::const_iterator it = _texture_collection.find(name);
+
+        if (it != _texture_collection.end())
         {
-            _texture_collection.erase(it);
-            return;
+            return it->second;
+        }
+
+        TextureRef texture = ResourceFactory::CreateTexture(name);
+        _texture_collection.insert(std::make_pair(name, texture));
+
+        return texture;
+    }
+
+    void TextureManager::ReleaseTexture(TextureRef texture)
+    {
+        for (TextureCollection::const_iterator it = _texture_collection.begin();
+            it != _texture_collection.end();
+            ++it)
+        {
+            if (it->second == texture)
+            {
+                _texture_collection.erase(it);
+                return;
+            }
         }
     }
+
 }
-//------------------------------------------------------------------------------------------------//
-}
-}
-//------------------------------------------------------------------------------------------------//

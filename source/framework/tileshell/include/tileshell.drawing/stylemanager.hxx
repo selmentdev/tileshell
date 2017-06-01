@@ -26,58 +26,53 @@
 #pragma once
 #ifndef _TileShell_Render_ThemeManager_H__
 #define _TileShell_Render_ThemeManager_H__
-//------------------------------------------------------------------------------------------------//
+
 #include <tileshell.core/types.hxx>
 #include <tileshell.core/reference.hxx>
 #include <tileshell.core/referenced.hxx>
 #include <tileshell.drawing/style.hxx>
 #include <tileshell/externalresourcefactory.hxx>
-//------------------------------------------------------------------------------------------------//
-namespace TileShell
+
+namespace TileShell::Drawing
 {
-namespace Drawing
-{
-//class Style;
-//typedef Core::Reference<Style> StyleRef;
-
-///
-/// This class implements texture manager.
-///
-class StyleManager
-{
-private:
-    typedef std::map<string_t, StyleRef> StyleCollection;
-
-private:
-    static StyleCollection              _style_collection;
-
-public:
-    ///
-    /// Initializes theme manager.
-    ///
-    /// @returns
-    ///     true when successful, false otherwise.
-    ///
-    static bool Initialize();
 
     ///
-    /// Shutdowns theme manager.
+    /// This class implements texture manager.
     ///
-    /// @returns
-    ///     true when successful, false otherwise.
-    ///
-    static bool Shutdown();
+    class StyleManager
+    {
+    private:
+        typedef std::map<string_t, StyleRef> StyleCollection;
 
-public:
-    ///
-    /// Gets theme for specified name.
-    ///
-    /// @param[in] name
-    ///     A theme name to load or create.
-    ///
-    static StyleRef GetStyle(const string_t& name);
-};
+    private:
+        static StyleCollection              _style_collection;
+
+    public:
+        ///
+        /// Initializes theme manager.
+        ///
+        /// @returns
+        ///     true when successful, false otherwise.
+        ///
+        static bool Initialize();
+
+        ///
+        /// Shutdowns theme manager.
+        ///
+        /// @returns
+        ///     true when successful, false otherwise.
+        ///
+        static bool Shutdown();
+
+    public:
+        ///
+        /// Gets theme for specified name.
+        ///
+        /// @param[in] name
+        ///     A theme name to load or create.
+        ///
+        static StyleRef GetStyle(const string_t& name);
+    };
 }
-}
-//------------------------------------------------------------------------------------------------//
+
 #endif /* _TileShell_Render_ThemeManager_H__ */

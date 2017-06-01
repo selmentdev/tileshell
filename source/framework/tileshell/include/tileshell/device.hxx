@@ -26,39 +26,39 @@
 #pragma once
 #ifndef _TileShell_Device_H__
 #define _TileShell_Device_H__
-//------------------------------------------------------------------------------------------------//
+
 #include <tileshell/externalresourcefactory.hxx>
-//------------------------------------------------------------------------------------------------//
+
 namespace TileShell
 {
-///
-/// @brief
-///     This class represents TileShell library device.
-///
-/// @details
-///     Use this class to initialize whole TileShell library.
-///
-class Device
-{
-public:
     ///
     /// @brief
-    ///     Initializes TileShell library using specified resource factory.
+    ///     This class represents TileShell library device.
     ///
-    /// @returns
-    ///     true when successful. false otherwise.
+    /// @details
+    ///     Use this class to initialize whole TileShell library.
     ///
-    static bool Initialize(ExternalResourceFactory* resource_factory);
+    class Device
+    {
+    public:
+        ///
+        /// @brief
+        ///     Initializes TileShell library using specified resource factory.
+        ///
+        /// @returns
+        ///     true when successful. false otherwise.
+        ///
+        static bool Initialize(ExternalResourceFactory* resource_factory);
 
-    ///
-    /// @brief
-    ///     Shutdowns TileShell library.
-    ///
-    /// @returns
-    ///     true when successful, false otherwise.
-    ///
-    static bool Shutdown();
-};
+        ///
+        /// @brief
+        ///     Shutdowns TileShell library.
+        ///
+        /// @returns
+        ///     true when successful, false otherwise.
+        ///
+        static bool Shutdown();
+    };
 }
-//------------------------------------------------------------------------------------------------//
+
 #endif /* _TileShell_Device_H__ */

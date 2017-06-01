@@ -26,42 +26,39 @@
 #pragma once
 #ifndef _TileShell_UI_INotifyPropertyChanged_H__
 #define _TileShell_UI_INotifyPropertyChanged_H__
-//------------------------------------------------------------------------------------------------//
+
 #include <tileshell/required.hxx>
 #include <tileshell.core/strongname.hxx>
-//------------------------------------------------------------------------------------------------//
-namespace TileShell
-{
-namespace UI
-{
 
-///
-/// @brief
-///     Declares OnPropertyChanged method.
-///
-/// @details
-///     This interface provides support for notifying changes for specified type of properties.
-///     Instead of using integral or string identifiers, for specifying property name it's using
-///     strong name functionality.
-///
-struct INotifyPropertyChanged
+namespace TileShell::UI
 {
-    virtual ~INotifyPropertyChanged() { }
 
     ///
     /// @brief
-    ///     Handles property change event.
+    ///     Declares OnPropertyChanged method.
     ///
-    /// @param[in] property_name
-    ///     A name of the changed property.
+    /// @details
+    ///     This interface provides support for notifying changes for specified type of properties.
+    ///     Instead of using integral or string identifiers, for specifying property name it's using
+    ///     strong name functionality.
     ///
-    /// @returns
-    ///     true when successful, false otherwise.
-    ///
-    virtual bool OnPropertyChanged(const Core::StrongName& property_name) = 0;
-};
+    struct INotifyPropertyChanged
+    {
+        virtual ~INotifyPropertyChanged() { }
+
+        ///
+        /// @brief
+        ///     Handles property change event.
+        ///
+        /// @param[in] property_name
+        ///     A name of the changed property.
+        ///
+        /// @returns
+        ///     true when successful, false otherwise.
+        ///
+        virtual bool OnPropertyChanged(const Core::StrongName& property_name) = 0;
+    };
 
 }
-}
-//------------------------------------------------------------------------------------------------//
+
 #endif /* _TileShell_UI_INotifyPropertyChanged_H__ */

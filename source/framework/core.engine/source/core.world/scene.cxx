@@ -4,9 +4,9 @@
 //      See LICENSE file in the project root for full license information.
 //
 
-#include <Core.World/Scene.hxx>
-#include <Core.Diagnostics/Trace.hxx>
-#include <Core.Rendering/RenderSystem.hxx>
+#include <core.world/scene.hxx>
+#include <core.diagnostics/trace.hxx>
+#include <core.rendering/rendersystem.hxx>
 
 
 namespace Core::World

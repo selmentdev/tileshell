@@ -26,13 +26,13 @@
 #pragma once
 #ifndef _OgreGlue_OgreRenderResourceFactory_H__
 #define _OgreGlue_OgreRenderResourceFactory_H__
-//------------------------------------------------------------------------------------------------//
+
 #include <TileShell/Device.h>
 #include "../OgreGlue/OgreTexture.h"
 #include "../OgreGlue/OgreVertexBuffer.h"
-//------------------------------------------------------------------------------------------------//
+
 #include <Ogre.h>
-//------------------------------------------------------------------------------------------------//
+
 namespace OgreGlue
 {
 class OgreRenderResourceFactory : public TileShell::ExternalResourceFactory
@@ -52,7 +52,7 @@ public:
     virtual TileShell::Drawing::TextureRef CreateTexture(const TileShell::string_t& name) override;
     virtual TileShell::Drawing::GeometryBufferRef CreateGeometryBuffer() override;
 };
-//------------------------------------------------------------------------------------------------//
+
 }
-//------------------------------------------------------------------------------------------------//
+
 #endif /* _OgreGlue_OgreRenderResourceFactory_H__ */

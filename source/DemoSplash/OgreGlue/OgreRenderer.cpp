@@ -26,10 +26,10 @@
 #include "../OgreGlue/OgreRenderer.h"
 #include "../OgreGlue/OgreTexture.h"
 #include "../OgreGlue/OgreVertexBuffer.h"
-//------------------------------------------------------------------------------------------------//
+
 namespace OgreGlue
 {
-//------------------------------------------------------------------------------------------------//
+
 OgreRenderer::OgreRenderer()
     : _scene(nullptr)
     , _render_system(nullptr)
@@ -56,11 +56,11 @@ OgreRenderer::OgreRenderer()
     _texture_address_mode.v         = Ogre::TextureUnitState::TAM_CLAMP;
     _texture_address_mode.w         = Ogre::TextureUnitState::TAM_CLAMP;
 }
-//------------------------------------------------------------------------------------------------//
+
 OgreRenderer::~OgreRenderer()
 {
 }
-//------------------------------------------------------------------------------------------------//
+
 void OgreRenderer::renderQueueStarted(Ogre::uint8 queue_group_id, const Ogre::String& invocation,
                                       bool& skipThisInvocation)
 {
@@ -79,12 +79,12 @@ void OgreRenderer::renderQueueStarted(Ogre::uint8 queue_group_id, const Ogre::St
         EndRender();
     }
 }
-//------------------------------------------------------------------------------------------------//
+
 void OgreRenderer::renderQueueEnded(Ogre::uint8 queueGroupId, const Ogre::String& invocation,
                                     bool& repeatThisInvocation)
 {
 }
-//------------------------------------------------------------------------------------------------//
+
 /*void OgreRenderer::DoRender(const TileShell::Drawing::Matrix4x4& world_matrix, TileShell::Drawing::GeometryBufferRef gbuffer, TileShell::Drawing::TextureRef texture, size_t vertex_count)
 {
     Ogre::Matrix4 wm(
@@ -116,7 +116,7 @@ void OgreRenderer::renderQueueEnded(Ogre::uint8 queueGroupId, const Ogre::String
     _render_system->_render(*rop);
     ++_draw_calls;
 }*/
-//------------------------------------------------------------------------------------------------//
+
 void OgreRenderer::DoRender(
     TileShell::Drawing::GeometryBufferRef gbuffer,
     TileShell::Drawing::TextureRef texture, size_t vertex_count)
@@ -144,7 +144,7 @@ void OgreRenderer::DoRender(
     ++_draw_calls;
     _vertices_count += vertex_count;
 }
-//------------------------------------------------------------------------------------------------//
+
 void OgreRenderer::DoRenderScreen(
     TileShell::Drawing::GeometryBufferRef gbuffer,
     TileShell::Drawing::TextureRef texture, size_t vertex_count)
@@ -174,7 +174,7 @@ void OgreRenderer::DoRenderScreen(
     ++_draw_calls;
     _vertices_count += vertex_count;
 }
-//------------------------------------------------------------------------------------------------//
+
 void OgreRenderer::BeginRender()
 {
     _draw_calls = 0;
@@ -221,18 +221,18 @@ void OgreRenderer::BeginRender()
     //_scene->Update(0.016F);
     //_scene->Draw(this);
 }
-//------------------------------------------------------------------------------------------------//
+
 void OgreRenderer::EndRender()
 {
 
 }
-//------------------------------------------------------------------------------------------------//
+
 void OgreRenderer::SetScale(float32_t value)
 {
     _scale = value;
     _world_matrix = Ogre::Matrix4::IDENTITY;
     _world_matrix.setScale(Ogre::Vector3(_scale, -_scale, _scale));
 }
-//------------------------------------------------------------------------------------------------//
+
 }
-//------------------------------------------------------------------------------------------------//
+

@@ -4,8 +4,8 @@
 //      See LICENSE file in the project root for full license information.
 //
 
-#include <Core.Rendering/Viewport.hxx>
-#include <Core.Rendering/RenderSystem.hxx>
+#include <core.rendering/viewport.hxx>
+#include <core.rendering/rendersystem.hxx>
 
 namespace Core::Rendering
 {
@@ -73,7 +73,7 @@ namespace Core::Rendering
         // On my laptop this caused occasional glitches with GPU. However, it's already old junk :)
         //
         DX::Ensure(m_SwapChain->SetFullscreenState(FALSE, nullptr));
-        
+
         CORE_TRACE_MESSAGE(Info, "[D3D11] Destroying viewport");
     }
 

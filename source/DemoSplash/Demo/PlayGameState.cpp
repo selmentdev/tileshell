@@ -26,12 +26,12 @@
 #include "PlayGameState.h"
 #include "IntroGameState.h"
 #include "MenuGameState.h"
-//------------------------------------------------------------------------------------------------//
+
 namespace Demo
 {
-//------------------------------------------------------------------------------------------------//
+
 PlayGameState PlayGameState::_game_state;
-//------------------------------------------------------------------------------------------------//
+
 PlayGameState::PlayGameState()
     : _root(nullptr)
     , _scene_manager(nullptr)
@@ -40,19 +40,19 @@ PlayGameState::PlayGameState()
     , _exit_game(false)
 {
 }
-//------------------------------------------------------------------------------------------------//
+
 void PlayGameState::ActivateViewport()
 {
     _root               = Ogre::Root::getSingletonPtr();
     _viewport           = _root->getAutoCreatedWindow()->addViewport(_camera);
     _viewport->setBackgroundColour(Ogre::ColourValue(0.0F, 1.0F, 0.0F));
 }
-//------------------------------------------------------------------------------------------------//
+
 void PlayGameState::DeactivateViewport()
 {
     _root->getAutoCreatedWindow()->removeAllViewports();
 }
-//------------------------------------------------------------------------------------------------//
+
 bool PlayGameState::OnLoad()
 {
     _root               = Ogre::Root::getSingletonPtr();
@@ -63,49 +63,49 @@ bool PlayGameState::OnLoad()
 
     return GameState::OnLoad();
 }
-//------------------------------------------------------------------------------------------------//
+
 bool PlayGameState::OnUnload()
 {
     _scene_manager->removeRenderQueueListener(&_renderer);
     delete _scene_manager;
     return GameState::OnUnload();
 }
-//------------------------------------------------------------------------------------------------//
+
 void PlayGameState::Enter()
 {
     GameState::Enter();
 }
-//------------------------------------------------------------------------------------------------//
+
 void PlayGameState::Exit()
 {
     GameState::Exit();
 }
-//------------------------------------------------------------------------------------------------//
+
 void PlayGameState::Pause()
 {
     GameState::Pause();
 }
-//------------------------------------------------------------------------------------------------//
+
 void PlayGameState::Resume()
 {
     GameState::Resume();
 }
-//------------------------------------------------------------------------------------------------//
+
 bool PlayGameState::mousePressed(const OIS::MouseEvent& evt, OIS::MouseButtonID id)
 {
     return true;
 }
-//------------------------------------------------------------------------------------------------//
+
 bool PlayGameState::mouseReleased(const OIS::MouseEvent& evt, OIS::MouseButtonID id)
 {
     return true;
 }
-//------------------------------------------------------------------------------------------------//
+
 bool PlayGameState::mouseMoved(const OIS::MouseEvent& evt)
 {
     return true;
 }
-//------------------------------------------------------------------------------------------------//
+
 bool PlayGameState::keyPressed(const OIS::KeyEvent& evt)
 {
     if (evt.key == OIS::KC_P)
@@ -115,17 +115,17 @@ bool PlayGameState::keyPressed(const OIS::KeyEvent& evt)
 
     return true;
 }
-//------------------------------------------------------------------------------------------------//
+
 bool PlayGameState::keyReleased(const OIS::KeyEvent& evt)
 {
     return true;
 }
-//------------------------------------------------------------------------------------------------//
+
 bool PlayGameState::frameStarted(const Ogre::FrameEvent& evt)
 {
     return true;
 }
-//------------------------------------------------------------------------------------------------//
+
 bool PlayGameState::frameEnded(const Ogre::FrameEvent& evt)
 {
     if (_exit_game)
@@ -135,12 +135,12 @@ bool PlayGameState::frameEnded(const Ogre::FrameEvent& evt)
 
     return true;
 }
-//------------------------------------------------------------------------------------------------//
+
 bool PlayGameState::ReleaseResources()
 {
     //_scene  = nullptr;
     return GameState::ReleaseResources();
 }
-//------------------------------------------------------------------------------------------------//
+
 }
-//------------------------------------------------------------------------------------------------//
+

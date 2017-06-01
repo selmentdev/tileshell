@@ -24,65 +24,61 @@
 // 
 //
 #include <tileshell.drawing/transform.hxx>
-//------------------------------------------------------------------------------------------------//
-namespace TileShell
+
+namespace TileShell::Drawing
 {
-namespace Drawing
-{
-//------------------------------------------------------------------------------------------------//
-void Transform::ComputeTransformMatrix(Matrix& out_result)
-{
-    out_result.Reset();
-    out_result.Shear(Skew.AngleX, Skew.AngleY);
-    out_result.Scale(Scale.ScaleX, Scale.ScaleY);
-    out_result.Rotate(Rotate.Angle);
-    out_result.Translate(Translate.X, Translate.Y);
-}
-//------------------------------------------------------------------------------------------------//
-void Transform::ComputeTransformMatrix(Matrix& out_result, const Point& in_transform_origin)
-{
-#if 1
-    out_result.Reset();
-    out_result.Translate(in_transform_origin.X, in_transform_origin.Y);
+
+    void Transform::ComputeTransformMatrix(Matrix& out_result)
     {
-        out_result.Translate(Translate.X, Translate.Y);
-        out_result.Rotate(Rotate.Angle);
+        out_result.Reset();
         out_result.Shear(Skew.AngleX, Skew.AngleY);
         out_result.Scale(Scale.ScaleX, Scale.ScaleY);
-
-    }
-    out_result.Translate(-in_transform_origin.X, -in_transform_origin.Y);
-
-#else
-    out_result.Shear(Skew.AngleX, Skew.AngleY);
-    out_result.Scale(Scale.ScaleX, Scale.ScaleY);
-    out_result.RotateAt(Rotate.Angle, in_transform_origin.ToFloat32x2());
-    out_result.Translate(Translate.X, Translate.Y);
-
-#endif
-}
-//------------------------------------------------------------------------------------------------//
-void Transform::ComputeTransformMatrix(Matrix& out_result, const Rect& in_rectangle)
-{
-#if 0
-    float32x2_t shear_origin = in_transform_origin.GetCenter().ToFloat32x2();
-    float32x2_t scale_origin = in_transform_origin.GetCenter().ToFloat32x2();
-    float32x2_t rotate_origin = in_transform_origin.GetCenter().ToFloat32x2();
-
-    out_result.Reset();
-    //out_result.Translate(in_transform_origin.X, in_transform_origin.Y);
-    {
-        out_result.ShearAt(Skew.AngleX, Skew.AngleY, shear_origin);
-        out_result.ScaleAt(Scale.ScaleX, Scale.ScaleY, scale_origin);
-        out_result.RotateAt(Rotate.Angle, rotate_origin);
+        out_result.Rotate(Rotate.Angle);
         out_result.Translate(Translate.X, Translate.Y);
     }
-    //out_result.Translate(-in_transform_origin.X, -in_transform_origin.Y);
+
+    void Transform::ComputeTransformMatrix(Matrix& out_result, const Point& in_transform_origin)
+    {
+#if 1
+        out_result.Reset();
+        out_result.Translate(in_transform_origin.X, in_transform_origin.Y);
+        {
+            out_result.Translate(Translate.X, Translate.Y);
+            out_result.Rotate(Rotate.Angle);
+            out_result.Shear(Skew.AngleX, Skew.AngleY);
+            out_result.Scale(Scale.ScaleX, Scale.ScaleY);
+
+        }
+        out_result.Translate(-in_transform_origin.X, -in_transform_origin.Y);
+
 #else
-    ComputeTransformMatrix(out_result, in_rectangle.GetCenter());
+        out_result.Shear(Skew.AngleX, Skew.AngleY);
+        out_result.Scale(Scale.ScaleX, Scale.ScaleY);
+        out_result.RotateAt(Rotate.Angle, in_transform_origin.ToFloat32x2());
+        out_result.Translate(Translate.X, Translate.Y);
+
 #endif
+    }
+
+    void Transform::ComputeTransformMatrix(Matrix& out_result, const Rect& in_rectangle)
+    {
+#if 0
+        float32x2_t shear_origin = in_transform_origin.GetCenter().ToFloat32x2();
+        float32x2_t scale_origin = in_transform_origin.GetCenter().ToFloat32x2();
+        float32x2_t rotate_origin = in_transform_origin.GetCenter().ToFloat32x2();
+
+        out_result.Reset();
+        //out_result.Translate(in_transform_origin.X, in_transform_origin.Y);
+        {
+            out_result.ShearAt(Skew.AngleX, Skew.AngleY, shear_origin);
+            out_result.ScaleAt(Scale.ScaleX, Scale.ScaleY, scale_origin);
+            out_result.RotateAt(Rotate.Angle, rotate_origin);
+            out_result.Translate(Translate.X, Translate.Y);
+        }
+        //out_result.Translate(-in_transform_origin.X, -in_transform_origin.Y);
+#else
+        ComputeTransformMatrix(out_result, in_rectangle.GetCenter());
+#endif
+    }
+
 }
-//------------------------------------------------------------------------------------------------//
-}
-}
-//------------------------------------------------------------------------------------------------//

@@ -25,132 +25,129 @@
 //
 #pragma once
 
-#include <TileShell/Core/Reference.h>
-#include <TileShell/Core/Referenced.h>
-#include <TileShell/Drawing/IRenderFrameCallback.h>
-#include <TileShell/Input/Input.h>
-#include <TileShell/Drawing/Size.h>
+#include <tileshell.core/reference.hxx>
+#include <tileshell.core/referenced.hxx>
+#include <tileshell.drawing/irenderframecallback.hxx>
+#include <tileshell.input/input.hxx>
+#include <tileshell.drawing/size.hxx>
 
-namespace TileShell
-{
-namespace UI
-{
-///
-/// Scene State.
-///
-/// @note
-///     This enumeration represents internal scene state.
-enum SceneState
+namespace TileShell::UI
 {
     ///
-    /// Update static text.
+    /// Scene State.
     ///
-    SceneState_UpdateStaticText     = 1 << 0,
+    /// @note
+    ///     This enumeration represents internal scene state.
+    enum SceneState
+    {
+        ///
+        /// Update static text.
+        ///
+        SceneState_UpdateStaticText = 1 << 0,
 
-    ///
-    /// Update dynamic text.
-    ///
-    SceneState_UpdateDynamicText    = 1 << 1,
+        ///
+        /// Update dynamic text.
+        ///
+        SceneState_UpdateDynamicText = 1 << 1,
 
-    ///
-    /// Updates geometry.
-    ///
-    SceneState_UpdateGeometry       = 1 << 2,
+        ///
+        /// Updates geometry.
+        ///
+        SceneState_UpdateGeometry = 1 << 2,
 
-    ///
-    /// Updates all geometry.
-    ///
-    SceneState_UpdateAllGeometry    =
+        ///
+        /// Updates all geometry.
+        ///
+        SceneState_UpdateAllGeometry =
         SceneState_UpdateStaticText |
         SceneState_UpdateDynamicText |
         SceneState_UpdateGeometry,
-};
+    };
 
-///
-/// @brief
-///     IScene interface.
-///
-struct IScene
+    ///
+    /// @brief
+    ///     IScene interface.
+    ///
+    struct IScene
         : public Core::Referenced
         , public Input::IKeyboardEventHandler
         , public Input::IMouseEventHandler
-{
-protected:
-    uint32_t        _scene_state;
-    Drawing::Size   _screen_size;
-
-public:
-    IScene()
-        : _scene_state(0)
-        , _screen_size(640.0F, 320.0F)
     {
-    }
+    protected:
+        uint32_t        _scene_state;
+        Drawing::Size   _screen_size;
 
-    virtual ~IScene() { }
+    public:
+        IScene()
+            : _scene_state(0)
+            , _screen_size(640.0F, 320.0F)
+        {
+        }
 
-public:
-    ///
-    /// @brief
-    ///     Loads scene from path.
-    ///
-    /// @returns
-    ///     true when successful, false otherwise.
-    ///
-    virtual bool Load(const string_t& path) = 0;
+        virtual ~IScene() { }
 
-    ///
-    /// @brief
-    ///     Draws scene.
-    ///
-    /// @param[in] callback
-    ///     A render frame callback provided by engine./
-    //
-    /// @returns
-    ///     true when successful, false otherwise.
-    ///
-    virtual bool Draw(Drawing::IRenderFrameCallback* callback) = 0;
+    public:
+        ///
+        /// @brief
+        ///     Loads scene from path.
+        ///
+        /// @returns
+        ///     true when successful, false otherwise.
+        ///
+        virtual bool Load(const string_t& path) = 0;
 
-    ///
-    /// @brief
-    ///     Updates scene.
-    ///
-    /// @param[in] delta
-    ///     A time since last frame, in seconds.
-    ///
-    /// @returns
-    ///     true when successful, false otherwise.
-    ///
-    virtual bool Update(float32_t delta) = 0;
+        ///
+        /// @brief
+        ///     Draws scene.
+        ///
+        /// @param[in] callback
+        ///     A render frame callback provided by engine./
+        //
+        /// @returns
+        ///     true when successful, false otherwise.
+        ///
+        virtual bool Draw(Drawing::IRenderFrameCallback* callback) = 0;
 
-public:
-    ///
-    /// @brief
-    ///     Gets screen size.
-    ///
-    Drawing::Size GetScreenSize() const
-    {
-        return _screen_size;
-    }
+        ///
+        /// @brief
+        ///     Updates scene.
+        ///
+        /// @param[in] delta
+        ///     A time since last frame, in seconds.
+        ///
+        /// @returns
+        ///     true when successful, false otherwise.
+        ///
+        virtual bool Update(float32_t delta) = 0;
 
-    ///
-    /// @brief
-    ///     Sets screen size.
-    ///
-    void SetScreenSize(const Drawing::Size& value)
-    {
-        _screen_size = value;
-    }
+    public:
+        ///
+        /// @brief
+        ///     Gets screen size.
+        ///
+        Drawing::Size GetScreenSize() const
+        {
+            return _screen_size;
+        }
 
-public:
-    ///
-    /// Notifies scene that it should update itself.
-    ///
-    bool NotifyUpdateSceneState(UI::SceneState state)
-    {
-        _scene_state |= state;
-    }
-};
+        ///
+        /// @brief
+        ///     Sets screen size.
+        ///
+        void SetScreenSize(const Drawing::Size& value)
+        {
+            _screen_size = value;
+        }
 
-typedef Core::Reference<IScene> ISceneRef;
-}
+    public:
+        ///
+        /// Notifies scene that it should update itself.
+        ///
+        bool NotifyUpdateSceneState(UI::SceneState state)
+        {
+            _scene_state |= state;
+        }
+    };
+
+    typedef Core::Reference<IScene> ISceneRef;
 }

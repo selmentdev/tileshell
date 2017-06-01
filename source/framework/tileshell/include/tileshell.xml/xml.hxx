@@ -28,15 +28,12 @@
 #include "rapidxml.hpp"
 #include "rapidxml_utils.hpp"
 
-namespace TileShell
-{
-namespace Xml
+namespace TileShell::Xml
 {
 
-typedef rapidxml::xml_node<char>        XmlNode;
-typedef rapidxml::file<char>            XmlFile;
-typedef rapidxml::xml_document<char>    XmlDocument;
-typedef rapidxml::xml_attribute<char>   XmlAttribute;
+    typedef rapidxml::xml_node<char>        XmlNode;
+    typedef rapidxml::file<char>            XmlFile;
+    typedef rapidxml::xml_document<char>    XmlDocument;
+    typedef rapidxml::xml_attribute<char>   XmlAttribute;
 
-}
 }

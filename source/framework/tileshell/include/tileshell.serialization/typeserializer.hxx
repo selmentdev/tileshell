@@ -26,7 +26,7 @@
 #pragma once
 #ifndef _TileShell_Serialization_H__
 #define _TileShell_Serialization_H__
-//------------------------------------------------------------------------------------------------//
+
 #include <tileshell/required.hxx>
 #include <tileshell.core/types.hxx>
 #include <tileshell.core/strongname.hxx>
@@ -37,403 +37,400 @@
 #include <tileshell.drawing/transform.hxx>
 #include <tileshell.drawing/color.hxx>
 #include <tileshell.xml/xml.hxx>
-//------------------------------------------------------------------------------------------------//
-namespace TileShell
+
+namespace TileShell::Serialization
 {
-namespace Serialization
-{
-//------------------------------------------------------------------------------------------------//
-template <typename T>
-struct ValueSerializer
-{
-    static bool Deserialize(T& out_result, const Xml::XmlAttribute* attr)
+
+    template <typename T>
+    struct ValueSerializer
     {
-        return false;
-    }
-};
-//------------------------------------------------------------------------------------------------//
-struct ThicknessValueSerializer
-{
-    static bool Deserialize(Drawing::Thickness& out_result, const Xml::XmlAttribute* attr)
-    {
-        if (attr == nullptr)
+        static bool Deserialize(T& out_result, const Xml::XmlAttribute* attr)
         {
             return false;
         }
+    };
 
-        Drawing::Thickness result;
-        bool valid = ::sscanf_s(attr->value(), "%f,%f,%f,%f", &result.Left, &result.Top, &result.Right,
-                                &result.Bottom) == 4;
-
-        if (valid)
-        {
-            out_result = result;
-        }
-
-        return valid;
-    }
-};
-//------------------------------------------------------------------------------------------------//
-struct PointValueSerializer
-{
-    static bool Deserialize(Drawing::Point& out_result, const Xml::XmlAttribute* attr)
+    struct ThicknessValueSerializer
     {
-        if (attr == nullptr)
+        static bool Deserialize(Drawing::Thickness& out_result, const Xml::XmlAttribute* attr)
         {
-            return false;
+            if (attr == nullptr)
+            {
+                return false;
+            }
+
+            Drawing::Thickness result;
+            bool valid = ::sscanf_s(attr->value(), "%f,%f,%f,%f", &result.Left, &result.Top, &result.Right,
+                &result.Bottom) == 4;
+
+            if (valid)
+            {
+                out_result = result;
+            }
+
+            return valid;
         }
+    };
 
-        Drawing::Point result;
-        bool valid = ::sscanf_s(attr->value(), "%f,%f", &result.X, &result.Y) == 2;
-
-        if (valid)
-        {
-            out_result = result;
-        }
-
-        return valid;
-    }
-};
-//------------------------------------------------------------------------------------------------//
-struct RectValueSerializer
-{
-    static bool Deserialize(Drawing::Rect& out_result, const Xml::XmlAttribute* attr)
+    struct PointValueSerializer
     {
-        if (attr == nullptr)
+        static bool Deserialize(Drawing::Point& out_result, const Xml::XmlAttribute* attr)
         {
-            return false;
+            if (attr == nullptr)
+            {
+                return false;
+            }
+
+            Drawing::Point result;
+            bool valid = ::sscanf_s(attr->value(), "%f,%f", &result.X, &result.Y) == 2;
+
+            if (valid)
+            {
+                out_result = result;
+            }
+
+            return valid;
         }
+    };
 
-        Drawing::Rect result;
-        bool valid = ::sscanf_s(attr->value(), "%f,%f,%f,%f", &result.X, &result.Y, &result.Width,
-                                &result.Height) == 4;
-
-        if (valid)
-        {
-            out_result = result;
-        }
-
-        return valid;
-    }
-};
-//------------------------------------------------------------------------------------------------//
-struct SizeValueSerializer
-{
-    static bool Deserialize(Drawing::Size& out_result, const Xml::XmlAttribute* attr)
+    struct RectValueSerializer
     {
-        if (attr == nullptr)
+        static bool Deserialize(Drawing::Rect& out_result, const Xml::XmlAttribute* attr)
         {
-            return false;
+            if (attr == nullptr)
+            {
+                return false;
+            }
+
+            Drawing::Rect result;
+            bool valid = ::sscanf_s(attr->value(), "%f,%f,%f,%f", &result.X, &result.Y, &result.Width,
+                &result.Height) == 4;
+
+            if (valid)
+            {
+                out_result = result;
+            }
+
+            return valid;
         }
+    };
 
-        Drawing::Size result;
-        bool valid = ::sscanf_s(attr->value(), "%f,%f", &result.Width, &result.Height) == 2;
-
-        if (valid)
-        {
-            out_result = result;
-        }
-
-        return valid;
-    }
-};
-//------------------------------------------------------------------------------------------------//
-struct ScaleTransformValueSerializer
-{
-    static bool Deserialize(Drawing::ScaleTransform& out_result, const Xml::XmlAttribute* attr)
+    struct SizeValueSerializer
     {
-        if (attr == nullptr)
+        static bool Deserialize(Drawing::Size& out_result, const Xml::XmlAttribute* attr)
         {
-            return false;
+            if (attr == nullptr)
+            {
+                return false;
+            }
+
+            Drawing::Size result;
+            bool valid = ::sscanf_s(attr->value(), "%f,%f", &result.Width, &result.Height) == 2;
+
+            if (valid)
+            {
+                out_result = result;
+            }
+
+            return valid;
         }
+    };
 
-        Drawing::ScaleTransform result;
-        bool valid = ::sscanf_s(attr->value(), "%f,%f", &result.ScaleX, &result.ScaleY) == 2;
-
-        if (valid)
-        {
-            out_result = result;
-        }
-
-        return valid;
-    }
-};
-//------------------------------------------------------------------------------------------------//
-struct SkewTransformValueSerializer
-{
-    static bool Deserialize(Drawing::SkewTransform& out_result, const Xml::XmlAttribute* attr)
+    struct ScaleTransformValueSerializer
     {
-        if (attr == nullptr)
+        static bool Deserialize(Drawing::ScaleTransform& out_result, const Xml::XmlAttribute* attr)
         {
-            return false;
+            if (attr == nullptr)
+            {
+                return false;
+            }
+
+            Drawing::ScaleTransform result;
+            bool valid = ::sscanf_s(attr->value(), "%f,%f", &result.ScaleX, &result.ScaleY) == 2;
+
+            if (valid)
+            {
+                out_result = result;
+            }
+
+            return valid;
         }
+    };
 
-        Drawing::SkewTransform result;
-        bool valid = ::sscanf_s(attr->value(), "%f,%f", &result.AngleX, &result.AngleY) == 2;
-
-        if (valid)
-        {
-            out_result = result;
-        }
-
-        return valid;
-    }
-};
-//------------------------------------------------------------------------------------------------//
-struct TranslateTransformValueSerializer
-{
-    static bool Deserialize(Drawing::TranslateTransform& out_result, const Xml::XmlAttribute* attr)
+    struct SkewTransformValueSerializer
     {
-        if (attr == nullptr)
+        static bool Deserialize(Drawing::SkewTransform& out_result, const Xml::XmlAttribute* attr)
         {
-            return false;
+            if (attr == nullptr)
+            {
+                return false;
+            }
+
+            Drawing::SkewTransform result;
+            bool valid = ::sscanf_s(attr->value(), "%f,%f", &result.AngleX, &result.AngleY) == 2;
+
+            if (valid)
+            {
+                out_result = result;
+            }
+
+            return valid;
         }
+    };
 
-        Drawing::TranslateTransform result;
-        bool valid = ::sscanf_s(attr->value(), "%f,%f", &result.X, &result.Y) == 2;
-
-        if (valid)
-        {
-            out_result = result;
-        }
-
-        return valid;
-    }
-};
-//------------------------------------------------------------------------------------------------//
-struct RotateTransformValueSerializer
-{
-    static bool Deserialize(Drawing::RotateTransform& out_result, const Xml::XmlAttribute* attr)
+    struct TranslateTransformValueSerializer
     {
-        if (attr == nullptr)
+        static bool Deserialize(Drawing::TranslateTransform& out_result, const Xml::XmlAttribute* attr)
         {
-            return false;
+            if (attr == nullptr)
+            {
+                return false;
+            }
+
+            Drawing::TranslateTransform result;
+            bool valid = ::sscanf_s(attr->value(), "%f,%f", &result.X, &result.Y) == 2;
+
+            if (valid)
+            {
+                out_result = result;
+            }
+
+            return valid;
         }
+    };
 
-        Drawing::RotateTransform result;
-        bool valid = ::sscanf_s(attr->value(), "%f", &result.Angle) == 1;
-
-        if (valid)
-        {
-            out_result = result;
-        }
-
-        return valid;
-    }
-};
-//------------------------------------------------------------------------------------------------//
-struct TransformValueSerializer
-{
-    static bool Deserialize(Drawing::Transform& out_result, const Xml::XmlNode* node)
+    struct RotateTransformValueSerializer
     {
-        if (node == nullptr)
+        static bool Deserialize(Drawing::RotateTransform& out_result, const Xml::XmlAttribute* attr)
         {
-            return false;
+            if (attr == nullptr)
+            {
+                return false;
+            }
+
+            Drawing::RotateTransform result;
+            bool valid = ::sscanf_s(attr->value(), "%f", &result.Angle) == 1;
+
+            if (valid)
+            {
+                out_result = result;
+            }
+
+            return valid;
         }
+    };
 
-        TranslateTransformValueSerializer::Deserialize(out_result.Translate, node->first_attribute("Translate"));
-        RotateTransformValueSerializer::Deserialize(out_result.Rotate, node->first_attribute("Rotate"));
-        ScaleTransformValueSerializer::Deserialize(out_result.Scale, node->first_attribute("Scale"));
-        SkewTransformValueSerializer::Deserialize(out_result.Skew, node->first_attribute("Skew"));
-
-        return true;
-    }
-};
-//------------------------------------------------------------------------------------------------//
-struct StringValueSerializer
-{
-    static bool Deserialize(string_t& out_result, const Xml::XmlAttribute* attr)
+    struct TransformValueSerializer
     {
-        if (attr == nullptr)
+        static bool Deserialize(Drawing::Transform& out_result, const Xml::XmlNode* node)
         {
-            return false;
-        }
+            if (node == nullptr)
+            {
+                return false;
+            }
 
-        out_result.assign(attr->value());
+            TranslateTransformValueSerializer::Deserialize(out_result.Translate, node->first_attribute("Translate"));
+            RotateTransformValueSerializer::Deserialize(out_result.Rotate, node->first_attribute("Rotate"));
+            ScaleTransformValueSerializer::Deserialize(out_result.Scale, node->first_attribute("Scale"));
+            SkewTransformValueSerializer::Deserialize(out_result.Skew, node->first_attribute("Skew"));
 
-        return true;
-    }
-};
-//------------------------------------------------------------------------------------------------//
-struct FloatValueSerializer
-{
-    static bool Deserialize(float32_t& out_result, const Xml::XmlAttribute* attr)
-    {
-        if (attr == nullptr)
-        {
-            return false;
-        }
-
-        return ::sscanf_s(attr->value(), "%f", &out_result) == 1;
-    }
-};
-//------------------------------------------------------------------------------------------------//
-struct Int16ValueSerializer
-{
-    static bool Deserialize(int16_t& out_result, const Xml::XmlAttribute* attr)
-    {
-        if (attr == nullptr)
-        {
-            return false;
-        }
-
-        int result;
-
-        if (::sscanf_s(attr->value(), "%d", &result) == 1)
-        {
-            out_result = static_cast<int16_t>(result);
             return true;
         }
+    };
 
-        return false;
-    }
-};
-//------------------------------------------------------------------------------------------------//
-struct Int32ValueSerializer
-{
-    static bool Deserialize(int32_t& out_result, const Xml::XmlAttribute* attr)
+    struct StringValueSerializer
     {
-        if (attr == nullptr)
+        static bool Deserialize(string_t& out_result, const Xml::XmlAttribute* attr)
         {
-            return false;
-        }
+            if (attr == nullptr)
+            {
+                return false;
+            }
 
-        int result;
+            out_result.assign(attr->value());
 
-        if (::sscanf_s(attr->value(), "%d", &result) == 1)
-        {
-            out_result = result;
             return true;
         }
+    };
 
-        return false;
-    }
-};
-//------------------------------------------------------------------------------------------------//
-struct UInt16ValueSerializer
-{
-    static bool Deserialize(uint16_t& out_result, const Xml::XmlAttribute* attr)
+    struct FloatValueSerializer
     {
-        if (attr == nullptr)
+        static bool Deserialize(float32_t& out_result, const Xml::XmlAttribute* attr)
         {
+            if (attr == nullptr)
+            {
+                return false;
+            }
+
+            return ::sscanf_s(attr->value(), "%f", &out_result) == 1;
+        }
+    };
+
+    struct Int16ValueSerializer
+    {
+        static bool Deserialize(int16_t& out_result, const Xml::XmlAttribute* attr)
+        {
+            if (attr == nullptr)
+            {
+                return false;
+            }
+
+            int result;
+
+            if (::sscanf_s(attr->value(), "%d", &result) == 1)
+            {
+                out_result = static_cast<int16_t>(result);
+                return true;
+            }
+
             return false;
         }
+    };
 
-        unsigned int result;
-
-        if (::sscanf_s(attr->value(), "%d", &result) == 1)
+    struct Int32ValueSerializer
+    {
+        static bool Deserialize(int32_t& out_result, const Xml::XmlAttribute* attr)
         {
-            out_result = static_cast<uint16_t>(result);
+            if (attr == nullptr)
+            {
+                return false;
+            }
+
+            int result;
+
+            if (::sscanf_s(attr->value(), "%d", &result) == 1)
+            {
+                out_result = result;
+                return true;
+            }
+
+            return false;
+        }
+    };
+
+    struct UInt16ValueSerializer
+    {
+        static bool Deserialize(uint16_t& out_result, const Xml::XmlAttribute* attr)
+        {
+            if (attr == nullptr)
+            {
+                return false;
+            }
+
+            unsigned int result;
+
+            if (::sscanf_s(attr->value(), "%d", &result) == 1)
+            {
+                out_result = static_cast<uint16_t>(result);
+                return true;
+            }
+
+            return false;
+        }
+    };
+
+    struct CharValueSerializer
+    {
+        static bool Deserialize(char& out_result, const Xml::XmlAttribute* attr)
+        {
+            if (attr == nullptr)
+            {
+                return false;
+            }
+
+            if (attr->value() != nullptr)
+            {
+                out_result = attr->value()[0];
+                return true;
+            }
+
+            return false;
+        }
+    };
+
+    struct StrongNameValueSerializer
+    {
+        static bool Deserialize(Core::StrongName& out_result, const Xml::XmlAttribute* attr)
+        {
+            if (attr == nullptr)
+            {
+                return false;
+            }
+
+            out_result = Core::StrongName::Create(attr->value());
+
             return true;
         }
+    };
 
-        return false;
-    }
-};
-//------------------------------------------------------------------------------------------------//
-struct CharValueSerializer
-{
-    static bool Deserialize(char& out_result, const Xml::XmlAttribute* attr)
+    struct BoolValueSerializer
     {
-        if (attr == nullptr)
+        static bool Deserialize(bool& out_result, const Xml::XmlAttribute* attr)
         {
+            if (attr == nullptr)
+            {
+                return false;
+            }
+
+            if (attr->value() != nullptr)
+            {
+                bool is_true = _strnicmp(attr->value(), "true", 5) == 0;
+                bool is_one = _strnicmp(attr->value(), "1", 2) == 0;
+                out_result = is_one || is_true;
+                return true;
+            }
+
             return false;
         }
+    };
 
-        if (attr->value() != nullptr)
-        {
-            out_result = attr->value()[0];
-            return true;
-        }
-
-        return false;
-    }
-};
-//------------------------------------------------------------------------------------------------//
-struct StrongNameValueSerializer
-{
-    static bool Deserialize(Core::StrongName& out_result, const Xml::XmlAttribute* attr)
+    struct Float32x3ValueSerializer
     {
-        if (attr == nullptr)
+        static bool Deserialize(float32x3_t& out_result, const Xml::XmlAttribute* attr)
         {
-            return false;
+            if (attr == nullptr)
+            {
+                return false;
+            }
+
+            float32x3_t result;
+            bool valid = ::sscanf_s(attr->value(), "%f,%f,%f", &result.X, &result.Y, &result.Z) == 3;
+
+            if (valid)
+            {
+                out_result = result;
+            }
+
+            return valid;
+
         }
+    };
 
-        out_result = Core::StrongName::Create(attr->value());
-
-        return true;
-    }
-};
-//------------------------------------------------------------------------------------------------//
-struct BoolValueSerializer
-{
-    static bool Deserialize(bool& out_result, const Xml::XmlAttribute* attr)
+    struct ColorValueSerializer
     {
-        if (attr == nullptr)
+        static bool Deserialize(Drawing::Color& out_result, const Xml::XmlAttribute* attr)
         {
-            return false;
+            if (attr == nullptr)
+            {
+                return false;
+            }
+
+            float32x4_t result;
+            bool valid = ::sscanf_s(attr->value(), "%f,%f,%f,%f", &result.X, &result.Y, &result.Z,
+                &result.W) == 4;
+
+            if (valid)
+            {
+                out_result = Drawing::Color(
+                    result.X,
+                    result.Y,
+                    result.Z,
+                    result.W);
+            }
+
+            return valid;
         }
+    };
 
-        if (attr->value() != nullptr)
-        {
-            bool is_true = _strnicmp(attr->value(), "true", 5) == 0;
-            bool is_one = _strnicmp(attr->value(), "1", 2) == 0;
-            out_result = is_one || is_true;
-            return true;
-        }
-
-        return false;
-    }
-};
-//------------------------------------------------------------------------------------------------//
-struct Float32x3ValueSerializer
-{
-    static bool Deserialize(float32x3_t& out_result, const Xml::XmlAttribute* attr)
-    {
-        if (attr == nullptr)
-        {
-            return false;
-        }
-
-        float32x3_t result;
-        bool valid = ::sscanf_s(attr->value(), "%f,%f,%f", &result.X, &result.Y, &result.Z) == 3;
-
-        if (valid)
-        {
-            out_result = result;
-        }
-
-        return valid;
-
-    }
-};
-//------------------------------------------------------------------------------------------------//
-struct ColorValueSerializer
-{
-    static bool Deserialize(Drawing::Color& out_result, const Xml::XmlAttribute* attr)
-    {
-        if (attr == nullptr)
-        {
-            return false;
-        }
-
-        float32x4_t result;
-        bool valid = ::sscanf_s(attr->value(), "%f,%f,%f,%f", &result.X, &result.Y, &result.Z,
-                                &result.W) == 4;
-
-        if (valid)
-        {
-            out_result = Drawing::Color(
-                             result.X,
-                             result.Y,
-                             result.Z,
-                             result.W);
-        }
-
-        return valid;
-    }
-};
-//------------------------------------------------------------------------------------------------//
-}
 }
 #endif /* _TileShell_Serialization_H__ */

@@ -28,89 +28,85 @@
 #include <tileshell.drawing/matrix.hxx>
 #include <tileshell.drawing/color.hxx>
 #include <tileshell.drawing/font.hxx>
-//------------------------------------------------------------------------------------------------//
-namespace TileShell
+
+namespace TileShell::UI
 {
-namespace UI
-{
-//------------------------------------------------------------------------------------------------//
-Visual::Visual()
-    : _transform()
-    , _local_transform_matrix()
-    , _rectangle(0.0F)
-    , _padding(0.0F)
-    , _style()
-    , _name()
-    , _opacity(1.0F)
-    , _visibility(true)
-{
-}
-//------------------------------------------------------------------------------------------------//
-Visual::~Visual()
-{
-}
-//------------------------------------------------------------------------------------------------//
-bool Visual::Deserialize(Xml::XmlNode* node)
-{
-    if (node == nullptr)
+
+    Visual::Visual()
+        : _transform()
+        , _local_transform_matrix()
+        , _rectangle(0.0F)
+        , _padding(0.0F)
+        , _style()
+        , _name()
+        , _opacity(1.0F)
+        , _visibility(true)
     {
-        return false;
     }
 
-    using namespace TileShell::Serialization;
-
-    //
-    // Transform (optional)
-    //
-    TransformValueSerializer::Deserialize(_transform, node);
-
-    //
-    // Rectangle
-    //
-    RectValueSerializer::Deserialize(_rectangle, node->first_attribute("Rectangle"));
-
-    //
-    // Padding (optional)
-    //
-    ThicknessValueSerializer::Deserialize(_padding, node->first_attribute("Padding"));
-
-    //
-    // Opacity (optional)
-    //
-    FloatValueSerializer::Deserialize(_opacity, node->first_attribute("Opacity"));
-
-    //
-    // Visibility (optional)
-    //
-    BoolValueSerializer::Deserialize(_visibility, node->first_attribute("Visibility"));
-
-    //
-    // Name (required)
-    //
-    if (StrongNameValueSerializer::Deserialize(_name, node->first_attribute("Name")) == false)
+    Visual::~Visual()
     {
-        return false;
     }
 
-    //
-    // Update transform matrix.
-    //
-    _transform.ComputeTransformMatrix(_local_transform_matrix, _rectangle);
-
-    return true;
-}
-//------------------------------------------------------------------------------------------------//
-bool Visual::OnPropertyChanged(const Core::StrongName& property_name)
-{
-    if (property_name == Core::StrongName("Transform"))
+    bool Visual::Deserialize(Xml::XmlNode* node)
     {
+        if (node == nullptr)
+        {
+            return false;
+        }
+
+        using namespace TileShell::Serialization;
+
+        //
+        // Transform (optional)
+        //
+        TransformValueSerializer::Deserialize(_transform, node);
+
+        //
+        // Rectangle
+        //
+        RectValueSerializer::Deserialize(_rectangle, node->first_attribute("Rectangle"));
+
+        //
+        // Padding (optional)
+        //
+        ThicknessValueSerializer::Deserialize(_padding, node->first_attribute("Padding"));
+
+        //
+        // Opacity (optional)
+        //
+        FloatValueSerializer::Deserialize(_opacity, node->first_attribute("Opacity"));
+
+        //
+        // Visibility (optional)
+        //
+        BoolValueSerializer::Deserialize(_visibility, node->first_attribute("Visibility"));
+
+        //
+        // Name (required)
+        //
+        if (StrongNameValueSerializer::Deserialize(_name, node->first_attribute("Name")) == false)
+        {
+            return false;
+        }
+
+        //
+        // Update transform matrix.
+        //
         _transform.ComputeTransformMatrix(_local_transform_matrix, _rectangle);
+
         return true;
     }
 
-    return true;
+    bool Visual::OnPropertyChanged(const Core::StrongName& property_name)
+    {
+        if (property_name == Core::StrongName("Transform"))
+        {
+            _transform.ComputeTransformMatrix(_local_transform_matrix, _rectangle);
+            return true;
+        }
+
+        return true;
+    }
+
 }
-//------------------------------------------------------------------------------------------------//
-}
-}
-//------------------------------------------------------------------------------------------------//

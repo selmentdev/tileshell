@@ -29,35 +29,35 @@
 
 namespace OgreGlue
 {
-//------------------------------------------------------------------------------------------------//
+
 OgreRenderResourceFactory::OgreRenderResourceFactory()
     : _group_name("TileShell")
 {
 }
-//------------------------------------------------------------------------------------------------//
+
 OgreRenderResourceFactory::~OgreRenderResourceFactory()
 {
 }
-//------------------------------------------------------------------------------------------------//
+
 bool OgreRenderResourceFactory::Initialize()
 {
     return true;
 }
-//------------------------------------------------------------------------------------------------//
+
 bool OgreRenderResourceFactory::Shutdown()
 {
     return true;
 }
-//------------------------------------------------------------------------------------------------//
+
 TileShell::Drawing::TextureRef OgreRenderResourceFactory::CreateTexture(
     const TileShell::string_t& name)
 {
     return new OgreTexture(name, _group_name.c_str());
 }
-//------------------------------------------------------------------------------------------------//
+
 TileShell::Drawing::GeometryBufferRef OgreRenderResourceFactory::CreateGeometryBuffer()
 {
     return new OgreVertexBuffer();
 }
-//------------------------------------------------------------------------------------------------//
+
 }

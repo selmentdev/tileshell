@@ -26,148 +26,145 @@
 #pragma once
 #ifndef _TileShell_Render_Transform2D_H__
 #define _TileShell_Render_Transform2D_H__
-//------------------------------------------------------------------------------------------------//
+
 #include <tileshell/required.hxx>
 #include <tileshell.core/types.hxx>
 #include <tileshell.drawing/matrix.hxx>
-//------------------------------------------------------------------------------------------------//
-namespace TileShell
-{
-namespace Drawing
+
+namespace TileShell::Drawing
 {
 
-///
-/// @brief
-///     The scale transform.
-///
-struct ScaleTransform
-{
-    float32_t   ScaleX;
-    float32_t   ScaleY;
-
-    ScaleTransform()
-        : ScaleX(1.0F)
-        , ScaleY(1.0F)
+    ///
+    /// @brief
+    ///     The scale transform.
+    ///
+    struct ScaleTransform
     {
-    }
+        float32_t   ScaleX;
+        float32_t   ScaleY;
 
-    ScaleTransform(float32_t scale_x, float32_t scale_y)
-        : ScaleX(scale_x)
-        , ScaleY(scale_y)
+        ScaleTransform()
+            : ScaleX(1.0F)
+            , ScaleY(1.0F)
+        {
+        }
+
+        ScaleTransform(float32_t scale_x, float32_t scale_y)
+            : ScaleX(scale_x)
+            , ScaleY(scale_y)
+        {
+        }
+    };
+
+    ///
+    /// @brief
+    ///     Skew transform.
+    ///
+    struct SkewTransform
     {
-    }
-};
+        float32_t   AngleX;
+        float32_t   AngleY;
 
-///
-/// @brief
-///     Skew transform.
-///
-struct SkewTransform
-{
-    float32_t   AngleX;
-    float32_t   AngleY;
+        SkewTransform()
+            : AngleX(0.0F)
+            , AngleY(0.0F)
+        {
+        }
 
-    SkewTransform()
-        : AngleX(0.0F)
-        , AngleY(0.0F)
+        SkewTransform(float32_t angle_x, float32_t angle_y)
+            : AngleX(angle_x)
+            , AngleY(angle_y)
+        {
+        }
+    };
+
+    ///
+    /// @brief
+    ///     Translate transform.
+    ///
+    struct TranslateTransform
     {
-    }
+        float32_t   X;
+        float32_t   Y;
 
-    SkewTransform(float32_t angle_x, float32_t angle_y)
-        : AngleX(angle_x)
-        , AngleY(angle_y)
+        TranslateTransform()
+            : X(0.0F)
+            , Y(0.0F)
+        {
+        }
+
+        TranslateTransform(float32_t x, float32_t y)
+            : X(x)
+            , Y(y)
+        {
+        }
+    };
+
+    ///
+    /// @brief
+    ///     Rotate transform.
+    ///
+    struct RotateTransform
     {
-    }
-};
+        float32_t   Angle;
 
-///
-/// @brief
-///     Translate transform.
-///
-struct TranslateTransform
-{
-    float32_t   X;
-    float32_t   Y;
+        RotateTransform()
+            : Angle(0.0F)
+        {
+        }
 
-    TranslateTransform()
-        : X(0.0F)
-        , Y(0.0F)
+        RotateTransform(float32_t angle)
+            : Angle(angle)
+        {
+        }
+    };
+
+    ///
+    /// @brief
+    ///     Visual transform.
+    ///
+    struct Transform
     {
-    }
+        ///
+        /// Translate transform.
+        ///
+        TranslateTransform  Translate;
 
-    TranslateTransform(float32_t x, float32_t y)
-        : X(x)
-        , Y(y)
-    {
-    }
-};
+        ///
+        /// Rotate transform.
+        ///
+        RotateTransform     Rotate;
 
-///
-/// @brief
-///     Rotate transform.
-///
-struct RotateTransform
-{
-    float32_t   Angle;
+        ///
+        /// Scale transform.
+        ///
+        ScaleTransform      Scale;
 
-    RotateTransform()
-        : Angle(0.0F)
-    {
-    }
+        ///
+        /// Skew transform.
+        ///
+        SkewTransform       Skew;
 
-    RotateTransform(float32_t angle)
-        : Angle(angle)
-    {
-    }
-};
+        ///
+        /// Computes transform matrix for this transform.
+        ///
+        void ComputeTransformMatrix(Matrix& out_result);
 
-///
-/// @brief
-///     Visual transform.
-///
-struct Transform
-{
-    ///
-    /// Translate transform.
-    ///
-    TranslateTransform  Translate;
+        ///
+        /// Computes transform matrix for this transform, using specified transform origin point.
+        ///
+        void ComputeTransformMatrix(Matrix& out_result, const Point& in_transform_origin);
 
-    ///
-    /// Rotate transform.
-    ///
-    RotateTransform     Rotate;
-
-    ///
-    /// Scale transform.
-    ///
-    ScaleTransform      Scale;
-
-    ///
-    /// Skew transform.
-    ///
-    SkewTransform       Skew;
-
-    ///
-    /// Computes transform matrix for this transform.
-    ///
-    void ComputeTransformMatrix(Matrix& out_result);
-
-    ///
-    /// Computes transform matrix for this transform, using specified transform origin point.
-    ///
-    void ComputeTransformMatrix(Matrix& out_result, const Point& in_transform_origin);
-
-    ///
-    /// Computes transform matrix for this transform, using rectangle.
-    ///
-    /// @todo
-    ///     By passing rectangle, we can specify origin point for each single transform at
-    ///     different point.
-    ///
-    void ComputeTransformMatrix(Matrix& out_result, const Rect& in_rectangle);
-};
-static_assert(sizeof(Transform) == 28, "Transform size mismatch");
+        ///
+        /// Computes transform matrix for this transform, using rectangle.
+        ///
+        /// @todo
+        ///     By passing rectangle, we can specify origin point for each single transform at
+        ///     different point.
+        ///
+        void ComputeTransformMatrix(Matrix& out_result, const Rect& in_rectangle);
+    };
+    static_assert(sizeof(Transform) == 28, "Transform size mismatch");
 }
-}
-//------------------------------------------------------------------------------------------------//
+
 #endif /* _TileShell_Render_Transform2D_H__ */

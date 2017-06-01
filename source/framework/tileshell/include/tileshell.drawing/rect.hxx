@@ -26,109 +26,106 @@
 #pragma once
 #ifndef _TileShell_Drawing_Rectangle_H__
 #define _TileShell_Drawing_Rectangle_H__
-//------------------------------------------------------------------------------------------------//
+
 #include <tileshell.core/types.hxx>
 #include <tileshell.drawing/point.hxx>
 #include <tileshell.drawing/size.hxx>
 #include <tileshell.drawing/vector.hxx>
-//------------------------------------------------------------------------------------------------//
-namespace TileShell
+
+namespace TileShell::Drawing
 {
-namespace Drawing
-{
-struct Size;
-struct Point;
-struct Thickness;
+    struct Size;
+    struct Point;
+    struct Thickness;
 
-///
-/// This struct represents axis oriented rectangle in 2D space.
-///
-struct Rect
-{
-public:
-    float32_t   X;
-    float32_t   Y;
-    float32_t   Width;
-    float32_t   Height;
+    ///
+    /// This struct represents axis oriented rectangle in 2D space.
+    ///
+    struct Rect
+    {
+    public:
+        float32_t   X;
+        float32_t   Y;
+        float32_t   Width;
+        float32_t   Height;
 
-public:
-    Rect();
-    explicit Rect(float32_t value);
-    Rect(float32_t x, float32_t y, float32_t size);
-    Rect(float32_t x, float32_t y, float32_t width, float32_t height);
-    explicit Rect(const Size& size);
-    Rect(const Point& point, const Vector& vector);
-    Rect(const Point& point1, const Point& point2);
-    Rect(const Point& location, const Size& size);
+    public:
+        Rect();
+        explicit Rect(float32_t value);
+        Rect(float32_t x, float32_t y, float32_t size);
+        Rect(float32_t x, float32_t y, float32_t width, float32_t height);
+        explicit Rect(const Size& size);
+        Rect(const Point& point, const Vector& vector);
+        Rect(const Point& point1, const Point& point2);
+        Rect(const Point& location, const Size& size);
 
-public:
-    bool operator == (const Rect& r) const;
-    bool operator != (const Rect& r) const;
+    public:
+        bool operator == (const Rect& r) const;
+        bool operator != (const Rect& r) const;
 
-public:
-    float32_t GetLeft() const;
-    float32_t GetTop() const;
-    float32_t GetWidth() const;
-    float32_t GetHeight() const;
-    float32_t GetRight() const;
-    float32_t GetBottom() const;
+    public:
+        float32_t GetLeft() const;
+        float32_t GetTop() const;
+        float32_t GetWidth() const;
+        float32_t GetHeight() const;
+        float32_t GetRight() const;
+        float32_t GetBottom() const;
 
-    Point GetLocation() const;
-    Rect& SetLocation(const Point& value);
-    Size GetSize() const;
-    Rect& SetSize(const Size& size);
+        Point GetLocation() const;
+        Rect& SetLocation(const Point& value);
+        Size GetSize() const;
+        Rect& SetSize(const Size& size);
 
-    Point GetTopLeft() const;
-    Point GetTopRight() const;
-    Point GetBottomLeft() const;
-    Point GetBottomRight() const;
-    Point GetCenter() const;
+        Point GetTopLeft() const;
+        Point GetTopRight() const;
+        Point GetBottomLeft() const;
+        Point GetBottomRight() const;
+        Point GetCenter() const;
 
-    Rect& SetCenter(const Point& value);
+        Rect& SetCenter(const Point& value);
 
-public:
-    static Rect CreateZeroRelative(float32_t width, float32_t height);
-    static Rect CreateZeroRelative(const Size& size);
+    public:
+        static Rect CreateZeroRelative(float32_t width, float32_t height);
+        static Rect CreateZeroRelative(const Size& size);
 
-public:
-    Rect& Scale(const Size& size);
+    public:
+        Rect& Scale(const Size& size);
 
-    Rect& Inflate(float32_t left, float32_t top, float32_t right, float32_t bottom);
-    Rect& Inflate(float32_t horizontal, float32_t vertical);
-    Rect& Inflate(float32_t value);
-    Rect& Inflate(const Size& size);
-    Rect& Inflate(const Thickness& value);
+        Rect& Inflate(float32_t left, float32_t top, float32_t right, float32_t bottom);
+        Rect& Inflate(float32_t horizontal, float32_t vertical);
+        Rect& Inflate(float32_t value);
+        Rect& Inflate(const Size& size);
+        Rect& Inflate(const Thickness& value);
 
-    Rect& Deflate(float32_t left, float32_t top, float32_t right, float32_t bottom);
-    Rect& Deflate(float32_t horizontal, float32_t vertical);
-    Rect& Deflate(float32_t value);
-    Rect& Deflate(const Size& size);
-    Rect& Deflate(const Thickness& value);
+        Rect& Deflate(float32_t left, float32_t top, float32_t right, float32_t bottom);
+        Rect& Deflate(float32_t horizontal, float32_t vertical);
+        Rect& Deflate(float32_t value);
+        Rect& Deflate(const Size& size);
+        Rect& Deflate(const Thickness& value);
 
-    Rect& Offset(float32_t x, float32_t y);
+        Rect& Offset(float32_t x, float32_t y);
 
-    Rect& Offset(const Vector& offset);
+        Rect& Offset(const Vector& offset);
 
-    Rect& Intersect(const Rect& r);
+        Rect& Intersect(const Rect& r);
 
-    Rect& Union(const Rect& r);
+        Rect& Union(const Rect& r);
 
-    Rect& Union(const Point& p);
+        Rect& Union(const Point& p);
 
-public:
-    bool Contains(const Rect& r) const;
+    public:
+        bool Contains(const Rect& r) const;
 
-    bool Contains(float32_t x, float32_t y) const;
+        bool Contains(float32_t x, float32_t y) const;
 
-    bool Contains(const Point& point) const;
+        bool Contains(const Point& point) const;
 
-    bool IntersectsWith(const Rect& r) const;
+        bool IntersectsWith(const Rect& r) const;
 
-    Point Clamp(const Point& p) const;
-};
+        Point Clamp(const Point& p) const;
+    };
 }
-}
-//------------------------------------------------------------------------------------------------//
+
 #include <tileshell.drawing/rect.inl>
-//------------------------------------------------------------------------------------------------//
+
 #endif /* _TileShell_Drawing_Rectangle_H__ */

@@ -4,8 +4,8 @@
 //      See LICENSE file in the project root for full license information.
 //
 
-#include <Core.Rendering/Buffers.hxx>
-#include <Core.Rendering/RenderSystem.hxx>
+#include <core.rendering/buffers.hxx>
+#include <core.rendering/rendersystem.hxx>
 
 namespace Core::Rendering
 {

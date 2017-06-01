@@ -26,7 +26,7 @@
 #pragma once
 #ifndef _OgreGlue_OgreRenderer_H__
 #define _OgreGlue_OgreRenderer_H__
-//------------------------------------------------------------------------------------------------//
+
 #include <OgreRoot.h>
 #include <OgreSceneManager.h>
 #include <OgreRenderWindow.h>
@@ -34,10 +34,10 @@
 #include <OgreViewport.h>
 #include <OgreWindowEventUtilities.h>
 #include <OgreRenderQueueListener.h>
-//------------------------------------------------------------------------------------------------//
+
 #include <TileShell/Drawing/IRenderFrameCallback.h>
 #include <TileShell/UI/IScene.h>
-//------------------------------------------------------------------------------------------------//
+
 namespace OgreGlue
 {
 
@@ -110,7 +110,7 @@ public:
 
     void SetScale(float32_t value);
 };
-//------------------------------------------------------------------------------------------------//
+
 }
-//------------------------------------------------------------------------------------------------//
+
 #endif /* _OgreGlue_OgreRenderer_H__ */

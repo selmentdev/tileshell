@@ -26,71 +26,68 @@
 #pragma once
 #ifndef _TileShell_Drawing_Geometry_H__
 #define _TileShell_Drawing_Geometry_H__
-//------------------------------------------------------------------------------------------------//
+
 #include <tileshell.core/types.hxx>
 #include <tileshell.core/reference.hxx>
 #include <tileshell.core/referenced.hxx>
-//------------------------------------------------------------------------------------------------//
-namespace TileShell
-{
-namespace Drawing
-{
-///
-/// Vertex structure.
-///
-struct Vertex
+
+namespace TileShell::Drawing
 {
     ///
-    /// Vertex position in 3D space.
+    /// Vertex structure.
     ///
-    float32x3_t Position;
+    struct Vertex
+    {
+        ///
+        /// Vertex position in 3D space.
+        ///
+        float32x3_t Position;
 
-    ///
-    /// Texture color in vertex.
-    ///
-    uint32_t    Color;
+        ///
+        /// Texture color in vertex.
+        ///
+        uint32_t    Color;
 
-    ///
-    /// Texture coordinate in vertex.
-    ///
-    float32x2_t TexCoord;
-};
-typedef std::vector<Vertex, Core::StlAllocator<Vertex>> VertexArray;
+        ///
+        /// Texture coordinate in vertex.
+        ///
+        float32x2_t TexCoord;
+    };
+    typedef std::vector<Vertex, Core::StlAllocator<Vertex>> VertexArray;
 
-enum PrimitiveType
-{
-    PrimitiveType_LineList,
-    PrimitiveType_LineStrip,
-    PrimitiveType_TriangleList,
-    PrimitiveType_TriangleStrip,
-};
+    enum PrimitiveType
+    {
+        PrimitiveType_LineList,
+        PrimitiveType_LineStrip,
+        PrimitiveType_TriangleList,
+        PrimitiveType_TriangleStrip,
+    };
 
-class Geometry
-{
-private:
-    VertexArray     _vertex_array;
-    PrimitiveType   _primitive_type;
+    class Geometry
+    {
+    private:
+        VertexArray     _vertex_array;
+        PrimitiveType   _primitive_type;
 
-public:
-    Geometry();
-    ~Geometry();
+    public:
+        Geometry();
+        ~Geometry();
 
-    void Resize(size_t size);
-    void Clear();
+        void Resize(size_t size);
+        void Clear();
 
-    Vertex& operator [] (size_t index);
-    const Vertex& operator [] (size_t index) const;
+        Vertex& operator [] (size_t index);
+        const Vertex& operator [] (size_t index) const;
 
-    void Append(const Vertex& value);
+        void Append(const Vertex& value);
 
-    PrimitiveType GetPrimitiveType() const;
-    void SetPrimitiveType(PrimitiveType value);
+        PrimitiveType GetPrimitiveType() const;
+        void SetPrimitiveType(PrimitiveType value);
 
-    Vertex* GetData();
-    const Vertex* GetData() const;
-};
+        Vertex* GetData();
+        const Vertex* GetData() const;
+    };
 
 }
-}
-//------------------------------------------------------------------------------------------------//
+
 #endif /* _TileShell_Drawing_Geometry_H__ */

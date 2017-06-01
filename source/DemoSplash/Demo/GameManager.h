@@ -26,7 +26,7 @@
 #pragma once
 #ifndef _Demo_GameManager_H__
 #define _Demo_GameManager_H__
-//------------------------------------------------------------------------------------------------//
+
 #include <Ogre/Ogre.h>
 #include <Ogre/OgreFrameListener.h>
 #include <OgreRoot.h>
@@ -37,98 +37,99 @@
 #include <OIS/OISKeyboard.h>
 #include <OIS/OISMouse.h>
 #include <TileShell/Required.h>
-//------------------------------------------------------------------------------------------------//
+
 namespace Demo
 {
-class GameState;
+    class GameState;
 
-class GameManager
-    : public Ogre::FrameListener
-    , public OIS::KeyListener
-    , public OIS::MouseListener
-    , public Ogre::Singleton<GameManager>
-{
-public:
-    GameManager();
-    virtual ~GameManager();
-
-    bool Initialize();
-    bool Shutdown();
-
-    void Start(GameState* state);
-    void ChangeState(GameState* state);
-    void PushState(GameState* state);
-    void PopState();
-
-    static GameManager& getSingleton();
-    static GameManager* getSingletonPtr();
-
-    virtual bool mousePressed(const OIS::MouseEvent& evt, OIS::MouseButtonID id) override;
-    virtual bool mouseReleased(const OIS::MouseEvent& evt, OIS::MouseButtonID id) override;
-    virtual bool mouseMoved(const OIS::MouseEvent& evt) override;
-    virtual bool keyPressed(const OIS::KeyEvent& evt) override;
-    virtual bool keyReleased(const OIS::KeyEvent& evt) override;
-
-    virtual bool frameStarted(const Ogre::FrameEvent& evt) override;
-    virtual bool frameEnded(const Ogre::FrameEvent& evt) override;
-
-    bool Run();
-
-    float GetAverageFPS() const
+    class GameManager
+        : public Ogre::FrameListener
+        , public OIS::KeyListener
+        , public OIS::MouseListener
+        , public Ogre::Singleton<GameManager>
     {
-        return _render_window->getAverageFPS();
-    }
+    public:
+        GameManager();
+        virtual ~GameManager();
 
-    float GetBestFPS() const
-    {
-        return _render_window->getBestFPS();
-    }
+        bool Initialize();
+        bool Shutdown();
 
-    float GetWorstFPS() const
-    {
-        return _render_window->getWorstFPS();
-    }
+        void Start(GameState* state);
+        void ChangeState(GameState* state);
+        void PushState(GameState* state);
+        void PopState();
 
-    float GetWorstFrameTime() const
-    {
-        return _render_window->getWorstFrameTime();
-    }
+        static GameManager& getSingleton();
+        static GameManager* getSingletonPtr();
 
-    float GetBestFrameTime() const
-    {
-        return _render_window->getBestFrameTime();
-    }
+        virtual bool mousePressed(const OIS::MouseEvent& evt, OIS::MouseButtonID id) override;
+        virtual bool mouseReleased(const OIS::MouseEvent& evt, OIS::MouseButtonID id) override;
+        virtual bool mouseMoved(const OIS::MouseEvent& evt) override;
+        virtual bool keyPressed(const OIS::KeyEvent& evt) override;
+        virtual bool keyReleased(const OIS::KeyEvent& evt) override;
 
-    float GetLastFrameTime() const
-    {
-        return 1.0F / _render_window->getStatistics().lastFPS;
-    }
+        virtual bool frameStarted(const Ogre::FrameEvent& evt) override;
+        virtual bool frameEnded(const Ogre::FrameEvent& evt) override;
 
-    void GetWindowSize(float& out_width, float& out_height)
-    {
-        out_width = static_cast<float>(_render_window->getWidth());
-        out_height = static_cast<float>(_render_window->getHeight());
-    }
+        bool Run();
 
-    TileShell::string_t SaveScreenShot()
-    {
-        return _render_window->writeContentsToTimestampedFile("tileshell-", ".png").c_str();
-    }
-protected:
-    Ogre::Root*             _root;
-    Ogre::RenderWindow*     _render_window;
-    OIS::InputManager*      _input_manager;
-    OIS::Mouse*             _mouse;
-    OIS::Keyboard*          _keyboard;
+        float GetAverageFPS() const
+        {
+            return _render_window->getAverageFPS();
+        }
 
-protected:
-    void SetupResources();
-    bool Configure();
+        float GetBestFPS() const
+        {
+            return _render_window->getBestFPS();
+        }
 
-private:
-    std::vector<GameState*>     _states;
-};
-//------------------------------------------------------------------------------------------------//
+        float GetWorstFPS() const
+        {
+            return _render_window->getWorstFPS();
+        }
+
+        float GetWorstFrameTime() const
+        {
+            return _render_window->getWorstFrameTime();
+        }
+
+        float GetBestFrameTime() const
+        {
+            return _render_window->getBestFrameTime();
+        }
+
+        float GetLastFrameTime() const
+        {
+            return 1.0F / _render_window->getStatistics().lastFPS;
+        }
+
+        void GetWindowSize(float& out_width, float& out_height)
+        {
+            out_width = static_cast<float>(_render_window->getWidth());
+            out_height = static_cast<float>(_render_window->getHeight());
+        }
+
+        TileShell::string_t SaveScreenShot()
+        {
+            return _render_window->writeContentsToTimestampedFile("tileshell-", ".png").c_str();
+        }
+    protected:
+        Ogre::Root*             _root;
+        Ogre::RenderWindow*     _render_window;
+        OIS::InputManager*      _input_manager;
+        OIS::Mouse*             _mouse;
+        OIS::Keyboard*          _keyboard;
+
+    protected:
+        void SetupResources();
+        bool Configure();
+
+    private:
+        std::vector<GameState*>     _states;
+    };
+
+
 }
-//------------------------------------------------------------------------------------------------//
+
 #endif /* _Demo_GameManager_H__ */

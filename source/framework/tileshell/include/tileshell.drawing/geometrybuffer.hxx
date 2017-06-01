@@ -26,56 +26,52 @@
 #pragma once
 #ifndef _TileShell_Drawing_GeometryBuffer_H__
 #define _TileShell_Drawing_GeometryBuffer_H__
-//------------------------------------------------------------------------------------------------//
+
 #include <tileshell.core/types.hxx>
 #include <tileshell.core/reference.hxx>
 #include <tileshell.core/referenced.hxx>
 #include <tileshell.drawing/geometry.hxx>
-//------------------------------------------------------------------------------------------------//
-namespace TileShell
-{
-namespace Drawing
+
+namespace TileShell::Drawing
 {
 
+    ///
+    /// This class represents geometry buffer resource.
+    ///
+    class GeometryBuffer : public Core::Referenced
+    {
+    public:
+        ///
+        /// Destroys instance of the GeometryBuffer class.
+        ///
+        virtual ~GeometryBuffer() {}
 
-///
-/// This class represents geometry buffer resource.
-///
-class GeometryBuffer : public Core::Referenced
-{
-public:
-    ///
-    /// Destroys instance of the GeometryBuffer class.
-    ///
-    virtual ~GeometryBuffer() {}
+    public:
+        ///
+        /// Sets number of vertices in geometry buffer.
+        ///
+        virtual void SetVertexCount(size_t count) = 0;
 
-public:
-    ///
-    /// Sets number of vertices in geometry buffer.
-    ///
-    virtual void SetVertexCount(size_t count) = 0;
+        ///
+        /// Gets number of vertices in geometry buffer.
+        ///
+        virtual size_t GetVertexCount() const = 0;
 
-    ///
-    /// Gets number of vertices in geometry buffer.
-    ///
-    virtual size_t GetVertexCount() const = 0;
+        ///
+        /// Maps buffer in system memory.
+        ///
+        /// @returns
+        ///     The pointer to mapped buffer.
+        ///
+        virtual Vertex* Map() = 0;
 
-    ///
-    /// Maps buffer in system memory.
-    ///
-    /// @returns
-    ///     The pointer to mapped buffer.
-    ///
-    virtual Vertex* Map() = 0;
-
-    ///
-    /// Unmaps mapped buffer from system memory.
-    ///
-    virtual void Unmap() = 0;
-};
-typedef Core::Reference<GeometryBuffer> GeometryBufferRef;
+        ///
+        /// Unmaps mapped buffer from system memory.
+        ///
+        virtual void Unmap() = 0;
+    };
+    typedef Core::Reference<GeometryBuffer> GeometryBufferRef;
 
 }
-}
-//------------------------------------------------------------------------------------------------//
+
 #endif /* _TileShell_Drawing_GeometryBuffer_H__ */

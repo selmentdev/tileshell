@@ -24,67 +24,63 @@
 // 
 //
 #include <tileshell.drawing/geometry.hxx>
-//------------------------------------------------------------------------------------------------//
-namespace TileShell
+
+namespace TileShell::Drawing
 {
-namespace Drawing
-{
-//------------------------------------------------------------------------------------------------//
-Geometry::Geometry()
-    : _vertex_array()
-    , _primitive_type(PrimitiveType_LineList)
-{
+
+    Geometry::Geometry()
+        : _vertex_array()
+        , _primitive_type(PrimitiveType_LineList)
+    {
+    }
+
+    Geometry::~Geometry()
+    {
+    }
+
+    void Geometry::Resize(size_t size)
+    {
+        _vertex_array.resize(size);
+    }
+
+    void Geometry::Clear()
+    {
+        _vertex_array.clear();
+    }
+
+    Vertex& Geometry::operator [] (size_t index)
+    {
+        return _vertex_array[index];
+    }
+
+    const Vertex& Geometry::operator [] (size_t index) const
+    {
+        return _vertex_array[index];
+    }
+
+    void Geometry::Append(const Vertex& value)
+    {
+        _vertex_array.push_back(value);
+    }
+
+    PrimitiveType Geometry::GetPrimitiveType() const
+    {
+        return _primitive_type;
+    }
+
+    void Geometry::SetPrimitiveType(PrimitiveType value)
+    {
+        _primitive_type = value;
+    }
+
+    Vertex* Geometry::GetData()
+    {
+        return _vertex_array.data();
+    }
+
+    const Vertex* Geometry::GetData() const
+    {
+        return _vertex_array.data();
+    }
+
 }
-//------------------------------------------------------------------------------------------------//
-Geometry::~Geometry()
-{
-}
-//------------------------------------------------------------------------------------------------//
-void Geometry::Resize(size_t size)
-{
-    _vertex_array.resize(size);
-}
-//------------------------------------------------------------------------------------------------//
-void Geometry::Clear()
-{
-    _vertex_array.clear();
-}
-//------------------------------------------------------------------------------------------------//
-Vertex& Geometry::operator [] (size_t index)
-{
-    return _vertex_array[index];
-}
-//------------------------------------------------------------------------------------------------//
-const Vertex& Geometry::operator [] (size_t index) const
-{
-    return _vertex_array[index];
-}
-//------------------------------------------------------------------------------------------------//
-void Geometry::Append(const Vertex& value)
-{
-    _vertex_array.push_back(value);
-}
-//------------------------------------------------------------------------------------------------//
-PrimitiveType Geometry::GetPrimitiveType() const
-{
-    return _primitive_type;
-}
-//------------------------------------------------------------------------------------------------//
-void Geometry::SetPrimitiveType(PrimitiveType value)
-{
-    _primitive_type = value;
-}
-//------------------------------------------------------------------------------------------------//
-Vertex* Geometry::GetData()
-{
-    return _vertex_array.data();
-}
-//------------------------------------------------------------------------------------------------//
-const Vertex* Geometry::GetData() const
-{
-    return _vertex_array.data();
-}
-//------------------------------------------------------------------------------------------------//
-}
-}
-//------------------------------------------------------------------------------------------------//

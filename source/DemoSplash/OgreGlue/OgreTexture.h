@@ -26,13 +26,13 @@
 #pragma once
 #ifndef _OgreGlue_OgreTexture_H__
 #define _OgreGlue_OgreTexture_H__
-//------------------------------------------------------------------------------------------------//
+
 #include <TileShell/Core/Referenced.h>
 #include <TileShell/Drawing/Texture.h>
-//------------------------------------------------------------------------------------------------//
+
 #include <OgreTexture.h>
 #include <OgreTextureManager.h>
-//------------------------------------------------------------------------------------------------//
+
 namespace OgreGlue
 {
 class OgreTexture : public TileShell::Drawing::Texture
@@ -71,7 +71,7 @@ public:
         return out_result;
     }
 };
-//------------------------------------------------------------------------------------------------//
+
 }
-//------------------------------------------------------------------------------------------------//
+
 #endif /* _OgreGlue_OgreTexture_H__ */

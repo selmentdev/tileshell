@@ -26,52 +26,50 @@
 #pragma once
 #ifndef _TileShell_Drawing_IRenderFrameCallback_H__
 #define _TileShell_Drawing_IRenderFrameCallback_H__
-//------------------------------------------------------------------------------------------------//
-#include <TileShell/Required.h>
-#include <TileShell/Core/Types.h>
-#include <TileShell/Core/Reference.h>
-#include <TileShell/Core/Referenced.h>
-#include <TileShell/Drawing/Texture.h>
-#include <TileShell/Drawing/GeometryBuffer.h>
-//------------------------------------------------------------------------------------------------//
-namespace TileShell
-{
-namespace Drawing
-{
-///
-/// Interface for render frame callback.
-///
-class IRenderFrameCallback
-{
-public:
-    virtual ~IRenderFrameCallback() {}
 
-public:
-    ///
-    /// Renders geometry.
-    ///
-    /// @param[in] gbuffer
-    ///     A geometry buffer reference.
-    /// @param[in] texture
-    ///     A texture reference.
-    /// @param[in] vertex_count
-    ///     A vertex count.
-    ///
-    virtual void DoRenderScreen(GeometryBufferRef gbuffer, TextureRef texture, size_t vertex_count) = 0;
+#include <tileshell/required.hxx>
+#include <tileshell.core/types.hxx>
+#include <tileshell.core/reference.hxx>
+#include <tileshell.core/referenced.hxx>
+#include <tileshell.drawing/texture.hxx>
+#include <tileshell.drawing/geometrybuffer.hxx>
 
+namespace TileShell::Drawing
+{
     ///
-    /// Renders geometry.
+    /// Interface for render frame callback.
     ///
-    /// @param[in] gbuffer
-    ///     A geometry buffer reference.
-    /// @param[in] texture
-    ///     A texture reference.
-    /// @param[in] vertex_count
-    ///     A vertex count.
-    ///
-    virtual void DoRender(GeometryBufferRef gbuffer, TextureRef texture, size_t vertex_count) = 0;
-};
+    class IRenderFrameCallback
+    {
+    public:
+        virtual ~IRenderFrameCallback() {}
+
+    public:
+        ///
+        /// Renders geometry.
+        ///
+        /// @param[in] gbuffer
+        ///     A geometry buffer reference.
+        /// @param[in] texture
+        ///     A texture reference.
+        /// @param[in] vertex_count
+        ///     A vertex count.
+        ///
+        virtual void DoRenderScreen(GeometryBufferRef gbuffer, TextureRef texture, size_t vertex_count) = 0;
+
+        ///
+        /// Renders geometry.
+        ///
+        /// @param[in] gbuffer
+        ///     A geometry buffer reference.
+        /// @param[in] texture
+        ///     A texture reference.
+        /// @param[in] vertex_count
+        ///     A vertex count.
+        ///
+        virtual void DoRender(GeometryBufferRef gbuffer, TextureRef texture, size_t vertex_count) = 0;
+    };
+
 }
-}
-//------------------------------------------------------------------------------------------------//
+
 #endif /* _TileShell_Drawing_IRenderFrameCallback_H__ */

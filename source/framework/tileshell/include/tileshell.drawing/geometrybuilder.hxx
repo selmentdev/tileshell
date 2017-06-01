@@ -26,7 +26,7 @@
 #pragma once
 #ifndef _TileShell_Drawing_GeometryBuilder_H__
 #define _TileShell_Drawing_GeometryBuilder_H__
-//------------------------------------------------------------------------------------------------//
+
 #include <tileshell.core/types.hxx>
 #include <tileshell.drawing/geometrybuffer.hxx>
 #include <tileshell.drawing/rect.hxx>
@@ -36,171 +36,168 @@
 #include <tileshell.drawing/color.hxx>
 #include <tileshell.drawing/font.hxx>
 #include <tileshell.drawing/styleitem.hxx>
-//------------------------------------------------------------------------------------------------//
-namespace TileShell
-{
-namespace Drawing
+
+namespace TileShell::Drawing
 {
 
-///
-/// This class implements geometry buffer generation.
-///
-class GeometryBuilder
-{
-private:
-    VertexArray         _vertex_collection;
-
-public:
     ///
-    /// Creates instance of the GeometryBuffer class.
+    /// This class implements geometry buffer generation.
     ///
-    GeometryBuilder();
-
-    ///
-    /// Destroys instance of the GeometryBuffer class.
-    ///
-    virtual ~GeometryBuilder();
-
-public:
-    ///
-    /// Begins geometry generation.
-    ///
-    void Begin();
-
-    ///
-    /// Ends geometry generation.
-    ///
-    /// @param[in,out] inout_geometry_buffer
-    ///     A target geometry buffer.
-    ///
-    void End(GeometryBufferRef& inout_geometry_buffer);
-
-    ///
-    /// Adds quad.
-    ///
-    /// @param[in] v1
-    ///     A first quad vertex.
-    /// @param[in] v2
-    ///     A second quad vertex.
-    /// @param[in] v3
-    ///     A third quad vertex.
-    /// @param[in] v4
-    ///     A fourth quad vertex.
-    ///
-    void AddQuad(const Vertex& v1, const Vertex& v2, const Vertex& v3, const Vertex& v4)
+    class GeometryBuilder
     {
-        AddTriangle(v1, v2, v3);
-        AddTriangle(v1, v3, v4);
-    }
+    private:
+        VertexArray         _vertex_collection;
 
-    ///
-    /// Adds triangle.
-    ///
-    /// @param[in] v1
-    ///     A first triangle vertex.
-    /// @param[in] v2
-    ///     A second triangle vertex.
-    /// @param[in] v3
-    ///     A third triangle vertex.
-    ///
-    void AddTriangle(const Vertex& v1, const Vertex& v2, const Vertex& v3)
-    {
-        _vertex_collection.push_back(v1);
-        _vertex_collection.push_back(v2);
-        _vertex_collection.push_back(v3);
-    }
+    public:
+        ///
+        /// Creates instance of the GeometryBuffer class.
+        ///
+        GeometryBuilder();
 
-    ///
-    /// Gets number of vertices in geometry builder.
-    ///
-    size_t GetVertexCount() const
-    {
-        return _vertex_collection.size();
-    }
+        ///
+        /// Destroys instance of the GeometryBuffer class.
+        ///
+        virtual ~GeometryBuilder();
 
-    ///
-    /// Draws style item.
-    ///
-    /// @param[in] matrix
-    ///     A transform matrix.
-    /// @param[in] color
-    ///     A color.
-    /// @param[in] zindex
-    ///     A Z index value.
-    /// @param[in] rectangle
-    ///     A rectangle to draw.
-    /// @param[in] padding
-    ///     An internal element padding.
-    /// @param[in] style_item
-    ///     A style item to draw.
-    ///
-    /// @returns
-    ///     true when successful, false otherwise.
-    ///
-    bool DrawStyleItem(
-        const Matrix& matrix,
-        const Color& color,
-        float32_t zindex,
-        const Rect& rectangle,
-        const Thickness& padding,
-        const StyleItem9Grid& style_item);
+    public:
+        ///
+        /// Begins geometry generation.
+        ///
+        void Begin();
 
-    ///
-    /// Draws style item.
-    ///
-    /// @param[in] matrix
-    ///     A transform matrix.
-    /// @param[in] color
-    ///     A color.
-    /// @param[in] zindex
-    ///     A Z index value.
-    /// @param[in] rectangle
-    ///     A rectangle to draw.
-    /// @param[in] style_item
-    ///     A style item to draw.
-    ///
-    /// @returns
-    ///     true when successful, false otherwise.
-    ///
-    bool DrawStyleItem(
-        const Matrix& matrix,
-        const Color& color,
-        float32_t zindex,
-        const Rect& rectangle,
-        const StyleItem1Quad& style_item);
+        ///
+        /// Ends geometry generation.
+        ///
+        /// @param[in,out] inout_geometry_buffer
+        ///     A target geometry buffer.
+        ///
+        void End(GeometryBufferRef& inout_geometry_buffer);
 
-    ///
-    /// Draws string.
-    ///
-    /// @param[in] matrix
-    ///     A transform matrix.
-    /// @param[in] color
-    ///     A color.
-    /// @param[in] zindex
-    ///     A Z index value.
-    /// @param[in] rectangle
-    ///     A bound rectangle.
-    /// @param[in] font
-    ///     A font used to draw text.
-    /// @param[in] font_size
-    ///     A size of text to draw.
-    /// @param[in] align
-    ///     An alignment of text inside rectangle bound.
-    ///
-    /// @returns
-    ///     true when successful, false otherwise.
-    bool DrawString(
-        const Matrix& matrix,
-        const Color& color,
-        float32_t zindex,
-        const Rect& rectangle,
-        const FontRef& font,
-        const char* text,
-        float32_t font_size,
-        TextAlign align = TextAlign_Center);
-};
+        ///
+        /// Adds quad.
+        ///
+        /// @param[in] v1
+        ///     A first quad vertex.
+        /// @param[in] v2
+        ///     A second quad vertex.
+        /// @param[in] v3
+        ///     A third quad vertex.
+        /// @param[in] v4
+        ///     A fourth quad vertex.
+        ///
+        void AddQuad(const Vertex& v1, const Vertex& v2, const Vertex& v3, const Vertex& v4)
+        {
+            AddTriangle(v1, v2, v3);
+            AddTriangle(v1, v3, v4);
+        }
+
+        ///
+        /// Adds triangle.
+        ///
+        /// @param[in] v1
+        ///     A first triangle vertex.
+        /// @param[in] v2
+        ///     A second triangle vertex.
+        /// @param[in] v3
+        ///     A third triangle vertex.
+        ///
+        void AddTriangle(const Vertex& v1, const Vertex& v2, const Vertex& v3)
+        {
+            _vertex_collection.push_back(v1);
+            _vertex_collection.push_back(v2);
+            _vertex_collection.push_back(v3);
+        }
+
+        ///
+        /// Gets number of vertices in geometry builder.
+        ///
+        size_t GetVertexCount() const
+        {
+            return _vertex_collection.size();
+        }
+
+        ///
+        /// Draws style item.
+        ///
+        /// @param[in] matrix
+        ///     A transform matrix.
+        /// @param[in] color
+        ///     A color.
+        /// @param[in] zindex
+        ///     A Z index value.
+        /// @param[in] rectangle
+        ///     A rectangle to draw.
+        /// @param[in] padding
+        ///     An internal element padding.
+        /// @param[in] style_item
+        ///     A style item to draw.
+        ///
+        /// @returns
+        ///     true when successful, false otherwise.
+        ///
+        bool DrawStyleItem(
+            const Matrix& matrix,
+            const Color& color,
+            float32_t zindex,
+            const Rect& rectangle,
+            const Thickness& padding,
+            const StyleItem9Grid& style_item);
+
+        ///
+        /// Draws style item.
+        ///
+        /// @param[in] matrix
+        ///     A transform matrix.
+        /// @param[in] color
+        ///     A color.
+        /// @param[in] zindex
+        ///     A Z index value.
+        /// @param[in] rectangle
+        ///     A rectangle to draw.
+        /// @param[in] style_item
+        ///     A style item to draw.
+        ///
+        /// @returns
+        ///     true when successful, false otherwise.
+        ///
+        bool DrawStyleItem(
+            const Matrix& matrix,
+            const Color& color,
+            float32_t zindex,
+            const Rect& rectangle,
+            const StyleItem1Quad& style_item);
+
+        ///
+        /// Draws string.
+        ///
+        /// @param[in] matrix
+        ///     A transform matrix.
+        /// @param[in] color
+        ///     A color.
+        /// @param[in] zindex
+        ///     A Z index value.
+        /// @param[in] rectangle
+        ///     A bound rectangle.
+        /// @param[in] font
+        ///     A font used to draw text.
+        /// @param[in] font_size
+        ///     A size of text to draw.
+        /// @param[in] align
+        ///     An alignment of text inside rectangle bound.
+        ///
+        /// @returns
+        ///     true when successful, false otherwise.
+        bool DrawString(
+            const Matrix& matrix,
+            const Color& color,
+            float32_t zindex,
+            const Rect& rectangle,
+            const FontRef& font,
+            const char* text,
+            float32_t font_size,
+            TextAlign align = TextAlign_Center);
+    };
 
 }
-}
-//------------------------------------------------------------------------------------------------//
+
 #endif /* _TileShell_Drawing_GeometryBuilder_H__ */

@@ -26,45 +26,42 @@
 #pragma once
 #ifndef _TileShell_Render_Size_H__
 #define _TileShell_Render_Size_H__
-//------------------------------------------------------------------------------------------------//
+
 #include <tileshell.core/types.hxx>
 #include <tileshell.drawing/point.hxx>
-//------------------------------------------------------------------------------------------------//
-namespace TileShell
-{
-namespace Drawing
+
+namespace TileShell::Drawing
 {
 
-///
-/// @brief
-///     This struct represents size in 2D space.
-///
-struct Size
-{
-    float32_t   Width;
-    float32_t   Height;
+    ///
+    /// @brief
+    ///     This struct represents size in 2D space.
+    ///
+    struct Size
+    {
+        float32_t   Width;
+        float32_t   Height;
 
-    Size();
-    Size(const Size& size);
-    Size(float32_t width, float32_t height);
-    explicit Size(float32_t size);
+        Size();
+        Size(const Size& size);
+        Size(float32_t width, float32_t height);
+        explicit Size(float32_t size);
 
-public:
-    bool IsEmpty() const;
-    bool operator == (const Size& s) const;
-    bool operator != (const Size& s) const;
+    public:
+        bool IsEmpty() const;
+        bool operator == (const Size& s) const;
+        bool operator != (const Size& s) const;
 
-public:
-    float32_t GetAspectRatio() const;
-    float32_t GetInverseAspectRatio() const;
-    float32x2_t ToFloat32x2() const;
-    float32x3_t ToFloat32x3() const;
-    Point ToPoint() const;
-};
+    public:
+        float32_t GetAspectRatio() const;
+        float32_t GetInverseAspectRatio() const;
+        float32x2_t ToFloat32x2() const;
+        float32x3_t ToFloat32x3() const;
+        Point ToPoint() const;
+    };
 
 }
-}
-//------------------------------------------------------------------------------------------------//
+
 #include <tileshell.drawing/size.inl>
-//------------------------------------------------------------------------------------------------//
+
 #endif /* _TileShell_Render_Size_H__ */

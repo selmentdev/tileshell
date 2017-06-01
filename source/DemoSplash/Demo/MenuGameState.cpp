@@ -26,9 +26,9 @@
 #include "MenuGameState.h"
 #include "IntroGameState.h"
 #include "PlayGameState.h"
-//------------------------------------------------------------------------------------------------//
+
 #include "../OgreSdk/DotSceneLoader.h"
-//------------------------------------------------------------------------------------------------//
+
 #include <TileShell/Serialization/TypeSerializer.h>
 #include <TileShell/UI/Controls/MenuScene.h>
 #include <TileShell/UI/Controls/Activity.h>
@@ -38,13 +38,13 @@
 #include <TileShell/UI/Controls/Primitives/SelectorBase.h>
 #include <TileShell/UI/Controls/Primitives/TextBase.h>
 #include <TileShell/UI/Controls/Primitives/ToggleButton.h>
-//------------------------------------------------------------------------------------------------//
+
 using namespace TileShell::Core;
 using namespace TileShell::UI::Controls;
-//------------------------------------------------------------------------------------------------//
+
 namespace Demo
 {
-//------------------------------------------------------------------------------------------------//
+
 class MainMenuHandler : public TileShell::UI::Controls::IEventHandler
 {
 private:
@@ -76,7 +76,7 @@ public:
         return activity != nullptr;
     }
 };
-//------------------------------------------------------------------------------------------------//
+
 class Menu_Main_ExitGame : public MainMenuHandler
 {
 public:
@@ -92,7 +92,7 @@ public:
         }
     }
 };
-//------------------------------------------------------------------------------------------------//
+
 class Menu_Main_Menu : public MainMenuHandler
 {
 private:
@@ -172,7 +172,7 @@ public:
         tbx_Spinner4->SetZOrder(20.0F + std::sin(_counter * 0.65F) * 40.0F);
     }
 };
-//------------------------------------------------------------------------------------------------//
+
 class Menu_Main_Options_Video : public MainMenuHandler
 {
 private:
@@ -205,7 +205,7 @@ public:
         }
     }
 };
-//------------------------------------------------------------------------------------------------//
+
 class Menu_Main_Options_Audio : public MainMenuHandler
 {
 private:
@@ -255,19 +255,19 @@ public:
         }
     }
 };
-//------------------------------------------------------------------------------------------------//
+
 class Menu_Main_Options_KeyBindings : public MainMenuHandler
 {
 public:
     virtual ~Menu_Main_Options_KeyBindings() { }
 };
-//------------------------------------------------------------------------------------------------//
+
 class Menu_Main_Options_Gameplay : public MainMenuHandler
 {
 public:
     virtual ~Menu_Main_Options_Gameplay() { }
 };
-//------------------------------------------------------------------------------------------------//
+
 class Menu_Main_Options_Controls : public MainMenuHandler
 {
 private:
@@ -427,9 +427,9 @@ public:
         }
     }
 };
-//------------------------------------------------------------------------------------------------//
+
 MenuGameState MenuGameState::_game_state;
-//------------------------------------------------------------------------------------------------//
+
 MenuGameState::MenuGameState()
     : _mm_menu(nullptr)
     , _mm_menu_exit(nullptr)
@@ -447,19 +447,19 @@ MenuGameState::MenuGameState()
     , _camera_locked(true)
 {
 }
-//------------------------------------------------------------------------------------------------//
+
 void MenuGameState::ActivateViewport()
 {
     _root               = Ogre::Root::getSingletonPtr();
     _viewport           = _root->getAutoCreatedWindow()->addViewport(_camera);
     _viewport->setBackgroundColour(Ogre::ColourValue(0.0F, 0.0F, 1.0F));
 }
-//------------------------------------------------------------------------------------------------//
+
 void MenuGameState::DeactivateViewport()
 {
     _root->getAutoCreatedWindow()->removeAllViewports();
 }
-//------------------------------------------------------------------------------------------------//
+
 bool MenuGameState::OnLoad()
 {
     _root               = Ogre::Root::getSingletonPtr();
@@ -529,32 +529,32 @@ bool MenuGameState::OnLoad()
 
     return GameState::OnLoad();
 }
-//------------------------------------------------------------------------------------------------//
+
 bool MenuGameState::OnUnload()
 {
     return GameState::OnUnload();
 }
-//------------------------------------------------------------------------------------------------//
+
 void MenuGameState::Enter()
 {
     GameState::Enter();
 }
-//------------------------------------------------------------------------------------------------//
+
 void MenuGameState::Exit()
 {
     GameState::Exit();
 }
-//------------------------------------------------------------------------------------------------//
+
 void MenuGameState::Pause()
 {
     GameState::Pause();
 }
-//------------------------------------------------------------------------------------------------//
+
 void MenuGameState::Resume()
 {
     GameState::Resume();
 }
-//------------------------------------------------------------------------------------------------//
+
 bool MenuGameState::mousePressed(const OIS::MouseEvent& evt, OIS::MouseButtonID id)
 {
 
@@ -576,7 +576,7 @@ bool MenuGameState::mousePressed(const OIS::MouseEvent& evt, OIS::MouseButtonID 
 
     return true;
 }
-//------------------------------------------------------------------------------------------------//
+
 bool MenuGameState::mouseReleased(const OIS::MouseEvent& evt, OIS::MouseButtonID id)
 {
 
@@ -598,7 +598,7 @@ bool MenuGameState::mouseReleased(const OIS::MouseEvent& evt, OIS::MouseButtonID
 
     return true;
 }
-//------------------------------------------------------------------------------------------------//
+
 bool MenuGameState::mouseMoved(const OIS::MouseEvent& evt)
 {
 
@@ -620,7 +620,7 @@ bool MenuGameState::mouseMoved(const OIS::MouseEvent& evt)
 
     return true;
 }
-//------------------------------------------------------------------------------------------------//
+
 bool MenuGameState::keyPressed(const OIS::KeyEvent& evt)
 {
 #if 0
@@ -672,7 +672,7 @@ bool MenuGameState::keyPressed(const OIS::KeyEvent& evt)
     _scene->OnKeyDown(e);
     return true;
 }
-//------------------------------------------------------------------------------------------------//
+
 bool MenuGameState::keyReleased(const OIS::KeyEvent& evt)
 {
     if (_camera_locked == false)
@@ -688,7 +688,7 @@ bool MenuGameState::keyReleased(const OIS::KeyEvent& evt)
     _scene->OnKeyUp(e);
     return true;
 }
-//------------------------------------------------------------------------------------------------//
+
 bool MenuGameState::frameStarted(const Ogre::FrameEvent& evt)
 {
     _ts_started = __rdtsc();
@@ -741,7 +741,7 @@ bool MenuGameState::frameStarted(const Ogre::FrameEvent& evt)
 
     return true;
 }
-//------------------------------------------------------------------------------------------------//
+
 bool MenuGameState::frameEnded(const Ogre::FrameEvent& evt)
 {
     _ts_ended = __rdtsc();
@@ -758,7 +758,7 @@ bool MenuGameState::frameEnded(const Ogre::FrameEvent& evt)
 
     return true;
 }
-//------------------------------------------------------------------------------------------------//
+
 bool MenuGameState::ReleaseResources()
 {
     delete _mm_menu;
@@ -780,6 +780,6 @@ bool MenuGameState::ReleaseResources()
     _scene = nullptr;
     return GameState::ReleaseResources();
 }
-//------------------------------------------------------------------------------------------------//
+
 }
-//------------------------------------------------------------------------------------------------//
+

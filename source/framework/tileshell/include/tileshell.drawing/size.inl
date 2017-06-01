@@ -24,80 +24,76 @@
 // 
 //
 #pragma once
-//------------------------------------------------------------------------------------------------//
+
 #include <tileshell.drawing/size.hxx>
 #include <tileshell.drawing/vector.hxx>
 #include <tileshell.drawing/point.hxx>
-//------------------------------------------------------------------------------------------------//
-namespace TileShell
+
+namespace TileShell::Drawing
 {
-namespace Drawing
-{
-//------------------------------------------------------------------------------------------------//
-inline Size::Size()
-    : Width(0.0F)
-    , Height(0.0F)
-{
+
+    inline Size::Size()
+        : Width(0.0F)
+        , Height(0.0F)
+    {
+    }
+
+    inline Size::Size(const Size& size)
+        : Width(size.Width)
+        , Height(size.Height)
+    {
+    }
+
+    inline Size::Size(float32_t width, float32_t height)
+        : Width(width)
+        , Height(height)
+    {
+    }
+
+    inline Size::Size(float32_t size)
+        : Width(size)
+        , Height(size)
+    {
+    }
+
+    inline bool Size::IsEmpty() const
+    {
+        return Width == 0.0F && Height == 0.0F;
+    }
+
+    inline bool Size::operator == (const Size& s) const
+    {
+        return Width == s.Width && Height == s.Height;
+    }
+
+    inline bool Size::operator != (const Size& s) const
+    {
+        return Width != s.Width || Height != s.Height;
+    }
+
+    inline float32_t Size::GetAspectRatio() const
+    {
+        return Width / Height;
+    }
+
+    inline float32_t Size::GetInverseAspectRatio() const
+    {
+        return Height / Width;
+    }
+
+    inline float32x2_t Size::ToFloat32x2() const
+    {
+        return float32x2_t(Width, Height);
+    }
+
+    inline float32x3_t Size::ToFloat32x3() const
+    {
+        return float32x3_t(Width, Height, 0.0F);
+    }
+
+    inline Point Size::ToPoint() const
+    {
+        return Point(Width, Height);
+    }
+
 }
-//------------------------------------------------------------------------------------------------//
-inline Size::Size(const Size& size)
-    : Width(size.Width)
-    , Height(size.Height)
-{
-}
-//------------------------------------------------------------------------------------------------//
-inline Size::Size(float32_t width, float32_t height)
-    : Width(width)
-    , Height(height)
-{
-}
-//------------------------------------------------------------------------------------------------//
-inline Size::Size(float32_t size)
-    : Width(size)
-    , Height(size)
-{
-}
-//------------------------------------------------------------------------------------------------//
-inline bool Size::IsEmpty() const
-{
-    return Width == 0.0F && Height == 0.0F;
-}
-//------------------------------------------------------------------------------------------------//
-inline bool Size::operator == (const Size& s) const
-{
-    return Width == s.Width && Height == s.Height;
-}
-//------------------------------------------------------------------------------------------------//
-inline bool Size::operator != (const Size& s) const
-{
-    return Width != s.Width || Height != s.Height;
-}
-//------------------------------------------------------------------------------------------------//
-inline float32_t Size::GetAspectRatio() const
-{
-    return Width / Height;
-}
-//------------------------------------------------------------------------------------------------//
-inline float32_t Size::GetInverseAspectRatio() const
-{
-    return Height / Width;
-}
-//------------------------------------------------------------------------------------------------//
-inline float32x2_t Size::ToFloat32x2() const
-{
-    return float32x2_t(Width, Height);
-}
-//------------------------------------------------------------------------------------------------//
-inline float32x3_t Size::ToFloat32x3() const
-{
-    return float32x3_t(Width, Height, 0.0F);
-}
-//------------------------------------------------------------------------------------------------//
-inline Point Size::ToPoint() const
-{
-    return Point(Width, Height);
-}
-//------------------------------------------------------------------------------------------------//
-}
-}
-//------------------------------------------------------------------------------------------------//

@@ -78,7 +78,7 @@ namespace Core
             {
                 return false;
             }
-            
+
             return true;
         }
 

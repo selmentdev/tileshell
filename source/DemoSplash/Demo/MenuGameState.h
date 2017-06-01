@@ -26,12 +26,12 @@
 #pragma once
 #ifndef _Demo_MenuGameState_H__
 #define _Demo_MenuGameState_H__
-//------------------------------------------------------------------------------------------------//
+
 #include "GameState.h"
 #include <OgreRenderWindow.h>
 #include <OgreWindowEventUtilities.h>
 #include <SdkCameraMan.h>
-//------------------------------------------------------------------------------------------------//
+
 namespace Demo
 {
 
@@ -115,7 +115,7 @@ protected:
 private:
     static MenuGameState    _game_state;
 };
-//------------------------------------------------------------------------------------------------//
+
 }
-//------------------------------------------------------------------------------------------------//
+
 #endif /* _Demo_MenuGameState_H__ */

@@ -24,7 +24,7 @@ namespace Core::Rendering
         auto renderSystem = Core::Rendering::RenderSystem::Current;
 
         /*
-            
+
             TexCoords were wrong.
 
             It's 4AM morning.
@@ -46,14 +46,14 @@ namespace Core::Rendering
 
         */
 
-        auto p0 = DirectX::XMFLOAT3(-0.5F, -0.5F,  0.5F);
-        auto p1 = DirectX::XMFLOAT3( 0.5F, -0.5F,  0.5F);
-        auto p2 = DirectX::XMFLOAT3( 0.5F, -0.5F, -0.5F);
+        auto p0 = DirectX::XMFLOAT3(-0.5F, -0.5F, 0.5F);
+        auto p1 = DirectX::XMFLOAT3(0.5F, -0.5F, 0.5F);
+        auto p2 = DirectX::XMFLOAT3(0.5F, -0.5F, -0.5F);
         auto p3 = DirectX::XMFLOAT3(-0.5F, -0.5F, -0.5F);
-        auto p4 = DirectX::XMFLOAT3(-0.5F,  0.5F,  0.5F);
-        auto p5 = DirectX::XMFLOAT3( 0.5F,  0.5F,  0.5F);
-        auto p6 = DirectX::XMFLOAT3( 0.5F,  0.5F, -0.5F);
-        auto p7 = DirectX::XMFLOAT3(-0.5F,  0.5F, -0.5F);
+        auto p4 = DirectX::XMFLOAT3(-0.5F, 0.5F, 0.5F);
+        auto p5 = DirectX::XMFLOAT3(0.5F, 0.5F, 0.5F);
+        auto p6 = DirectX::XMFLOAT3(0.5F, 0.5F, -0.5F);
+        auto p7 = DirectX::XMFLOAT3(-0.5F, 0.5F, -0.5F);
 
 
         auto nu = DirectX::XMFLOAT3(0.0F, 1.0F, 0.0F);
@@ -70,7 +70,7 @@ namespace Core::Rendering
         auto _11 = DirectX::XMFLOAT2(1.0F, 1.0F);
 
         std::array<Vertex, 24> vertices = { {
-            // Bottom
+                // Bottom
             { p0, nd, _11 }, { p1, nd, _01 }, { p2, nd, _00 }, { p3, nd, _10 },
 
             // Left

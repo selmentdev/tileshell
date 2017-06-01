@@ -26,11 +26,11 @@
 #pragma once
 #ifndef _TileShell_Required_H__
 #define _TileShell_Required_H__
-//------------------------------------------------------------------------------------------------//
+
 #define WIN32_LEAN_AND_MEAN
 #define NOMINMAX
 #include <Windows.h>
-//------------------------------------------------------------------------------------------------//
+
 #include <vector>
 #include <list>
 #include <algorithm>
@@ -41,26 +41,37 @@
 #include <cstdint>
 #include <map>
 #include <crtdbg.h>
-//------------------------------------------------------------------------------------------------//
+
 // Disable certain sets of warning on Visual Studio
 #pragma warning(disable : 4324)
 #pragma warning(disable : 4275)
 #pragma warning(disable : 4251)
 #pragma warning(disable : 4201)
 #pragma warning(disable : 4127)
-//------------------------------------------------------------------------------------------------//
+
 typedef float float32_t;
-//------------------------------------------------------------------------------------------------//
+
 #ifdef _DEBUG
 #   define TILESHELL_DEBUG
 #endif
-//------------------------------------------------------------------------------------------------//
+
 #define TILESHELL_ALIGN(Bytes)                  __declspec(align(Bytes))
 #define TILESHELL_MATHALIGN                     TILESHELL_ALIGN(16)
 
 #define tileshell_assert assert
 #define tileshell_unused(_Expression)           ((void)(_Expression))
-//------------------------------------------------------------------------------------------------//
+
+#define TILESHELL_ENUM_CLASS_FLAGS(_EnumType) \
+    inline _EnumType& operator |= (_EnumType& lvalue, const _EnumType rvalue) noexcept { return lvalue = static_cast<_EnumType>(static_cast<std::underlying_type_t<_EnumType>>(lvalue) | static_cast<std::underlying_type_t<_EnumType>>(rvalue)); } \
+    inline _EnumType& operator &= (_EnumType& lvalue, const _EnumType rvalue) noexcept { return lvalue = static_cast<_EnumType>(static_cast<std::underlying_type_t<_EnumType>>(lvalue) & static_cast<std::underlying_type_t<_EnumType>>(rvalue)); } \
+    inline _EnumType& operator ^= (_EnumType& lvalue, const _EnumType rvalue) noexcept { return lvalue = static_cast<_EnumType>(static_cast<std::underlying_type_t<_EnumType>>(lvalue) & static_cast<std::underlying_type_t<_EnumType>>(rvalue)); } \
+    inline constexpr _EnumType operator | (const _EnumType lvalue, const _EnumType rvalue) noexcept { return static_cast<_EnumType>(static_cast<std::underlying_type_t<_EnumType>>(lvalue) | static_cast<std::underlying_type_t<_EnumType>>(rvalue)); } \
+    inline constexpr _EnumType operator & (const _EnumType lvalue, const _EnumType rvalue) noexcept { return static_cast<_EnumType>(static_cast<std::underlying_type_t<_EnumType>>(lvalue) & static_cast<std::underlying_type_t<_EnumType>>(rvalue)); } \
+    inline constexpr _EnumType operator ^ (const _EnumType lvalue, const _EnumType rvalue) noexcept { return static_cast<_EnumType>(static_cast<std::underlying_type_t<_EnumType>>(lvalue) ^ static_cast<std::underlying_type_t<_EnumType>>(rvalue)); } \
+    inline constexpr bool operator ! (const _EnumType value) noexcept { return !static_cast<std::underlying_type_t<_EnumType>>(value); } \
+    inline constexpr _EnumType operator ~ (const _EnumType value) noexcept { return static_cast<_EnumType>(~static_cast<std::underlying_type_t<_EnumType>>(value)); }
+
+
 #include <tileshell.core/types.hxx>
-//------------------------------------------------------------------------------------------------//
+
 #endif /* _TileShell_Required_H__ */

@@ -26,79 +26,76 @@
 #pragma once
 #ifndef _TileShell_Render_StyleItem_H__
 #define _TileShell_Render_StyleItem_H__
-//------------------------------------------------------------------------------------------------//
+
 #include <tileshell.drawing/rect.hxx>
 #include <tileshell.drawing/thickness.hxx>
 #include <tileshell.xml/xml.hxx>
 #include <tileshell.serialization/typeserializer.hxx>
-//------------------------------------------------------------------------------------------------//
-namespace TileShell
-{
-namespace Drawing
-{
-///
-/// @remarks
-///     This structure defines 1 quad texture coordinates. This structure is simpler version of
-///     Theme9Grid structure, which is more specialized.
-///
-/// @note
-///     Xml format:
-///
-struct StyleItem1Quad
-{
-    ///
-    /// Contains texture coordinates.
-    ///
-    Drawing::Rect   Rectangle;
-};
 
-///
-/// 9Grid.
-///
-/// @remarks
-///     This structure defines 9 grid texture coordinates. The Border contains outer box
-///     texture coordinates, and the InnerBox contains inner box texture coordinates relative
-///     padding values.
-///
-/// @note
-///     Xml format:
-///
-struct StyleItem9Grid
+namespace TileShell::Drawing
 {
     ///
-    /// Contains texture coordinates.
+    /// @remarks
+    ///     This structure defines 1 quad texture coordinates. This structure is simpler version of
+    ///     Theme9Grid structure, which is more specialized.
     ///
-    Rect        Rectangle;
-
+    /// @note
+    ///     Xml format:
     ///
-    /// Contains center cell texture coordinates padding.
-    ///
-    Thickness   Padding;
-};
-
-}
-//------------------------------------------------------------------------------------------------//
-namespace Serialization
-{
-//------------------------------------------------------------------------------------------------//
-struct StyleItem1QuadValueSerializer
-{
-    static bool Deserialize(Drawing::StyleItem1Quad& out_result, const Xml::XmlNode* node)
+    struct StyleItem1Quad
     {
-        return RectValueSerializer::Deserialize(out_result.Rectangle, node->first_attribute("Rectangle"));
-    }
-};
-//------------------------------------------------------------------------------------------------//
-struct StyleItem9GridValueSerializer
-{
-    static bool Deserialize(Drawing::StyleItem9Grid& out_result, const Xml::XmlNode* node)
+        ///
+        /// Contains texture coordinates.
+        ///
+        Drawing::Rect   Rectangle;
+    };
+
+    ///
+    /// 9Grid.
+    ///
+    /// @remarks
+    ///     This structure defines 9 grid texture coordinates. The Border contains outer box
+    ///     texture coordinates, and the InnerBox contains inner box texture coordinates relative
+    ///     padding values.
+    ///
+    /// @note
+    ///     Xml format:
+    ///
+    struct StyleItem9Grid
     {
-        return RectValueSerializer::Deserialize(out_result.Rectangle, node->first_attribute("Rectangle")) &&
-               ThicknessValueSerializer::Deserialize(out_result.Padding, node->first_attribute("Padding"));
-    }
-};
-//------------------------------------------------------------------------------------------------//
+        ///
+        /// Contains texture coordinates.
+        ///
+        Rect        Rectangle;
+
+        ///
+        /// Contains center cell texture coordinates padding.
+        ///
+        Thickness   Padding;
+    };
+
 }
+
+namespace TileShell::Serialization
+{
+
+    struct StyleItem1QuadValueSerializer
+    {
+        static bool Deserialize(Drawing::StyleItem1Quad& out_result, const Xml::XmlNode* node)
+        {
+            return RectValueSerializer::Deserialize(out_result.Rectangle, node->first_attribute("Rectangle"));
+        }
+    };
+
+    struct StyleItem9GridValueSerializer
+    {
+        static bool Deserialize(Drawing::StyleItem9Grid& out_result, const Xml::XmlNode* node)
+        {
+            return RectValueSerializer::Deserialize(out_result.Rectangle, node->first_attribute("Rectangle")) &&
+                ThicknessValueSerializer::Deserialize(out_result.Padding, node->first_attribute("Padding"));
+        }
+    };
+
 }
-//------------------------------------------------------------------------------------------------//
+
 #endif /* _TileShell_Render_StyleItem_H__ */

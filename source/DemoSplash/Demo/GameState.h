@@ -26,7 +26,7 @@
 #pragma once
 #ifndef _Demo_GameState_H__
 #define _Demo_GameState_H__
-//------------------------------------------------------------------------------------------------//
+
 #include <OgreRoot.h>
 #include <OgreSceneManager.h>
 #include <OgreRenderWindow.h>
@@ -37,10 +37,10 @@
 #include <OIS/OIS.h>
 #include <OIS/OISKeyboard.h>
 #include <OIS/OISMouse.h>
-//------------------------------------------------------------------------------------------------//
+
 #include "../OgreGlue/OgreRenderer.h"
 #include "GameManager.h"
-//------------------------------------------------------------------------------------------------//
+
 namespace Demo
 {
 
@@ -108,7 +108,7 @@ protected:
 private:
     bool        _loaded;
 };
-//------------------------------------------------------------------------------------------------//
+
 }
-//------------------------------------------------------------------------------------------------//
+
 #endif /* _Demo_GameState_H__ */

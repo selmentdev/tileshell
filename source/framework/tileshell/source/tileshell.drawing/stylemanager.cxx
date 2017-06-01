@@ -24,42 +24,41 @@
 // 
 //
 #include <tileshell.drawing/stylemanager.hxx>
-//------------------------------------------------------------------------------------------------//
+
 namespace TileShell::Drawing
 {
-//------------------------------------------------------------------------------------------------//
-StyleManager::StyleCollection StyleManager::_style_collection;
-//------------------------------------------------------------------------------------------------//
-StyleRef StyleManager::GetStyle(const string_t& name)
-{
-    StyleCollection::const_iterator it = _style_collection.find(name);
 
-    if (it != _style_collection.end())
+    StyleManager::StyleCollection StyleManager::_style_collection;
+
+    StyleRef StyleManager::GetStyle(const string_t& name)
     {
-        return it->second;
+        StyleCollection::const_iterator it = _style_collection.find(name);
+
+        if (it != _style_collection.end())
+        {
+            return it->second;
+        }
+
+        StyleRef theme(new Style());
+
+        if (theme->Load(name) == true)
+        {
+            _style_collection.insert(std::make_pair(name, theme));
+            return theme;
+        }
+
+        return StyleRef(nullptr);
     }
 
-    StyleRef theme(new Style());
-
-    if (theme->Load(name) == true)
+    bool StyleManager::Initialize()
     {
-        _style_collection.insert(std::make_pair(name, theme));
-        return theme;
+        return true;
     }
 
-    return StyleRef(nullptr);
+    bool StyleManager::Shutdown()
+    {
+        _style_collection.clear();
+        return true;
+    }
+
 }
-//------------------------------------------------------------------------------------------------//
-bool StyleManager::Initialize()
-{
-    return true;
-}
-//------------------------------------------------------------------------------------------------//
-bool StyleManager::Shutdown()
-{
-    _style_collection.clear();
-    return true;
-}
-//------------------------------------------------------------------------------------------------//
-}
-//------------------------------------------------------------------------------------------------//

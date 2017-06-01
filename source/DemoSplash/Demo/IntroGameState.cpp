@@ -25,16 +25,16 @@
 //
 #include "IntroGameState.h"
 #include "MenuGameState.h"
-//------------------------------------------------------------------------------------------------//
+
 #include "../OgreSdk/DotSceneLoader.h"
-//------------------------------------------------------------------------------------------------//
+
 #include <TileShell/SplashKit/SplashScene.h>
-//------------------------------------------------------------------------------------------------//
+
 namespace Demo
 {
-//------------------------------------------------------------------------------------------------//
+
 IntroGameState IntroGameState::_game_state;
-//------------------------------------------------------------------------------------------------//
+
 IntroGameState::IntroGameState()
     : _root(nullptr)
     , _scene_manager(nullptr)
@@ -46,7 +46,7 @@ IntroGameState::IntroGameState()
 #endif
 {
 }
-//------------------------------------------------------------------------------------------------//
+
 bool IntroGameState::OnLoad()
 {
     _root               = Ogre::Root::getSingletonPtr();
@@ -78,63 +78,63 @@ bool IntroGameState::OnLoad()
 
     return GameState::OnLoad();
 }
-//------------------------------------------------------------------------------------------------//
+
 bool IntroGameState::OnUnload()
 {
     _scene_manager->removeRenderQueueListener(&_renderer);
     delete _scene_manager;
     return GameState::OnUnload();
 }
-//------------------------------------------------------------------------------------------------//
+
 void IntroGameState::ActivateViewport()
 {
     _root               = Ogre::Root::getSingletonPtr();
     _viewport           = _root->getAutoCreatedWindow()->addViewport(_camera);
     _viewport->setBackgroundColour(Ogre::ColourValue(0.0F, 0.0F, 0.0F));
 }
-//------------------------------------------------------------------------------------------------//
+
 void IntroGameState::DeactivateViewport()
 {
     _root->getAutoCreatedWindow()->removeAllViewports();
 }
-//------------------------------------------------------------------------------------------------//
+
 void IntroGameState::Enter()
 {
     GameState::Enter();
 
     _exit_game = false;
 }
-//------------------------------------------------------------------------------------------------//
+
 void IntroGameState::Exit()
 {
     GameState::Exit();
 }
-//------------------------------------------------------------------------------------------------//
+
 void IntroGameState::Pause()
 {
     GameState::Pause();
 }
-//------------------------------------------------------------------------------------------------//
+
 void IntroGameState::Resume()
 {
     GameState::Resume();
 }
-//------------------------------------------------------------------------------------------------//
+
 bool IntroGameState::mousePressed(const OIS::MouseEvent& evt, OIS::MouseButtonID id)
 {
     return true;
 }
-//------------------------------------------------------------------------------------------------//
+
 bool IntroGameState::mouseReleased(const OIS::MouseEvent& evt, OIS::MouseButtonID id)
 {
     return true;
 }
-//------------------------------------------------------------------------------------------------//
+
 bool IntroGameState::mouseMoved(const OIS::MouseEvent& evt)
 {
     return true;
 }
-//------------------------------------------------------------------------------------------------//
+
 bool IntroGameState::keyPressed(const OIS::KeyEvent& evt)
 {
     if (evt.key == OIS::KC_SPACE)
@@ -164,12 +164,12 @@ bool IntroGameState::keyPressed(const OIS::KeyEvent& evt)
 
     return true;
 }
-//------------------------------------------------------------------------------------------------//
+
 bool IntroGameState::keyReleased(const OIS::KeyEvent& evt)
 {
     return true;
 }
-//------------------------------------------------------------------------------------------------//
+
 bool IntroGameState::frameStarted(const Ogre::FrameEvent& evt)
 {
     TileShell::Drawing::Size screen_size;
@@ -180,7 +180,7 @@ bool IntroGameState::frameStarted(const Ogre::FrameEvent& evt)
     _scene->SetScreenSize(screen_size);
     return true;
 }
-//------------------------------------------------------------------------------------------------//
+
 bool IntroGameState::frameEnded(const Ogre::FrameEvent& evt)
 {
     if (!_scene->Update(evt.timeSinceLastFrame))
@@ -195,12 +195,12 @@ bool IntroGameState::frameEnded(const Ogre::FrameEvent& evt)
 
     return true;
 }
-//------------------------------------------------------------------------------------------------//
+
 bool IntroGameState::ReleaseResources()
 {
     _scene  = nullptr;
     return GameState::ReleaseResources();
 }
-//------------------------------------------------------------------------------------------------//
+
 }
-//------------------------------------------------------------------------------------------------//
+

@@ -26,61 +26,58 @@
 #pragma once
 #ifndef _TileShell_Drawing_FontManager_H__
 #define _TileShell_Drawing_FontManager_H__
-//------------------------------------------------------------------------------------------------//
+
 #include <tileshell.core/types.hxx>
 #include <tileshell.core/reference.hxx>
 #include <tileshell.core/referenced.hxx>
 #include <tileshell.drawing/font.hxx>
 #include <tileshell/externalresourcefactory.hxx>
-//------------------------------------------------------------------------------------------------//
-namespace TileShell
+
+namespace TileShell::Drawing
 {
-namespace Drawing
-{
-///
-/// This class implements font management.
-///
-class FontManager
-{
-private:
-    friend class Font;
-    friend class Device;
+    ///
+    /// This class implements font management.
+    ///
+    class FontManager
+    {
+    private:
+        friend class Font;
+        friend class Device;
 
-private:
-    typedef std::map<string_t, FontRef> FontCollection;
+    private:
+        typedef std::map<string_t, FontRef> FontCollection;
 
-private:
-    static FontCollection               _font_collection;
+    private:
+        static FontCollection               _font_collection;
 
-public:
-    ///
-    /// Initializes font manager.
-    ///
-    /// @returns
-    ///     true when successful, false otherwise.
-    ///
-    static bool Initialize();
+    public:
+        ///
+        /// Initializes font manager.
+        ///
+        /// @returns
+        ///     true when successful, false otherwise.
+        ///
+        static bool Initialize();
 
-    ///
-    /// Shutdowns font manager.
-    ///
-    /// @returns
-    ///     true when successful, false otherwise.
-    ///
-    static bool Shutdown();
+        ///
+        /// Shutdowns font manager.
+        ///
+        /// @returns
+        ///     true when successful, false otherwise.
+        ///
+        static bool Shutdown();
 
-public:
-    ///
-    /// Gets font for specified name.
-    ///
-    /// @param[in] name
-    ///     A font name to load or create.
-    ///
-    static FontRef GetFont(const string_t& name);
+    public:
+        ///
+        /// Gets font for specified name.
+        ///
+        /// @param[in] name
+        ///     A font name to load or create.
+        ///
+        static FontRef GetFont(const string_t& name);
 
-};
+    };
 
 }
-}
-//------------------------------------------------------------------------------------------------//
+
 #endif /* _TileShell_Drawing_FontManager_H__ */
